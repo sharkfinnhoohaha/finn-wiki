@@ -1,0 +1,336 @@
+/* ==========================================================================
+   Overlook Strategy — Colors & Type
+   Ocean-inspired palette drawn from Ventura, California:
+   deep navy (the logo ink), cream/bone (paper), pacific teals,
+   sandstone and fog for supporting neutrals.
+   ========================================================================== */
+
+/* Fonts — Google Font stand-ins until originals are delivered.
+   Primary sans: a humanist grotesque matching the logo wordmark (OVERLOOK STRATEGY).
+   Primary serif: transitional serif for names, editorial display, italics. */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+  /* ── INK — the deep navy from the logo ────────────────────────────── */
+  --ink-900: #0e2439;   /* deepest navy — headlines, wordmark */
+  --ink-800: #122f39;   /* deep navy-green — secondary surfaces */
+  --ink-700: #1f3d5a;   /* secondary navy */
+
+  /* ── PAPER — warm cream backgrounds (Ventura morning light) ──────── */
+  --paper-50:  #ffffff;  /* pure white — hero surfaces, deep contrast */
+  --paper-100: #fbfaf7;  /* default page surface — softest off-white */
+  --paper-200: #f2f4f2;  /* card surface on page */
+  --paper-300: #e2e4e1;  /* borders on off-white */
+
+  /* ── PACIFIC — ocean teals/blues ──────────────────────────────────── */
+  --pacific-50:  #e9f1f2;
+  --pacific-200: #a7c8ce;
+  --pacific-400: #5f9ba4;   /* Channel Islands haze */
+  --pacific-600: #2f6e7b;   /* deep water */
+  --pacific-800: #134852;   /* kelp forest */
+
+  /* ── TIDE — softer teal accent (Ventura pier morning) ─────────────── */
+  --tide-300: #8fc4c1;
+  --tide-500: #4a9d97;   /* the ONE highlight color */
+
+  /* ── SANDSTONE — warm tans (bluffs, adobe) ───────────────────────── */
+  --sand-200: #e8d9bf;
+  --sand-400: #c9a775;
+  --sand-600: #916b3a;   /* accent warm */
+
+  /* ── FOG — cool neutrals for lines, dividers ─────────────────────── */
+  --fog-100: #eceae4;
+  --fog-300: #c9c7bf;
+  --fog-500: #8b8a84;
+  --fog-700: #555450;
+
+  /* ── SIGNAL — semantic (used sparingly) ──────────────────────────── */
+  --signal-sunset:  #c85a3f;   /* warnings, rare */
+  --signal-moss:    #5a7d4a;   /* success, rare */
+
+  /* ══════════════════════════════════════════════════════════════════
+     SEMANTIC TOKENS — use these in components
+     ══════════════════════════════════════════════════════════════════ */
+
+  --color-bg:         var(--paper-100);
+  --color-bg-elev:    var(--paper-50);
+  --color-bg-sunk:    var(--paper-200);
+  --color-bg-inverse: var(--ink-900);
+
+  --color-fg:          var(--ink-900);   /* primary text */
+  --color-fg-muted:    var(--ink-700);   /* secondary text */
+  --color-fg-subtle:   var(--fog-700);   /* captions, meta */
+  --color-fg-inverse:  var(--paper-50);  /* on ink backgrounds */
+
+  --color-accent:       var(--tide-500);      /* highlight */
+  --color-accent-deep:  var(--pacific-600);
+  --color-accent-warm:  var(--sand-600);
+
+  --color-border:       var(--paper-300);
+  --color-border-strong: var(--ink-900);
+  --color-divider:      var(--fog-300);
+
+  --color-link:         var(--ink-900);
+  --color-link-hover:   var(--pacific-600);
+
+  /* ══════════════════════════════════════════════════════════════════
+     TYPOGRAPHY — base families
+     ══════════════════════════════════════════════════════════════════ */
+
+  --font-sans: 'Inter', 'Helvetica Neue', system-ui, sans-serif;
+  --font-serif: 'Libre Caslon Text', 'Cormorant Garamond', 'Georgia', serif;
+  --font-display: 'Libre Caslon Text', 'Cormorant Garamond', 'Georgia', serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', ui-monospace, monospace;
+  /* Display mono — typewriter-portfolio voice. Names, big titles, eyebrows at scale.
+     Sits alongside the serif display as a cooler, more technical option. */
+  --font-display-mono: 'Space Mono', 'JetBrains Mono', 'SF Mono', ui-monospace, monospace;
+
+  /* Tracking specific to display-mono at its various sizes. Mono glyphs are already
+     airy; these wider values are what give the treatment its signature open rhythm. */
+  --tracking-mono-display: 0.30em;   /* names, hero titles */
+  --tracking-mono-nav:     0.22em;   /* nav / small display */
+
+  /* Type scale — modular, 1.25 ratio anchored at 16px */
+  --fs-xs:   0.75rem;   /* 12 */
+  --fs-sm:   0.875rem;  /* 14 */
+  --fs-base: 1rem;      /* 16 */
+  --fs-md:   1.125rem;  /* 18 */
+  --fs-lg:   1.375rem;  /* 22 */
+  --fs-xl:   1.75rem;   /* 28 */
+  --fs-2xl:  2.25rem;   /* 36 */
+  --fs-3xl:  3rem;      /* 48 */
+  --fs-4xl:  4rem;      /* 64 */
+  --fs-5xl:  5.5rem;    /* 88 — editorial hero */
+
+  --lh-tight: 1.08;
+  --lh-snug:  1.25;
+  --lh-body:  1.55;
+  --lh-loose: 1.8;
+
+  --tracking-tightest: -0.02em;
+  --tracking-tight:    -0.01em;
+  --tracking-normal:    0;
+  --tracking-wide:      0.08em;
+  --tracking-wider:     0.18em;   /* all-caps labels */
+  --tracking-widest:    0.28em;   /* hud/eyebrow */
+
+  /* ══════════════════════════════════════════════════════════════════
+     SPACING, RADII, SHADOWS, MOTION
+     ══════════════════════════════════════════════════════════════════ */
+
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  24px;
+  --space-6:  32px;
+  --space-7:  48px;
+  --space-8:  64px;
+  --space-9:  96px;
+  --space-10: 128px;
+
+  --radius-none: 0;
+  --radius-sm:   6px;
+  --radius-md:   10px;      /* default for cards */
+  --radius-lg:   14px;
+  --radius-xl:   20px;      /* hero surfaces, large panels */
+  --radius-pill: 999px;
+
+  /* Quiet, paper-like shadows — never glowy */
+  --shadow-flat:  0 1px 0 rgba(14, 36, 57, 0.05);
+  --shadow-soft:  0 2px 8px rgba(14, 36, 57, 0.06);
+  --shadow-card:  0 8px 24px rgba(14, 36, 57, 0.08);
+  --shadow-lift:  0 18px 48px rgba(14, 36, 57, 0.12);
+
+  --ease-out:   cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --dur-fast:   150ms;
+  --dur-base:   240ms;
+  --dur-slow:   480ms;
+
+  --rule-hair:  1px solid var(--ink-900);
+  --rule-thin:  1px solid var(--color-border);
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   SEMANTIC ELEMENT STYLES
+   Apply these with utility classes or by targeting raw elements.
+   ══════════════════════════════════════════════════════════════════════ */
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--fs-base);
+  line-height: var(--lh-body);
+  color: var(--color-fg);
+  background: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.wordmark,
+.display,
+h1.display {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+  color: var(--ink-900);
+  line-height: var(--lh-tight);
+}
+
+h1, .h1 {
+  font-family: var(--font-serif);
+  font-weight: 300;
+  font-size: var(--fs-4xl);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-fg);
+}
+
+h2, .h2 {
+  font-family: var(--font-serif);
+  font-weight: 300;
+  font-size: var(--fs-3xl);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-fg);
+}
+
+h3, .h3 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: var(--fs-2xl);
+  line-height: var(--lh-snug);
+  color: var(--color-fg);
+}
+
+h4, .h4 {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: var(--fs-lg);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-fg);
+}
+
+p, .p {
+  font-family: var(--font-sans);
+  font-size: var(--fs-base);
+  line-height: var(--lh-body);
+  color: var(--color-fg-muted);
+  text-wrap: pretty;
+}
+
+.lede {
+  font-family: var(--font-serif);
+  font-weight: 300;
+  font-style: italic;
+  font-size: var(--fs-xl);
+  line-height: var(--lh-snug);
+  color: var(--color-fg);
+}
+
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-widest);
+  color: var(--color-fg-subtle);
+}
+
+.caption {
+  font-family: var(--font-sans);
+  font-size: var(--fs-sm);
+  color: var(--color-fg-subtle);
+}
+
+.meta {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-fg-subtle);
+}
+
+code, .code {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  color: var(--color-accent-deep);
+  background: var(--paper-200);
+  padding: 0.1em 0.35em;
+  border-radius: var(--radius-sm);
+}
+
+a, .link {
+  color: var(--color-link);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--color-border);
+  transition: color var(--dur-fast) var(--ease-out),
+              text-decoration-color var(--dur-fast) var(--ease-out);
+}
+a:hover, .link:hover {
+  color: var(--color-link-hover);
+  text-decoration-color: currentColor;
+}
+
+hr, .rule {
+  border: none;
+  border-top: var(--rule-hair);
+  margin: var(--space-5) 0;
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   DISPLAY MONO — typewriter-portfolio voice
+   A third display voice alongside the serif. Best for personal names,
+   portfolio titles, and editorial wordmarks where the serif feels too soft.
+   Always ALL CAPS. Always light in weight on screen; generous in letter-spacing.
+   ══════════════════════════════════════════════════════════════════════ */
+
+.display-mono,
+h1.display-mono,
+h2.display-mono {
+  font-family: var(--font-display-mono);
+  font-weight: 400;
+  font-size: var(--fs-3xl);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--tracking-mono-display);
+  text-transform: uppercase;
+  color: var(--color-fg);
+  /* Mono at display size looks heavy at 400; a hair of optical lightening helps. */
+  font-synthesis: none;
+}
+
+.display-mono-lg {
+  font-family: var(--font-display-mono);
+  font-weight: 400;
+  font-size: var(--fs-4xl);
+  line-height: 1.1;
+  letter-spacing: var(--tracking-mono-display);
+  text-transform: uppercase;
+  color: var(--color-fg);
+}
+
+.display-mono-sm {
+  font-family: var(--font-display-mono);
+  font-weight: 400;
+  font-size: var(--fs-md);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--tracking-mono-nav);
+  text-transform: uppercase;
+  color: var(--color-fg);
+}
+
+/* Nav / menu treatment — the 'BIO / CAREER / INQUIRIES' feel from portfolio sites. */
+.mono-nav {
+  font-family: var(--font-display-mono);
+  font-weight: 400;
+  font-size: var(--fs-sm);
+  letter-spacing: var(--tracking-mono-nav);
+  text-transform: uppercase;
+  color: var(--color-fg-subtle);
+  transition: color var(--dur-fast) var(--ease-out);
+}
+.mono-nav:hover { color: var(--color-fg); }

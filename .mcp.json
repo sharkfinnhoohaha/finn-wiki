@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "graphify-finn-wiki": {
+      "type": "stdio",
+      "command": ".venv/bin/python",
+      "args": ["-m", "graphify.serve", "graphify-out/graph.json"]
+    }
+  }
+}

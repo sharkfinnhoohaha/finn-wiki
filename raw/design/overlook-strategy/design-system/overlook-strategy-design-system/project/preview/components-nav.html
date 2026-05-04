@@ -1,0 +1,153 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Nav</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: #fbfaf7;
+    min-height: 100vh;
+  }
+
+  /* Two "page" surfaces so the floating pill has something to hover over */
+  .surface {
+    position: relative;
+    padding: 28px 24px 36px;
+    background-size: cover;
+    background-position: center;
+  }
+  .surface.light {
+    background:
+      linear-gradient(180deg, rgba(251,250,247,0) 0%, rgba(251,250,247,1) 100%),
+      linear-gradient(120deg, #e9eef0 0%, #d9e3e4 40%, #c6d3d2 100%);
+  }
+  .surface.dark {
+    background:
+      linear-gradient(180deg, rgba(14,36,57,0) 0%, rgba(14,36,57,0.6) 100%),
+      linear-gradient(120deg, #1a3347 0%, #0e2439 55%, #081829 100%);
+  }
+
+  /* Floating pill nav */
+  .nav {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 24px;
+    padding: 10px 10px 10px 22px;
+    border-radius: 999px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 8px 32px rgba(14,36,57,0.10), 0 1px 0 rgba(255,255,255,0.6) inset;
+  }
+  .nav.light {
+    background: rgba(255,255,255,0.55);
+    border: 1px solid rgba(255,255,255,0.6);
+  }
+  .nav.dark {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.25);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.35), 0 1px 0 rgba(255,255,255,0.18) inset;
+  }
+
+  .wm {
+    justify-self: start;
+    font-family: 'Libre Caslon Text', 'Cormorant Garamond', Georgia, serif;
+    font-size: 15px;
+    letter-spacing: 0.04em;
+    color: #0e2439;
+    font-weight: 500;
+    padding-left: 4px;
+  }
+  .nav.dark .wm { color: #ffffff; }
+
+  .links {
+    justify-self: center;
+    display: flex;
+    gap: 28px;
+    align-items: center;
+  }
+  .link {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0;
+    color: #64748b;
+    text-decoration: none;
+    padding-bottom: 2px;
+    transition: color 0.2s ease;
+  }
+  .link:hover { color: #0e2439; }
+  .link.active {
+    color: #0e2439;
+    border-bottom: 1px solid #0e2439;
+  }
+  .nav.dark .link { color: rgba(255,255,255,0.55); }
+  .nav.dark .link:hover { color: #ffffff; }
+  .nav.dark .link.active { color: #ffffff; border-bottom-color: #ffffff; }
+
+  .cta {
+    justify-self: end;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: #ffffff;
+    background: #0e2439;
+    border: none;
+    border-radius: 999px;
+    padding: 10px 22px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  .cta:hover { transform: scale(1.02); }
+  .nav.dark .cta {
+    background: #ffffff;
+    color: #0e2439;
+  }
+
+  .caption {
+    position: absolute;
+    left: 24px;
+    bottom: 10px;
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 9px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(14,36,57,0.5);
+  }
+  .surface.dark .caption { color: rgba(255,255,255,0.45); }
+</style>
+</head>
+<body>
+
+  <div class="surface light">
+    <nav class="nav light">
+      <span class="wm">Overlook Strategy</span>
+      <div class="links">
+        <a class="link active" href="#">Vantage</a>
+        <a class="link" href="#">Strategy</a>
+        <a class="link" href="#">Portfolio</a>
+        <a class="link" href="#">Initiate</a>
+      </div>
+      <button class="cta">Connect</button>
+    </nav>
+    <div class="caption">Floating pill · On light surface</div>
+  </div>
+
+  <div class="surface dark">
+    <nav class="nav dark">
+      <span class="wm">Overlook Strategy</span>
+      <div class="links">
+        <a class="link active" href="#">Vantage</a>
+        <a class="link" href="#">Strategy</a>
+        <a class="link" href="#">Portfolio</a>
+        <a class="link" href="#">Initiate</a>
+      </div>
+      <button class="cta">Connect</button>
+    </nav>
+    <div class="caption">Floating pill · On dark / image surface</div>
+  </div>
+
+</body>
+</html>

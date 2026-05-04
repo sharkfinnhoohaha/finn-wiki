@@ -1,0 +1,65 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="../colors_and_type.css">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<style>
+  body{margin:0;padding:28px;background:#fbfaf7;}
+  .section-label{font-family:var(--font-mono);font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:#8b8a84;margin:0 0 12px;}
+  .grid{display:grid;grid-template-columns:repeat(8,1fr);gap:18px 12px;margin-bottom:28px;}
+  .unit{display:flex;flex-direction:column;align-items:center;gap:6px;color:#0e2439;}
+  .unit svg{width:24px;height:24px;stroke-width:1.5;}
+  .lbl{font-family:var(--font-mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:#555450;}
+</style></head>
+<body>
+
+  <p class="section-label">Brand — Coastal</p>
+  <div class="grid">
+    <div class="unit"><i data-lucide="mountain"></i><span class="lbl">Mountain</span></div>
+    <div class="unit"><i data-lucide="compass"></i><span class="lbl">Compass</span></div>
+    <div class="unit"><i data-lucide="anchor"></i><span class="lbl">Anchor</span></div>
+    <div class="unit"><i data-lucide="sun"></i><span class="lbl">Sun</span></div>
+    <div class="unit"><i data-lucide="map-pin"></i><span class="lbl">Map Pin</span></div>
+    <div class="unit"><i data-lucide="wind"></i><span class="lbl">Wind</span></div>
+    <!-- A-frame wave — custom SVG -->
+    <div class="unit">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M2 16 C4 16, 6 8, 9 8 C10.5 8, 11 10, 12 16 C13 10, 14 7, 16 7 C18 7, 19.5 13, 22 13"/>
+      </svg>
+      <span class="lbl">A-Frame</span>
+    </div>
+    <div class="unit"><i data-lucide="navigation"></i><span class="lbl">Navigate</span></div>
+  </div>
+
+  <p class="section-label">UI &amp; Navigation</p>
+  <div class="grid">
+    <div class="unit"><i data-lucide="arrow-up-right"></i><span class="lbl">Arrow UR</span></div>
+    <div class="unit"><i data-lucide="arrow-right"></i><span class="lbl">Arrow R</span></div>
+    <div class="unit"><i data-lucide="external-link"></i><span class="lbl">Ext Link</span></div>
+    <div class="unit"><i data-lucide="menu"></i><span class="lbl">Menu</span></div>
+    <div class="unit"><i data-lucide="x"></i><span class="lbl">Close</span></div>
+    <div class="unit"><i data-lucide="plus"></i><span class="lbl">Plus</span></div>
+    <div class="unit"><i data-lucide="chevron-right"></i><span class="lbl">Chevron</span></div>
+    <div class="unit"><i data-lucide="search"></i><span class="lbl">Search</span></div>
+  </div>
+
+  <p class="section-label">Web &amp; Development</p>
+  <div class="grid">
+    <div class="unit"><i data-lucide="code-2"></i><span class="lbl">Code</span></div>
+    <div class="unit"><i data-lucide="terminal"></i><span class="lbl">Terminal</span></div>
+    <div class="unit"><i data-lucide="monitor"></i><span class="lbl">Monitor</span></div>
+    <div class="unit"><i data-lucide="layout-template"></i><span class="lbl">Layout</span></div>
+    <div class="unit"><i data-lucide="globe"></i><span class="lbl">Globe</span></div>
+    <div class="unit"><i data-lucide="git-branch"></i><span class="lbl">Git Branch</span></div>
+    <div class="unit"><i data-lucide="github"></i><span class="lbl">GitHub</span></div>
+    <div class="unit"><i data-lucide="layers"></i><span class="lbl">Layers</span></div>
+  </div>
+
+  <p class="section-label">Contact</p>
+  <div class="grid">
+    <div class="unit"><i data-lucide="mail"></i><span class="lbl">Mail</span></div>
+    <div class="unit"><i data-lucide="phone"></i><span class="lbl">Phone</span></div>
+    <div class="unit"><i data-lucide="instagram"></i><span class="lbl">Instagram</span></div>
+    <div class="unit"><i data-lucide="linkedin"></i><span class="lbl">LinkedIn</span></div>
+  </div>
+
+  <script>lucide.createIcons();</script>
+</body></html>

@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Finn's OS — Second Brain</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script>if(typeof d3==='undefined'){document.write('<script src="https://d3js.org/d3.v7.min.js"><\/script>')}</script>
+<style>
+
+  :root {
+    --bg: #0a0a0a;
+    --surface: #141414;
+    --surface-2: #1a1a1a;
+    --border: #262626;
+    --border-hover: #404040;
+    --text: #e5e5e5;
+    --text-muted: #737373;
+    --text-dim: #525252;
+    --accent: #f5f5f5;
+    --amber: #f59e0b;
+    --violet: #8b5cf6;
+    --emerald: #10b981;
+    --pink: #ec4899;
+    --gray: #6b7280;
+    --blue: #3b82f6;
+    --orange: #f97316;
+    --cyan: #06b6d4;
+    --teal: #14b8a6;
+    --lavender: #a78bfa;
+    --red: #ef4444;
+    --slate: #d1d5db;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', -apple-system, sans-serif;
+    overflow-x: hidden;
+  }
+
+  .header {
+    padding: 32px 40px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .header h1 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 28px;
+    font-weight: 300;
+    letter-spacing: -0.5px;
+    color: var(--accent);
+  }
+
+  .header h1 span {
+    color: var(--text-muted);
+    font-weight: 300;
+  }
+
+  .header .date {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--text-dim);
+    letter-spacing: 0.5px;
+  }
+
+  .graph-section {
+    position: relative;
+    height: 65vh;
+    min-height: 500px;
+    border-bottom: 1px solid var(--border);
+    overflow: hidden;
+  }
+
+  .graph-section svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .graph-legend {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: rgba(10,10,10,0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px 18px;
+    font-size: 11px;
+    z-index: 10;
+  }
+
+  .graph-legend h3 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-dim);
+    margin-bottom: 10px;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+  }
+
+  .legend-item:hover { opacity: 1; }
+  .legend-item.dimmed { opacity: 0.25; }
+
+  .legend-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .legend-label {
+    color: var(--text-muted);
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .graph-controls {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 6px;
+    z-index: 10;
+  }
+
+  .graph-controls button {
+    background: rgba(10,10,10,0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .graph-controls button:hover {
+    border-color: var(--border-hover);
+    color: var(--text);
+  }
+
+  .graph-controls button.active {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .graph-controls button.grow-btn {
+    background: rgba(16, 185, 129, 0.12);
+    border-color: rgba(16, 185, 129, 0.3);
+    color: #10b981;
+  }
+
+  .graph-controls button.grow-btn:hover {
+    background: rgba(16, 185, 129, 0.2);
+    border-color: #10b981;
+  }
+
+  .graph-controls button.grow-btn.running {
+    animation: pulse-glow 1.5s ease-in-out infinite;
+  }
+
+  .grow-counter {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--text-dim);
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .grow-counter.visible { opacity: 1; }
+
+  .grow-counter .grow-count {
+    color: #10b981;
+    font-weight: 600;
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 4px rgba(16,185,129,0.15); }
+    50% { box-shadow: 0 0 12px rgba(16,185,129,0.35); }
+  }
+
+  @keyframes node-appear {
+    0% { r: 0; opacity: 0; }
+    60% { opacity: 1; }
+    80% { r: attr(r); }
+    100% { r: attr(r); opacity: 1; }
+  }
+
+  .tooltip {
+    position: absolute;
+    background: rgba(20,20,20,0.95);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 12px;
+    pointer-events: none;
+    z-index: 100;
+    opacity: 0;
+    transition: opacity 0.15s;
+    max-width: 250px;
+  }
+
+  .tooltip .tt-title {
+    font-weight: 600;
+    margin-bottom: 2px;
+  }
+
+  .tooltip .tt-type {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .tooltip .tt-links {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 2px;
+  }
+
+  .dashboard {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0;
+  }
+
+  .panel {
+    padding: 28px 32px;
+    border-right: 1px solid var(--border);
+    min-height: 320px;
+  }
+
+  .panel:last-child { border-right: none; }
+
+  .panel-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-dim);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .panel-title .count {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 1px 6px;
+    font-size: 10px;
+    color: var(--text-muted);
+  }
+
+  .project-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(38,38,38,0.5);
+  }
+
+  .project-item:last-child { border-bottom: none; }
+
+  .project-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    margin-top: 6px;
+    flex-shrink: 0;
+  }
+
+  .project-name {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text);
+    line-height: 1.3;
+  }
+
+  .project-desc {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 2px;
+    line-height: 1.4;
+  }
+
+  .project-tag {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 2px 6px;
+    border-radius: 3px;
+    margin-top: 4px;
+  }
+
+  .tag-client { background: rgba(236,72,153,0.12); color: var(--pink); }
+  .tag-personal { background: rgba(249,115,22,0.12); color: var(--orange); }
+  .tag-business { background: rgba(16,185,129,0.12); color: var(--emerald); }
+  .tag-urgent { background: rgba(239,68,68,0.15); color: var(--red); }
+  .tag-audio { background: rgba(139,92,246,0.12); color: var(--violet); }
+
+  .todo-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(38,38,38,0.5);
+  }
+
+  .todo-item:last-child { border-bottom: none; }
+
+  .todo-check {
+    width: 16px;
+    height: 16px;
+    border: 1.5px solid var(--border-hover);
+    border-radius: 3px;
+    margin-top: 1px;
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .todo-check:hover { border-color: var(--text-muted); }
+  .todo-check.checked { background: var(--emerald); border-color: var(--emerald); }
+  .todo-check.checked::after { content: '✓'; color: #000; font-size: 10px; font-weight: 700; }
+
+  .todo-text {
+    font-size: 13px;
+    color: var(--text);
+    line-height: 1.4;
+  }
+
+  .todo-text.done {
+    text-decoration: line-through;
+    color: var(--text-dim);
+  }
+
+  .todo-priority {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.5px;
+    padding: 1px 5px;
+    border-radius: 2px;
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+
+  .priority-high { background: rgba(239,68,68,0.15); color: var(--red); }
+  .priority-med { background: rgba(245,158,11,0.12); color: var(--amber); }
+
+  .schedule-item {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(38,38,38,0.5);
+  }
+
+  .schedule-item:last-child { border-bottom: none; }
+
+  .schedule-time {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-dim);
+    letter-spacing: 0.5px;
+  }
+
+  .schedule-label {
+    font-size: 13px;
+    color: var(--text);
+    margin-top: 3px;
+  }
+
+  .schedule-note {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 2px;
+  }
+
+  .footer {
+    padding: 16px 40px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--text-dim);
+    letter-spacing: 0.5px;
+  }
+
+  .stats {
+    display: flex;
+    gap: 24px;
+  }
+
+  .stat-value { color: var(--text-muted); }
+
+  @media (max-width: 900px) {
+    .dashboard { grid-template-columns: 1fr; }
+    .panel { border-right: none; border-bottom: 1px solid var(--border); }
+    .header { padding: 20px 24px 16px; }
+    .panel { padding: 20px 24px; }
+    .graph-section { height: 50vh; min-height: 350px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Finn's OS <span>/ second brain</span></h1>
+  <div class="date">APR 26, 2026 — WEEK 17</div>
+</div>
+
+<div class="graph-section" id="graph-container">
+  <div class="graph-legend" id="legend">
+    <h3>Node types</h3>
+  </div>
+  <div class="graph-controls">
+    <button class="active" data-filter="all">All</button>
+    <button data-filter="brainstorm">Brainstorm</button>
+    <button data-filter="business">Business</button>
+    <button data-filter="tech">Tech</button>
+    <button data-filter="active">Active</button>
+    <button class="grow-btn" id="grow-btn">&#9654; Grow</button>
+  </div>
+  <div class="tooltip" id="tooltip"></div>
+  <div class="grow-counter" id="grow-counter"><span class="grow-count" id="grow-count-val">0</span> / <span id="grow-total">0</span> nodes</div>
+</div>
+
+<div class="dashboard">
+  <div class="panel">
+    <div class="panel-title">Projects this week <span class="count">7</span></div>
+
+    <div class="project-item">
+      <div class="project-dot" style="background:var(--amber)"></div>
+      <div>
+        <div class="project-name">three-altitudes</div>
+        <div class="project-desc">Immersive 3D portfolio: R3F scroll stages, Lenis, GSAP. Ship hero + about sections.</div>
+        <span class="project-tag tag-personal">portfolio</span>
+      </div>
+    </div>
+
+    <div class="project-item">
+      <div class="project-dot" style="background:var(--amber)"></div>
+      <div>
+        <div class="project-name">overlook-portal-webapp</div>
+        <div class="project-desc">Client portal: FastAPI + Next.js. Agents tab extension next.</div>
+        <span class="project-tag tag-business">overlook</span>
+      </div>
+    </div>
+
+    <div class="project-item">
+      <div class="project-dot" style="background:var(--pink)"></div>
+      <div>
+        <div class="project-name">sømliøya</div>
+        <div class="project-desc">TinaCMS client site. Content updates + Gumroad template prep.</div>
+        <span class="project-tag tag-client">client</span>
+      </div>
+    </div>
+
+    <div class="project-item">
+      <div class="project-dot" style="background:var(--emerald)"></div>
+      <div>
+        <div class="project-name">pier-and-point</div>
+        <div class="project-desc">Hyperlocal Ventura news. GNI grant deadline May 7.</div>
+        <span class="project-tag tag-urgent">deadline 12d</span>
+      </div>
+    </div>
+
+    <div class="project-item">
+      <div class="project-dot" style="background:var(--orange)"></div>
+      <div>
+        <div class="project-name">berklee-music-supervision-1</div>
+        <div class="project-desc">Lessons 10-12 for Alchemy (CBS). Final stretch.</div>
+        <span class="project-tag tag-personal">school</span>
+      </div>
+    </div>
+
+    <div class="project-item">
+      <div class="project-dot" style="background:var(--violet)"></div>
+      <div>
+        <div class="project-name">riptide</div>
+        <div class="project-desc">Overlook Audio hardware: PCB, firmware, CAD.</div>
+        <span class="project-tag tag-audio">hardware</span>
+      </div>
+    </div>
+
+    <div class="project-item">
+      <div class="project-dot" style="background:var(--amber)"></div>
+      <div>
+        <div class="project-name">gumroad-launch</div>
+        <div class="project-desc">Ship Sømliøya template first ($29). Hit $200 by month-end.</div>
+        <span class="project-tag tag-business">revenue</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-title">Open threads <span class="count">6</span></div>
+
+    <div class="todo-item">
+      <div class="todo-check" onclick="this.classList.toggle('checked');this.nextElementSibling.classList.toggle('done')"></div>
+      <div class="todo-text">Decide pier-and-point: commit to MVP + GNI grant, or shelf it</div>
+      <span class="todo-priority priority-high">HIGH</span>
+    </div>
+
+    <div class="todo-item">
+      <div class="todo-check" onclick="this.classList.toggle('checked');this.nextElementSibling.classList.toggle('done')"></div>
+      <div class="todo-text">Pilot per-task pricing on Ventura Forward retainer ($50/post)</div>
+      <span class="todo-priority priority-med">MED</span>
+    </div>
+
+    <div class="todo-item">
+      <div class="todo-check" onclick="this.classList.toggle('checked');this.nextElementSibling.classList.toggle('done')"></div>
+      <div class="todo-text">Decide agent-native-saas side track: pick niche or kill</div>
+      <span class="todo-priority priority-med">MED</span>
+    </div>
+
+    <div class="todo-item">
+      <div class="todo-check" onclick="this.classList.toggle('checked');this.nextElementSibling.classList.toggle('done')"></div>
+      <div class="todo-text">Surface pier-and-point to Ventura Forward at next check-in</div>
+    </div>
+
+    <div class="todo-item">
+      <div class="todo-check" onclick="this.classList.toggle('checked');this.nextElementSibling.classList.toggle('done')"></div>
+      <div class="todo-text">Screenshot Sømliøya template and list on Gumroad</div>
+    </div>
+
+    <div class="todo-item">
+      <div class="todo-check" onclick="this.classList.toggle('checked');this.nextElementSibling.classList.toggle('done')"></div>
+      <div class="todo-text">Fix buoy 46217 URL in daily smoke test (returning 404)</div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-title">Schedule / cadence</div>
+
+    <div class="schedule-item">
+      <div class="schedule-time">DAILY 2:00 AM</div>
+      <div class="schedule-label">Niche landing page generator</div>
+      <div class="schedule-note">3 pages/night for Overlook verticals</div>
+    </div>
+
+    <div class="schedule-item">
+      <div class="schedule-time">DAILY 3:05 AM</div>
+      <div class="schedule-label">Gumroad launch kit builder</div>
+      <div class="schedule-note">Notion pipeline for shelf assets</div>
+    </div>
+
+    <div class="schedule-item">
+      <div class="schedule-time">DAILY 6:00 AM</div>
+      <div class="schedule-label">Pier & Point feed smoke test</div>
+      <div class="schedule-note">VCFD, USGS, NWS, buoys — 4/5 feeds live</div>
+    </div>
+
+    <div class="schedule-item">
+      <div class="schedule-time">SUN 9:00 AM</div>
+      <div class="schedule-label">Weekly wiki lint</div>
+      <div class="schedule-note">Broken links, orphans, stale projects</div>
+    </div>
+
+    <div class="schedule-item">
+      <div class="schedule-time">MON 9:00 AM</div>
+      <div class="schedule-label">Wiki maintenance pass</div>
+      <div class="schedule-note">Weight audit, cross-ref updates</div>
+    </div>
+
+    <div class="schedule-item">
+      <div class="schedule-time">SUN 11:59 PM</div>
+      <div class="schedule-label">Finn to the Max — weekly plan</div>
+      <div class="schedule-note">Generates next week's Notion page</div>
+    </div>
+
+    <div class="schedule-item">
+      <div class="schedule-time" style="color:var(--red)">MAY 7</div>
+      <div class="schedule-label" style="color:var(--red)">GNI Growth Catalyst deadline</div>
+      <div class="schedule-note">$100K grant for Pier & Point</div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <div class="stats">
+    <span>NODES <span class="stat-value" id="stat-nodes">—</span></span>
+    <span>EDGES <span class="stat-value" id="stat-edges">—</span></span>
+    <span>IN-PROGRESS <span class="stat-value">14</span></span>
+    <span>UNFINISHED <span class="stat-value">5</span></span>
+    <span>DEPLOYED <span class="stat-value">13</span></span>
+  </div>
+  <div>FINN-WIKI / OBSIDIAN / GENERATED 2026-04-26</div>
+</div>
+
+<script>
+if (typeof d3 === 'undefined') {
+  document.getElementById('graph-container').innerHTML = '<div style="color:#ef4444;padding:40px;text-align:center;font-family:monospace">D3.js failed to load. Check your internet connection and try again.</div>';
+  throw new Error('D3 not loaded');
+}
+const graphData = {"n":[{"id":"README","t":"Readme","c":"#14b8a6","tp":"finn-os","s":5,"ib":0},{"id":"CLAUDE","t":"Page Title","c":"#9ca3af","tp":"other","s":15,"ib":0},{"id":"identity-and-brand-architecture","t":"Identity and Brand Architecture","c":"#f97316","tp":"personal","s":15,"ib":12},{"id":"gcp-credits","t":"Google Cloud \u2014 $300 free-tier credits","c":"#f97316","tp":"personal","s":6,"ib":16},{"id":"school-berklee","t":"School \u2014 Berklee Online","c":"#f97316","tp":"personal","s":10,"ib":9},{"id":"somli\u00f8ya","t":"S\u00f8mli\u00f8ya","c":"#f59e0b","tp":"in-progress","s":10,"ib":35},{"id":"ventura-forward","t":"Ventura Forward","c":"#ec4899","tp":"client","s":10,"ib":37},{"id":"all-in-one-music","t":"All In One Music","c":"#ec4899","tp":"client","s":5,"ib":13},{"id":"rustler-42","t":"Rustler 42","c":"#ec4899","tp":"client","s":5,"ib":14},{"id":"kelly-bennett-site","t":"Kelly Bennett Site","c":"#a78bfa","tp":"design","s":5,"ib":12},{"id":"design-tokens","t":"Design Tokens","c":"#a78bfa","tp":"design","s":5,"ib":12},{"id":"three-altitudes","t":"three-altitudes","c":"#f59e0b","tp":"in-progress","s":15,"ib":59},{"id":"gemini-usage-tracker","t":"Gemini Usage Tracker","c":"#f59e0b","tp":"in-progress","s":10,"ib":4},{"id":"ventura-forward-app","t":"Ventura Forward App","c":"#f59e0b","tp":"in-progress","s":10,"ib":15},{"id":"johnson-aviation","t":"Johnson Aviation","c":"#f59e0b","tp":"in-progress","s":10,"ib":8},{"id":"riptide","t":"Riptide","c":"#f59e0b","tp":"in-progress","s":15,"ib":13},{"id":"gearflip","t":"GearFlip","c":"#f59e0b","tp":"in-progress","s":10,"ib":26},{"id":"waveshade","t":"Waveshade","c":"#f59e0b","tp":"in-progress","s":10,"ib":3},{"id":"notion-life-os","t":"Notion Life OS","c":"#f59e0b","tp":"in-progress","s":10,"ib":35},{"id":"berklee-music-supervision-1","t":"Berklee Music Supervision 1 \u2014 OMBUS-495.02","c":"#f59e0b","tp":"in-progress","s":10,"ib":7},{"id":"overlook-portal-webapp","t":"Overlook Portal Webapp","c":"#f59e0b","tp":"in-progress","s":15,"ib":67},{"id":"hybrid-llm-workflow","t":"Hybrid Local LLM + Sonnet Workflow","c":"#f59e0b","tp":"in-progress","s":10,"ib":24},{"id":"copper-and-cast","t":"Copper and Cast","c":"#f59e0b","tp":"in-progress","s":10,"ib":4},{"id":"overlook-boilerplates","t":"Overlook Boilerplates","c":"#f59e0b","tp":"in-progress","s":10,"ib":6},{"id":"file-organization-pass","t":"File Organization Pass","c":"#f59e0b","tp":"deployed","s":10,"ib":16},{"id":"latency-optimizer","t":"Latency Optimizer","c":"#f59e0b","tp":"unfinished","s":3,"ib":3},{"id":"kb","t":"KB","c":"#f59e0b","tp":"unfinished","s":3,"ib":3},{"id":"finn-bennett-dotcom","t":"finnbennett.com (Maintenance Landing)","c":"#f59e0b","tp":"unfinished","s":4,"ib":8},{"id":"admin-client-app-template-ovlk","t":"Overlook Admin/Client App Template","c":"#f59e0b","tp":"unfinished","s":4,"ib":9},{"id":"iamhumantoo","t":"iamhumantoo","c":"#f59e0b","tp":"unfinished","s":3,"ib":4},{"id":"pier-and-point","t":"Pier and Point","c":"#10b981","tp":"business","s":15,"ib":35},{"id":"overlook-strategy-positioning","t":"Overlook Strategy \u2014 Positioning","c":"#10b981","tp":"business","s":15,"ib":58},{"id":"pier-and-point-execution","t":"Pier and Point \u2014 Execution Map","c":"#10b981","tp":"business","s":15,"ib":14},{"id":"pier-and-point-monetization","t":"Pier and Point \u2014 Monetization & Roadmap","c":"#10b981","tp":"business","s":10,"ib":9},{"id":"workflow-audit-service","t":"Workflow Audit \u2014 Overlook's lowest-friction AI service tier","c":"#10b981","tp":"business","s":5,"ib":9},{"id":"overlook-audio-positioning","t":"Overlook Audio \u2014 Positioning","c":"#10b981","tp":"business","s":10,"ib":10},{"id":"per-task-pilot-on-retainers","t":"Per-task pilot \u2014 adding agent-execution line items to existing retainers","c":"#10b981","tp":"business","s":5,"ib":12},{"id":"pricing-and-rates","t":"Pricing and Rates","c":"#10b981","tp":"business","s":10,"ib":17},{"id":"business-ideas-backlog","t":"Business Ideas \u2014 Backlog","c":"#10b981","tp":"business","s":10,"ib":5},{"id":"client-portal-as-differentiator","t":"Client Portal as Differentiator","c":"#10b981","tp":"business","s":10,"ib":17},{"id":"portal-orchestration-extension","t":"Extend the Overlook portal into an agent orchestration surface","c":"#10b981","tp":"business","s":5,"ib":8},{"id":"setup-obsidian-vault","t":"Setup Obsidian vault","c":"#06b6d4","tp":"workflow","s":5,"ib":12},{"id":"hybrid-local-llm-workflow","t":"Hybrid Local LLM Workflow","c":"#06b6d4","tp":"workflow","s":10,"ib":9},{"id":"lint-workflow","t":"Lint workflow","c":"#06b6d4","tp":"workflow","s":5,"ib":13},{"id":"ninety-day-launch-plan","t":"90-day launch plan (productized AI service)","c":"#06b6d4","tp":"workflow","s":10,"ib":25},{"id":"ingest-workflow","t":"Ingest workflow","c":"#06b6d4","tp":"workflow","s":10,"ib":13},{"id":"build-niche-agent-saas","t":"Build a niche agent-SaaS (Isenberg 30-step playbook)","c":"#06b6d4","tp":"workflow","s":10,"ib":21},{"id":"weekly-prep-briefing","t":"Weekly Prep Briefing","c":"#06b6d4","tp":"workflow","s":10,"ib":2},{"id":"phase-3-agents","t":"Phase 3 agents","c":"#8b5cf6","tp":"concept","s":15,"ib":24},{"id":"vibe-coding","t":"Vibe coding","c":"#8b5cf6","tp":"concept","s":10,"ib":21},{"id":"services-first-saas","t":"Services-first SaaS","c":"#8b5cf6","tp":"concept","s":5,"ib":14},{"id":"llm-wiki-pattern","t":"LLM Wiki pattern","c":"#8b5cf6","tp":"concept","s":15,"ib":32},{"id":"media-first-distribution","t":"Media-first distribution","c":"#8b5cf6","tp":"concept","s":6,"ib":18},{"id":"ingest-operation","t":"Ingest operation","c":"#8b5cf6","tp":"concept","s":10,"ib":11},{"id":"orchestration-as-interface","t":"Orchestration as the new interface layer","c":"#8b5cf6","tp":"concept","s":7,"ib":24},{"id":"mcp-protocol","t":"Model Context Protocol (MCP)","c":"#8b5cf6","tp":"concept","s":10,"ib":23},{"id":"karpathy-autoresearch","t":"Karpathy's autoresearch","c":"#8b5cf6","tp":"concept","s":10,"ib":13},{"id":"index-file-navigation","t":"Index file navigation","c":"#8b5cf6","tp":"concept","s":10,"ib":13},{"id":"wat-framework-marketing","t":"WAT framework \u2014 marketing automation playbook","c":"#8b5cf6","tp":"concept","s":13,"ib":50},{"id":"discord-hub-pattern","t":"Discord Hub Pattern","c":"#8b5cf6","tp":"concept","s":10,"ib":10},{"id":"autonomous-agent-design-principles","t":"Autonomous Agent Design Principles","c":"#8b5cf6","tp":"concept","s":15,"ib":14},{"id":"lint-operation","t":"Lint operation","c":"#8b5cf6","tp":"concept","s":10,"ib":13},{"id":"knowledge-graph-llm-wiki","t":"Knowledge graph LLM wiki (InfraNodus pattern)","c":"#8b5cf6","tp":"concept","s":10,"ib":7},{"id":"agent-native-saas","t":"Agent-native SaaS","c":"#8b5cf6","tp":"concept","s":12,"ib":46},{"id":"boring-business-automation","t":"Boring business automation","c":"#8b5cf6","tp":"concept","s":10,"ib":16},{"id":"token-conservation-mindset","t":"Token Conservation Mindset","c":"#8b5cf6","tp":"concept","s":10,"ib":15},{"id":"environmental-behaviors","t":"Environmental Behaviors","c":"#8b5cf6","tp":"concept","s":10,"ib":3},{"id":"living-config-files","t":"Living Config Files","c":"#3b82f6","tp":"tech","s":6,"ib":17},{"id":"memex","t":"Memex","c":"#8b5cf6","tp":"concept","s":10,"ib":6},{"id":"query-operation","t":"Query operation","c":"#8b5cf6","tp":"concept","s":10,"ib":12},{"id":"productized-services","t":"Productized services","c":"#8b5cf6","tp":"concept","s":10,"ib":34},{"id":"per-task-pricing","t":"Per-task pricing (and the per-seat decline)","c":"#8b5cf6","tp":"concept","s":11,"ib":41},{"id":"three-layer-architecture","t":"Three-layer architecture","c":"#8b5cf6","tp":"concept","s":10,"ib":10},{"id":"ai-agency-niches","t":"AI agency niches (2026)","c":"#8b5cf6","tp":"concept","s":13,"ib":54},{"id":"deep-research-strategic-arbitrage","t":"Deep Research Strategic Arbitrage","c":"#8b5cf6","tp":"concept","s":10,"ib":39},{"id":"claude-max-arbitrage","t":"Claude Max arbitrage","c":"#8b5cf6","tp":"concept","s":10,"ib":20},{"id":"compiled-knowledge","t":"Compiled knowledge","c":"#8b5cf6","tp":"concept","s":10,"ib":5},{"id":"loopiness-framework","t":"Loopiness Framework","c":"#8b5cf6","tp":"concept","s":15,"ib":23},{"id":"ai-journalism-legal-posture","t":"AI Journalism \u2014 Legal & Editorial Posture","c":"#8b5cf6","tp":"concept","s":10,"ib":10},{"id":"pier-and-point-research","t":"Pier and Point \u2014 Research Report","c":"#d1d5db","tp":"source","s":11,"ib":40},{"id":"nate-herk-claude-code-video","t":"Nate Herk Claude Code video","c":"#d1d5db","tp":"source","s":8,"ib":26},{"id":"isenberg-future-of-saas-30-step","t":"Greg Isenberg \u2014 SaaS is minting millionaires again (30-step playbook)","c":"#d1d5db","tp":"source","s":15,"ib":86},{"id":"overlook-strategy-design-system-bundle","t":"Overlook Strategy Design System Bundle","c":"#d1d5db","tp":"source","s":5,"ib":12},{"id":"openclaw-deep-dive-krentsel","t":"OpenClaw Deep Dive \u2014 Alex Krentsel (UC Berkeley)","c":"#d1d5db","tp":"source","s":8,"ib":28},{"id":"notebooklm-simple-ui-viral-ai","t":"NotebookLM \u2014 Simple UI and Viral AI App Strategies","c":"#d1d5db","tp":"source","s":8,"ib":25},{"id":"notebooklm-mastering-agentic-workflows","t":"NotebookLM \u2014 Mastering Agentic Workflows with Claude Code","c":"#d1d5db","tp":"source","s":6,"ib":17},{"id":"karpathy-llm-wiki-gist","t":"Karpathy LLM Wiki gist","c":"#d1d5db","tp":"source","s":11,"ib":44},{"id":"notebooklm-overlook-strategy","t":"NotebookLM \u2014 Overlook Strategy","c":"#d1d5db","tp":"source","s":9,"ib":32},{"id":"ai-newsroom-pipeline","t":"AI Newsroom Pipeline (Sanity + Mastra + Kimi/Claude)","c":"#3b82f6","tp":"tech","s":10,"ib":24},{"id":"openclaw-architecture","t":"OpenClaw Architecture","c":"#3b82f6","tp":"tech","s":6,"ib":18},{"id":"next-js-patterns","t":"Next.js Patterns","c":"#3b82f6","tp":"tech","s":7,"ib":24},{"id":"sanity-patterns","t":"Sanity Patterns","c":"#3b82f6","tp":"tech","s":6,"ib":16},{"id":"overlook-audio","t":"Overlook Audio","c":"#6b7280","tp":"entity","s":15,"ib":29},{"id":"claude-code","t":"Claude Code","c":"#6b7280","tp":"entity","s":15,"ib":60},{"id":"pgvector","t":"pgvector","c":"#6b7280","tp":"entity","s":6,"ib":15},{"id":"ollama","t":"Ollama","c":"#6b7280","tp":"entity","s":7,"ib":20},{"id":"tinacms","t":"TinaCMS","c":"#6b7280","tp":"entity","s":6,"ib":18},{"id":"kelly-bennett","t":"Kelly Bennett","c":"#6b7280","tp":"entity","s":6,"ib":15},{"id":"openclaw","t":"OpenClaw","c":"#6b7280","tp":"entity","s":15,"ib":40},{"id":"obsidian","t":"Obsidian","c":"#6b7280","tp":"entity","s":5,"ib":13},{"id":"vercel","t":"Vercel","c":"#6b7280","tp":"entity","s":8,"ib":28},{"id":"greg-isenberg","t":"Greg Isenberg","c":"#6b7280","tp":"entity","s":6,"ib":16},{"id":"alex-krentsel","t":"Alex Krentsel","c":"#6b7280","tp":"entity","s":10,"ib":15},{"id":"sanity","t":"Sanity","c":"#6b7280","tp":"entity","s":7,"ib":20},{"id":"finn-bennett","t":"Finn Bennett","c":"#6b7280","tp":"entity","s":15,"ib":42},{"id":"overlook-strategy","t":"Overlook Strategy","c":"#6b7280","tp":"entity","s":15,"ib":100},{"id":"berklee-online","t":"Berklee Online","c":"#6b7280","tp":"entity","s":6,"ib":15},{"id":"railway","t":"Railway","c":"#6b7280","tp":"entity","s":8,"ib":29},{"id":"andrej-karpathy","t":"Andrej Karpathy","c":"#6b7280","tp":"entity","s":10,"ib":14},{"id":"now","t":"Now","c":"#14b8a6","tp":"finn-os","s":5,"ib":0},{"id":"network","t":"Career \u2014 Network","c":"#14b8a6","tp":"finn-os","s":5,"ib":0},{"id":"opportunities","t":"Career \u2014 Opportunities","c":"#14b8a6","tp":"finn-os","s":5,"ib":0},{"id":"skills","t":"Career \u2014 Skills you're building","c":"#14b8a6","tp":"finn-os","s":5,"ib":0},{"id":"goals","t":"Career \u2014 Goals","c":"#14b8a6","tp":"finn-os","s":5,"ib":0},{"id":"archive","t":"Ideas \u2014 Archive","c":"#14b8a6","tp":"finn-os","s":5,"ib":1},{"id":"ranked","t":"Ideas \u2014 Ranked","c":"#14b8a6","tp":"finn-os","s":5,"ib":2},{"id":"backlog","t":"Ideas \u2014 Backlog","c":"#14b8a6","tp":"finn-os","s":5,"ib":1},{"id":"monthly","t":"Monthly review","c":"#14b8a6","tp":"finn-os","s":5,"ib":0},{"id":"weekly","t":"Weekly review","c":"#14b8a6","tp":"finn-os","s":5,"ib":0}],"e":[["README","llm-wiki-pattern"],["identity-and-brand-architecture","overlook-strategy-positioning"],["identity-and-brand-architecture","overlook-audio-positioning"],["identity-and-brand-architecture","three-altitudes"],["identity-and-brand-architecture","riptide"],["identity-and-brand-architecture","environmental-behaviors"],["gcp-credits","isenberg-future-of-saas-30-step"],["gcp-credits","overlook-strategy-positioning"],["gcp-credits","hybrid-llm-workflow"],["gcp-credits","autonomous-agent-design-principles"],["gcp-credits","media-first-distribution"],["gcp-credits","per-task-pilot-on-retainers"],["gcp-credits","ai-agency-niches"],["gcp-credits","boring-business-automation"],["gcp-credits","agent-native-saas"],["gcp-credits","token-conservation-mindset"],["gcp-credits","claude-max-arbitrage"],["school-berklee","pricing-and-rates"],["school-berklee","overlook-audio-positioning"],["somli\u00f8ya","overlook-strategy"],["somli\u00f8ya","tinacms"],["somli\u00f8ya","file-organization-pass"],["somli\u00f8ya","vercel"],["somli\u00f8ya","overlook-portal-webapp"],["somli\u00f8ya","notion-life-os"],["somli\u00f8ya","rustler-42"],["somli\u00f8ya","all-in-one-music"],["somli\u00f8ya","ventura-forward"],["ventura-forward","notion-life-os"],["ventura-forward","three-altitudes"],["ventura-forward","pier-and-point"],["ventura-forward","overlook-strategy"],["ventura-forward","ventura-forward-app"],["ventura-forward","overlook-portal-webapp"],["ventura-forward","rustler-42"],["ventura-forward","somli\u00f8ya"],["ventura-forward","all-in-one-music"],["ventura-forward","finn-bennett"],["all-in-one-music","overlook-strategy"],["all-in-one-music","notion-life-os"],["all-in-one-music","rustler-42"],["all-in-one-music","somli\u00f8ya"],["all-in-one-music","overlook-audio"],["all-in-one-music","overlook-portal-webapp"],["all-in-one-music","ventura-forward"],["rustler-42","overlook-strategy"],["rustler-42","notion-life-os"],["rustler-42","somli\u00f8ya"],["rustler-42","all-in-one-music"],["rustler-42","ventura-forward"],["rustler-42","overlook-portal-webapp"],["kelly-bennett-site","overlook-strategy-design-system-bundle"],["kelly-bennett-site","kelly-bennett"],["kelly-bennett-site","overlook-strategy"],["kelly-bennett-site","design-tokens"],["design-tokens","overlook-strategy-design-system-bundle"],["design-tokens","three-altitudes"],["design-tokens","next-js-patterns"],["three-altitudes","overlook-strategy"],["three-altitudes","overlook-audio"],["three-altitudes","sanity"],["three-altitudes","vercel"],["somli\u00f8ya","three-altitudes"],["ventura-forward-app","pier-and-point"],["ventura-forward-app","overlook-strategy"],["ventura-forward-app","ventura-forward"],["johnson-aviation","overlook-strategy"],["riptide","overlook-audio"],["riptide","notion-life-os"],["riptide","file-organization-pass"],["riptide","overlook-strategy"],["riptide","finn-bennett"],["gearflip","overlook-strategy"],["waveshade","overlook-strategy"],["notion-life-os","overlook-strategy"],["notion-life-os","overlook-audio"],["notion-life-os","ventura-forward"],["notion-life-os","rustler-42"],["notion-life-os","somli\u00f8ya"],["notion-life-os","all-in-one-music"],["notion-life-os","riptide"],["notion-life-os","berklee-music-supervision-1"],["notion-life-os","finn-bennett"],["notion-life-os","hybrid-llm-workflow"],["berklee-music-supervision-1","berklee-online"],["berklee-music-supervision-1","overlook-audio"],["berklee-music-supervision-1","finn-bennett"],["overlook-portal-webapp","overlook-strategy"],["overlook-portal-webapp","vercel"],["overlook-portal-webapp","railway"],["overlook-portal-webapp","ollama"],["overlook-portal-webapp","pgvector"],["overlook-portal-webapp","rustler-42"],["overlook-portal-webapp","somli\u00f8ya"],["overlook-portal-webapp","all-in-one-music"],["overlook-portal-webapp","ventura-forward"],["hybrid-llm-workflow","notion-life-os"],["hybrid-llm-workflow","file-organization-pass"],["hybrid-llm-workflow","overlook-portal-webapp"],["hybrid-llm-workflow","ollama"],["hybrid-llm-workflow","claude-code"],["copper-and-cast","overlook-strategy"],["copper-and-cast","three-altitudes"],["overlook-boilerplates","overlook-strategy"],["overlook-boilerplates","admin-client-app-template-ovlk"],["file-organization-pass","hybrid-llm-workflow"],["file-organization-pass","somli\u00f8ya"],["file-organization-pass","finn-bennett"],["latency-optimizer","overlook-audio"],["latency-optimizer","riptide"],["finn-bennett-dotcom","three-altitudes"],["admin-client-app-template-ovlk","overlook-portal-webapp"],["admin-client-app-template-ovlk","notebooklm-overlook-strategy"],["admin-client-app-template-ovlk","ai-agency-niches"],["admin-client-app-template-ovlk","productized-services"],["admin-client-app-template-ovlk","overlook-boilerplates"],["admin-client-app-template-ovlk","overlook-strategy"],["pier-and-point","pier-and-point-research"],["pier-and-point","ai-journalism-legal-posture"],["pier-and-point","three-altitudes"],["pier-and-point","overlook-strategy"],["pier-and-point","ventura-forward"],["pier-and-point","pier-and-point-execution"],["pier-and-point","pier-and-point-monetization"],["pier-and-point","ai-newsroom-pipeline"],["pier-and-point","overlook-strategy-positioning"],["pier-and-point","ventura-forward-app"],["pier-and-point","finn-bennett"],["overlook-strategy-positioning","identity-and-brand-architecture"],["overlook-strategy-positioning","client-portal-as-differentiator"],["overlook-strategy-positioning","rustler-42"],["overlook-strategy-positioning","somli\u00f8ya"],["overlook-strategy-positioning","all-in-one-music"],["overlook-strategy-positioning","ventura-forward"],["overlook-strategy-positioning","pricing-and-rates"],["overlook-strategy-positioning","pier-and-point"],["overlook-strategy-positioning","pier-and-point-execution"],["overlook-strategy-positioning","pier-and-point-monetization"],["overlook-strategy-positioning","business-ideas-backlog"],["overlook-strategy-positioning","vibe-coding"],["overlook-strategy-positioning","ai-agency-niches"],["overlook-strategy-positioning","claude-max-arbitrage"],["overlook-strategy-positioning","agent-native-saas"],["overlook-strategy-positioning","build-niche-agent-saas"],["overlook-strategy-positioning","ninety-day-launch-plan"],["overlook-strategy-positioning","isenberg-future-of-saas-30-step"],["overlook-strategy-positioning","deep-research-strategic-arbitrage"],["overlook-strategy-positioning","wat-framework-marketing"],["overlook-strategy-positioning","productized-services"],["overlook-strategy-positioning","boring-business-automation"],["overlook-strategy-positioning","per-task-pricing"],["pier-and-point-execution","pier-and-point-research"],["pier-and-point-execution","overlook-portal-webapp"],["pier-and-point-execution","three-altitudes"],["pier-and-point-execution","gearflip"],["pier-and-point-execution","ventura-forward-app"],["pier-and-point-execution","next-js-patterns"],["pier-and-point-execution","sanity-patterns"],["pier-and-point-execution","hybrid-llm-workflow"],["pier-and-point-execution","client-portal-as-differentiator"],["pier-and-point-execution","gcp-credits"],["pier-and-point-execution","ai-journalism-legal-posture"],["pier-and-point-execution","overlook-strategy-positioning"],["pier-and-point-execution","ventura-forward"],["pier-and-point-execution","pier-and-point"],["pier-and-point-execution","pier-and-point-monetization"],["pier-and-point-execution","ai-newsroom-pipeline"],["pier-and-point-execution","identity-and-brand-architecture"],["pier-and-point-monetization","pier-and-point-research"],["pier-and-point-monetization","pier-and-point"],["pier-and-point-monetization","pricing-and-rates"],["pier-and-point-monetization","overlook-strategy"],["pier-and-point-monetization","pier-and-point-execution"],["pier-and-point-monetization","ai-newsroom-pipeline"],["pier-and-point-monetization","ai-journalism-legal-posture"],["pier-and-point-monetization","overlook-strategy-positioning"],["pier-and-point-monetization","ventura-forward"],["workflow-audit-service","isenberg-future-of-saas-30-step"],["workflow-audit-service","notebooklm-simple-ui-viral-ai"],["workflow-audit-service","ai-agency-niches"],["workflow-audit-service","wat-framework-marketing"],["workflow-audit-service","agent-native-saas"],["workflow-audit-service","productized-services"],["workflow-audit-service","per-task-pricing"],["workflow-audit-service","ninety-day-launch-plan"],["workflow-audit-service","overlook-strategy-positioning"],["workflow-audit-service","build-niche-agent-saas"],["overlook-audio-positioning","identity-and-brand-architecture"],["overlook-audio-positioning","riptide"],["overlook-audio-positioning","overlook-strategy-positioning"],["overlook-audio-positioning","school-berklee"],["per-task-pilot-on-retainers","isenberg-future-of-saas-30-step"],["per-task-pilot-on-retainers","per-task-pricing"],["per-task-pilot-on-retainers","ventura-forward"],["per-task-pilot-on-retainers","productized-services"],["per-task-pilot-on-retainers","agent-native-saas"],["per-task-pilot-on-retainers","wat-framework-marketing"],["per-task-pilot-on-retainers","pricing-and-rates"],["per-task-pilot-on-retainers","workflow-audit-service"],["per-task-pilot-on-retainers","overlook-strategy-positioning"],["per-task-pilot-on-retainers","client-portal-as-differentiator"],["pricing-and-rates","isenberg-future-of-saas-30-step"],["pricing-and-rates","school-berklee"],["pricing-and-rates","ventura-forward"],["pricing-and-rates","overlook-strategy-positioning"],["pricing-and-rates","rustler-42"],["pricing-and-rates","somli\u00f8ya"],["pricing-and-rates","all-in-one-music"],["pricing-and-rates","overlook-audio-positioning"],["pricing-and-rates","riptide"],["pricing-and-rates","client-portal-as-differentiator"],["pricing-and-rates","per-task-pricing"],["business-ideas-backlog","three-altitudes"],["client-portal-as-differentiator","overlook-strategy-positioning"],["client-portal-as-differentiator","token-conservation-mindset"],["portal-orchestration-extension","isenberg-future-of-saas-30-step"],["portal-orchestration-extension","overlook-portal-webapp"],["portal-orchestration-extension","client-portal-as-differentiator"],["portal-orchestration-extension","orchestration-as-interface"],["portal-orchestration-extension","per-task-pilot-on-retainers"],["portal-orchestration-extension","agent-native-saas"],["portal-orchestration-extension","overlook-strategy-positioning"],["portal-orchestration-extension","vibe-coding"],["portal-orchestration-extension","workflow-audit-service"],["portal-orchestration-extension","wat-framework-marketing"],["setup-obsidian-vault","karpathy-llm-wiki-gist"],["setup-obsidian-vault","nate-herk-claude-code-video"],["setup-obsidian-vault","claude-code"],["setup-obsidian-vault","obsidian"],["setup-obsidian-vault","ingest-workflow"],["setup-obsidian-vault","lint-workflow"],["hybrid-local-llm-workflow","token-conservation-mindset"],["lint-workflow","karpathy-llm-wiki-gist"],["lint-workflow","lint-operation"],["lint-workflow","claude-code"],["ninety-day-launch-plan","deep-research-strategic-arbitrage"],["ninety-day-launch-plan","isenberg-future-of-saas-30-step"],["ninety-day-launch-plan","ai-agency-niches"],["ninety-day-launch-plan","wat-framework-marketing"],["ninety-day-launch-plan","build-niche-agent-saas"],["ninety-day-launch-plan","services-first-saas"],["ninety-day-launch-plan","per-task-pricing"],["ninety-day-launch-plan","productized-services"],["ninety-day-launch-plan","claude-max-arbitrage"],["ninety-day-launch-plan","overlook-strategy-positioning"],["ninety-day-launch-plan","agent-native-saas"],["ingest-workflow","karpathy-llm-wiki-gist"],["ingest-workflow","nate-herk-claude-code-video"],["ingest-workflow","ingest-operation"],["ingest-workflow","claude-code"],["ingest-workflow","lint-workflow"],["build-niche-agent-saas","isenberg-future-of-saas-30-step"],["build-niche-agent-saas","greg-isenberg"],["build-niche-agent-saas","ninety-day-launch-plan"],["build-niche-agent-saas","claude-code"],["build-niche-agent-saas","media-first-distribution"],["build-niche-agent-saas","services-first-saas"],["build-niche-agent-saas","wat-framework-marketing"],["build-niche-agent-saas","mcp-protocol"],["build-niche-agent-saas","orchestration-as-interface"],["build-niche-agent-saas","per-task-pricing"],["build-niche-agent-saas","agent-native-saas"],["build-niche-agent-saas","productized-services"],["build-niche-agent-saas","ai-agency-niches"],["build-niche-agent-saas","overlook-strategy-positioning"],["weekly-prep-briefing","school-berklee"],["phase-3-agents","deep-research-strategic-arbitrage"],["phase-3-agents","openclaw-deep-dive-krentsel"],["phase-3-agents","claude-code"],["phase-3-agents","openclaw"],["phase-3-agents","wat-framework-marketing"],["phase-3-agents","mcp-protocol"],["phase-3-agents","productized-services"],["phase-3-agents","ai-agency-niches"],["phase-3-agents","alex-krentsel"],["phase-3-agents","loopiness-framework"],["phase-3-agents","karpathy-autoresearch"],["vibe-coding","notebooklm-overlook-strategy"],["vibe-coding","notebooklm-mastering-agentic-workflows"],["vibe-coding","overlook-strategy"],["vibe-coding","karpathy-autoresearch"],["vibe-coding","deep-research-strategic-arbitrage"],["vibe-coding","client-portal-as-differentiator"],["vibe-coding","wat-framework-marketing"],["vibe-coding","phase-3-agents"],["vibe-coding","productized-services"],["vibe-coding","agent-native-saas"],["vibe-coding","overlook-strategy-positioning"],["vibe-coding","isenberg-future-of-saas-30-step"],["services-first-saas","isenberg-future-of-saas-30-step"],["services-first-saas","greg-isenberg"],["services-first-saas","productized-services"],["services-first-saas","agent-native-saas"],["services-first-saas","ninety-day-launch-plan"],["services-first-saas","per-task-pricing"],["services-first-saas","overlook-strategy-positioning"],["llm-wiki-pattern","karpathy-llm-wiki-gist"],["llm-wiki-pattern","nate-herk-claude-code-video"],["llm-wiki-pattern","obsidian"],["llm-wiki-pattern","ingest-operation"],["llm-wiki-pattern","query-operation"],["llm-wiki-pattern","lint-operation"],["llm-wiki-pattern","three-layer-architecture"],["llm-wiki-pattern","index-file-navigation"],["llm-wiki-pattern","compiled-knowledge"],["llm-wiki-pattern","setup-obsidian-vault"],["llm-wiki-pattern","ingest-workflow"],["llm-wiki-pattern","lint-workflow"],["llm-wiki-pattern","claude-code"],["llm-wiki-pattern","memex"],["media-first-distribution","isenberg-future-of-saas-30-step"],["media-first-distribution","greg-isenberg"],["media-first-distribution","agent-native-saas"],["media-first-distribution","claude-code"],["media-first-distribution","openclaw"],["media-first-distribution","wat-framework-marketing"],["media-first-distribution","overlook-strategy"],["media-first-distribution","overlook-strategy-positioning"],["media-first-distribution","client-portal-as-differentiator"],["media-first-distribution","identity-and-brand-architecture"],["media-first-distribution","vibe-coding"],["media-first-distribution","build-niche-agent-saas"],["ingest-operation","karpathy-llm-wiki-gist"],["ingest-operation","nate-herk-claude-code-video"],["ingest-operation","query-operation"],["ingest-operation","lint-operation"],["ingest-operation","index-file-navigation"],["ingest-operation","ingest-workflow"],["ingest-operation","three-layer-architecture"],["orchestration-as-interface","isenberg-future-of-saas-30-step"],["orchestration-as-interface","greg-isenberg"],["orchestration-as-interface","agent-native-saas"],["orchestration-as-interface","openclaw"],["orchestration-as-interface","openclaw-architecture"],["orchestration-as-interface","overlook-portal-webapp"],["orchestration-as-interface","ai-agency-niches"],["orchestration-as-interface","autonomous-agent-design-principles"],["orchestration-as-interface","loopiness-framework"],["orchestration-as-interface","mcp-protocol"],["orchestration-as-interface","client-portal-as-differentiator"],["mcp-protocol","notebooklm-mastering-agentic-workflows"],["mcp-protocol","deep-research-strategic-arbitrage"],["mcp-protocol","openclaw-deep-dive-krentsel"],["mcp-protocol","wat-framework-marketing"],["mcp-protocol","ingest-workflow"],["mcp-protocol","notion-life-os"],["mcp-protocol","somli\u00f8ya"],["mcp-protocol","openclaw"],["mcp-protocol","loopiness-framework"],["mcp-protocol","openclaw-architecture"],["mcp-protocol","per-task-pricing"],["mcp-protocol","orchestration-as-interface"],["mcp-protocol","claude-code"],["mcp-protocol","phase-3-agents"],["mcp-protocol","agent-native-saas"],["karpathy-autoresearch","notebooklm-overlook-strategy"],["karpathy-autoresearch","andrej-karpathy"],["karpathy-autoresearch","vibe-coding"],["karpathy-autoresearch","llm-wiki-pattern"],["karpathy-autoresearch","karpathy-llm-wiki-gist"],["karpathy-autoresearch","overlook-strategy"],["karpathy-autoresearch","lint-workflow"],["karpathy-autoresearch","phase-3-agents"],["karpathy-autoresearch","knowledge-graph-llm-wiki"],["index-file-navigation","karpathy-llm-wiki-gist"],["index-file-navigation","nate-herk-claude-code-video"],["index-file-navigation","andrej-karpathy"],["index-file-navigation","compiled-knowledge"],["wat-framework-marketing","notebooklm-mastering-agentic-workflows"],["wat-framework-marketing","isenberg-future-of-saas-30-step"],["wat-framework-marketing","claude-code"],["wat-framework-marketing","ingest-workflow"],["wat-framework-marketing","mcp-protocol"],["wat-framework-marketing","railway"],["wat-framework-marketing","overlook-strategy-positioning"],["wat-framework-marketing","ai-agency-niches"],["wat-framework-marketing","media-first-distribution"],["wat-framework-marketing","orchestration-as-interface"],["wat-framework-marketing","vibe-coding"],["wat-framework-marketing","agent-native-saas"],["discord-hub-pattern","openclaw-deep-dive-krentsel"],["discord-hub-pattern","alex-krentsel"],["discord-hub-pattern","openclaw"],["discord-hub-pattern","openclaw-architecture"],["discord-hub-pattern","loopiness-framework"],["discord-hub-pattern","phase-3-agents"],["autonomous-agent-design-principles","openclaw-deep-dive-krentsel"],["autonomous-agent-design-principles","alex-krentsel"],["autonomous-agent-design-principles","loopiness-framework"],["autonomous-agent-design-principles","living-config-files"],["autonomous-agent-design-principles","vibe-coding"],["autonomous-agent-design-principles","overlook-strategy"],["autonomous-agent-design-principles","claude-code"],["autonomous-agent-design-principles","openclaw-architecture"],["autonomous-agent-design-principles","discord-hub-pattern"],["autonomous-agent-design-principles","phase-3-agents"],["lint-operation","karpathy-llm-wiki-gist"],["lint-operation","ingest-operation"],["lint-operation","query-operation"],["lint-operation","llm-wiki-pattern"],["lint-operation","lint-workflow"],["knowledge-graph-llm-wiki","notebooklm-overlook-strategy"],["knowledge-graph-llm-wiki","llm-wiki-pattern"],["knowledge-graph-llm-wiki","karpathy-llm-wiki-gist"],["knowledge-graph-llm-wiki","overlook-strategy"],["knowledge-graph-llm-wiki","gearflip"],["knowledge-graph-llm-wiki","ventura-forward"],["knowledge-graph-llm-wiki","index-file-navigation"],["knowledge-graph-llm-wiki","lint-workflow"],["knowledge-graph-llm-wiki","karpathy-autoresearch"],["agent-native-saas","isenberg-future-of-saas-30-step"],["agent-native-saas","greg-isenberg"],["agent-native-saas","per-task-pricing"],["agent-native-saas","media-first-distribution"],["agent-native-saas","deep-research-strategic-arbitrage"],["agent-native-saas","mcp-protocol"],["agent-native-saas","overlook-audio-positioning"],["agent-native-saas","client-portal-as-differentiator"],["agent-native-saas","school-berklee"],["agent-native-saas","vibe-coding"],["agent-native-saas","overlook-strategy-positioning"],["agent-native-saas","services-first-saas"],["agent-native-saas","orchestration-as-interface"],["agent-native-saas","build-niche-agent-saas"],["agent-native-saas","productized-services"],["agent-native-saas","ai-agency-niches"],["agent-native-saas","ninety-day-launch-plan"],["agent-native-saas","wat-framework-marketing"],["boring-business-automation","notebooklm-simple-ui-viral-ai"],["boring-business-automation","notebooklm-overlook-strategy"],["boring-business-automation","isenberg-future-of-saas-30-step"],["boring-business-automation","wat-framework-marketing"],["boring-business-automation","ventura-forward"],["boring-business-automation","somli\u00f8ya"],["boring-business-automation","productized-services"],["boring-business-automation","build-niche-agent-saas"],["boring-business-automation","agent-native-saas"],["boring-business-automation","ai-agency-niches"],["token-conservation-mindset","hybrid-local-llm-workflow"],["environmental-behaviors","three-altitudes"],["environmental-behaviors","identity-and-brand-architecture"],["living-config-files","openclaw-deep-dive-krentsel"],["living-config-files","openclaw"],["living-config-files","alex-krentsel"],["living-config-files","llm-wiki-pattern"],["living-config-files","three-layer-architecture"],["living-config-files","phase-3-agents"],["living-config-files","loopiness-framework"],["memex","karpathy-llm-wiki-gist"],["memex","llm-wiki-pattern"],["query-operation","karpathy-llm-wiki-gist"],["query-operation","ingest-operation"],["query-operation","lint-operation"],["query-operation","index-file-navigation"],["productized-services","notebooklm-simple-ui-viral-ai"],["productized-services","deep-research-strategic-arbitrage"],["productized-services","isenberg-future-of-saas-30-step"],["productized-services","wat-framework-marketing"],["productized-services","overlook-strategy"],["productized-services","ai-agency-niches"],["productized-services","llm-wiki-pattern"],["productized-services","services-first-saas"],["productized-services","per-task-pricing"],["productized-services","ninety-day-launch-plan"],["productized-services","claude-max-arbitrage"],["productized-services","overlook-strategy-positioning"],["productized-services","agent-native-saas"],["productized-services","build-niche-agent-saas"],["per-task-pricing","isenberg-future-of-saas-30-step"],["per-task-pricing","greg-isenberg"],["per-task-pricing","productized-services"],["per-task-pricing","pricing-and-rates"],["per-task-pricing","ventura-forward"],["per-task-pricing","wat-framework-marketing"],["per-task-pricing","agent-native-saas"],["per-task-pricing","ai-agency-niches"],["per-task-pricing","claude-max-arbitrage"],["per-task-pricing","overlook-strategy-positioning"],["three-layer-architecture","karpathy-llm-wiki-gist"],["three-layer-architecture","llm-wiki-pattern"],["three-layer-architecture","claude-code"],["three-layer-architecture","ingest-operation"],["three-layer-architecture","query-operation"],["three-layer-architecture","lint-operation"],["ai-agency-niches","notebooklm-simple-ui-viral-ai"],["ai-agency-niches","deep-research-strategic-arbitrage"],["ai-agency-niches","notebooklm-overlook-strategy"],["ai-agency-niches","isenberg-future-of-saas-30-step"],["ai-agency-niches","overlook-strategy"],["ai-agency-niches","overlook-portal-webapp"],["ai-agency-niches","llm-wiki-pattern"],["ai-agency-niches","kelly-bennett"],["ai-agency-niches","productized-services"],["ai-agency-niches","agent-native-saas"],["ai-agency-niches","per-task-pricing"],["ai-agency-niches","services-first-saas"],["ai-agency-niches","build-niche-agent-saas"],["ai-agency-niches","ninety-day-launch-plan"],["ai-agency-niches","boring-business-automation"],["ai-agency-niches","claude-max-arbitrage"],["ai-agency-niches","overlook-strategy-positioning"],["deep-research-strategic-arbitrage","notebooklm-simple-ui-viral-ai"],["deep-research-strategic-arbitrage","claude-code"],["deep-research-strategic-arbitrage","phase-3-agents"],["deep-research-strategic-arbitrage","overlook-strategy"],["deep-research-strategic-arbitrage","productized-services"],["deep-research-strategic-arbitrage","boring-business-automation"],["deep-research-strategic-arbitrage","ai-agency-niches"],["deep-research-strategic-arbitrage","wat-framework-marketing"],["deep-research-strategic-arbitrage","overlook-portal-webapp"],["deep-research-strategic-arbitrage","claude-max-arbitrage"],["claude-max-arbitrage","notebooklm-simple-ui-viral-ai"],["claude-max-arbitrage","deep-research-strategic-arbitrage"],["claude-max-arbitrage","wat-framework-marketing"],["claude-max-arbitrage","mcp-protocol"],["claude-max-arbitrage","ai-agency-niches"],["claude-max-arbitrage","productized-services"],["claude-max-arbitrage","ninety-day-launch-plan"],["claude-max-arbitrage","overlook-strategy-positioning"],["compiled-knowledge","karpathy-llm-wiki-gist"],["compiled-knowledge","llm-wiki-pattern"],["compiled-knowledge","nate-herk-claude-code-video"],["compiled-knowledge","ingest-operation"],["loopiness-framework","openclaw-deep-dive-krentsel"],["loopiness-framework","alex-krentsel"],["loopiness-framework","claude-code"],["loopiness-framework","openclaw"],["loopiness-framework","phase-3-agents"],["loopiness-framework","deep-research-strategic-arbitrage"],["loopiness-framework","living-config-files"],["loopiness-framework","karpathy-autoresearch"],["ai-journalism-legal-posture","pier-and-point-research"],["ai-journalism-legal-posture","pier-and-point"],["ai-journalism-legal-posture","pier-and-point-execution"],["ai-journalism-legal-posture","ai-newsroom-pipeline"],["pier-and-point-research","overlook-strategy"],["pier-and-point-research","pier-and-point"],["pier-and-point-research","pier-and-point-execution"],["pier-and-point-research","pier-and-point-monetization"],["pier-and-point-research","ai-newsroom-pipeline"],["pier-and-point-research","ai-journalism-legal-posture"],["pier-and-point-research","ventura-forward"],["pier-and-point-research","ventura-forward-app"],["pier-and-point-research","overlook-strategy-positioning"],["pier-and-point-research","finn-bennett"],["pier-and-point-research","hybrid-llm-workflow"],["pier-and-point-research","token-conservation-mindset"],["pier-and-point-research","claude-max-arbitrage"],["pier-and-point-research","sanity-patterns"],["pier-and-point-research","sanity"],["pier-and-point-research","next-js-patterns"],["nate-herk-claude-code-video","karpathy-llm-wiki-gist"],["nate-herk-claude-code-video","obsidian"],["nate-herk-claude-code-video","claude-code"],["nate-herk-claude-code-video","index-file-navigation"],["nate-herk-claude-code-video","setup-obsidian-vault"],["nate-herk-claude-code-video","ingest-workflow"],["isenberg-future-of-saas-30-step","greg-isenberg"],["isenberg-future-of-saas-30-step","productized-services"],["isenberg-future-of-saas-30-step","wat-framework-marketing"],["isenberg-future-of-saas-30-step","ninety-day-launch-plan"],["isenberg-future-of-saas-30-step","claude-code"],["isenberg-future-of-saas-30-step","mcp-protocol"],["isenberg-future-of-saas-30-step","orchestration-as-interface"],["isenberg-future-of-saas-30-step","ai-agency-niches"],["isenberg-future-of-saas-30-step","deep-research-strategic-arbitrage"],["isenberg-future-of-saas-30-step","services-first-saas"],["isenberg-future-of-saas-30-step","pricing-and-rates"],["isenberg-future-of-saas-30-step","per-task-pricing"],["isenberg-future-of-saas-30-step","media-first-distribution"],["isenberg-future-of-saas-30-step","overlook-strategy-positioning"],["isenberg-future-of-saas-30-step","vibe-coding"],["isenberg-future-of-saas-30-step","overlook-audio-positioning"],["isenberg-future-of-saas-30-step","agent-native-saas"],["isenberg-future-of-saas-30-step","build-niche-agent-saas"],["isenberg-future-of-saas-30-step","boring-business-automation"],["isenberg-future-of-saas-30-step","openclaw"],["isenberg-future-of-saas-30-step","notebooklm-simple-ui-viral-ai"],["overlook-strategy-design-system-bundle","overlook-strategy"],["overlook-strategy-design-system-bundle","kelly-bennett-site"],["overlook-strategy-design-system-bundle","overlook-audio"],["overlook-strategy-design-system-bundle","three-altitudes"],["overlook-strategy-design-system-bundle","design-tokens"],["overlook-strategy-design-system-bundle","kelly-bennett"],["overlook-strategy-design-system-bundle","overlook-strategy-positioning"],["overlook-strategy-design-system-bundle","finn-bennett"],["openclaw-deep-dive-krentsel","alex-krentsel"],["openclaw-deep-dive-krentsel","openclaw"],["openclaw-deep-dive-krentsel","loopiness-framework"],["openclaw-deep-dive-krentsel","living-config-files"],["openclaw-deep-dive-krentsel","discord-hub-pattern"],["openclaw-deep-dive-krentsel","phase-3-agents"],["openclaw-deep-dive-krentsel","autonomous-agent-design-principles"],["openclaw-deep-dive-krentsel","openclaw-architecture"],["openclaw-deep-dive-krentsel","claude-code"],["openclaw-deep-dive-krentsel","mcp-protocol"],["openclaw-deep-dive-krentsel","vibe-coding"],["openclaw-deep-dive-krentsel","karpathy-autoresearch"],["notebooklm-simple-ui-viral-ai","finn-bennett"],["notebooklm-simple-ui-viral-ai","notebooklm-overlook-strategy"],["notebooklm-simple-ui-viral-ai","ai-agency-niches"],["notebooklm-simple-ui-viral-ai","phase-3-agents"],["notebooklm-simple-ui-viral-ai","openclaw"],["notebooklm-simple-ui-viral-ai","ninety-day-launch-plan"],["notebooklm-simple-ui-viral-ai","claude-max-arbitrage"],["notebooklm-simple-ui-viral-ai","lint-workflow"],["notebooklm-simple-ui-viral-ai","boring-business-automation"],["notebooklm-simple-ui-viral-ai","overlook-strategy"],["notebooklm-simple-ui-viral-ai","productized-services"],["notebooklm-simple-ui-viral-ai","notebooklm-mastering-agentic-workflows"],["notebooklm-simple-ui-viral-ai","overlook-strategy-positioning"],["notebooklm-mastering-agentic-workflows","finn-bennett"],["notebooklm-mastering-agentic-workflows","karpathy-llm-wiki-gist"],["notebooklm-mastering-agentic-workflows","claude-code"],["notebooklm-mastering-agentic-workflows","wat-framework-marketing"],["notebooklm-mastering-agentic-workflows","railway"],["notebooklm-mastering-agentic-workflows","mcp-protocol"],["notebooklm-mastering-agentic-workflows","overlook-strategy"],["notebooklm-mastering-agentic-workflows","setup-obsidian-vault"],["notebooklm-mastering-agentic-workflows","three-layer-architecture"],["notebooklm-mastering-agentic-workflows","overlook-portal-webapp"],["notebooklm-mastering-agentic-workflows","gearflip"],["notebooklm-mastering-agentic-workflows","vibe-coding"],["notebooklm-mastering-agentic-workflows","notebooklm-overlook-strategy"],["notebooklm-mastering-agentic-workflows","notebooklm-simple-ui-viral-ai"],["karpathy-llm-wiki-gist","andrej-karpathy"],["karpathy-llm-wiki-gist","llm-wiki-pattern"],["karpathy-llm-wiki-gist","three-layer-architecture"],["karpathy-llm-wiki-gist","ingest-operation"],["karpathy-llm-wiki-gist","query-operation"],["karpathy-llm-wiki-gist","lint-operation"],["karpathy-llm-wiki-gist","index-file-navigation"],["karpathy-llm-wiki-gist","memex"],["karpathy-llm-wiki-gist","setup-obsidian-vault"],["karpathy-llm-wiki-gist","nate-herk-claude-code-video"],["notebooklm-overlook-strategy","finn-bennett"],["notebooklm-overlook-strategy","overlook-strategy"],["notebooklm-overlook-strategy","admin-client-app-template-ovlk"],["notebooklm-overlook-strategy","vibe-coding"],["notebooklm-overlook-strategy","karpathy-autoresearch"],["notebooklm-overlook-strategy","andrej-karpathy"],["notebooklm-overlook-strategy","ai-agency-niches"],["notebooklm-overlook-strategy","karpathy-llm-wiki-gist"],["notebooklm-overlook-strategy","knowledge-graph-llm-wiki"],["notebooklm-overlook-strategy","boring-business-automation"],["notebooklm-overlook-strategy","sanity-patterns"],["notebooklm-overlook-strategy","notebooklm-mastering-agentic-workflows"],["notebooklm-overlook-strategy","notebooklm-simple-ui-viral-ai"],["notebooklm-overlook-strategy","overlook-strategy-positioning"],["ai-newsroom-pipeline","pier-and-point-research"],["ai-newsroom-pipeline","sanity-patterns"],["ai-newsroom-pipeline","three-altitudes"],["ai-newsroom-pipeline","somli\u00f8ya"],["ai-newsroom-pipeline","hybrid-llm-workflow"],["ai-newsroom-pipeline","overlook-portal-webapp"],["ai-newsroom-pipeline","pier-and-point"],["ai-newsroom-pipeline","pier-and-point-execution"],["ai-newsroom-pipeline","ai-journalism-legal-posture"],["ai-newsroom-pipeline","next-js-patterns"],["ai-newsroom-pipeline","token-conservation-mindset"],["openclaw-architecture","openclaw-deep-dive-krentsel"],["openclaw-architecture","openclaw"],["openclaw-architecture","alex-krentsel"],["openclaw-architecture","autonomous-agent-design-principles"],["openclaw-architecture","living-config-files"],["openclaw-architecture","loopiness-framework"],["openclaw-architecture","discord-hub-pattern"],["next-js-patterns","vercel"],["next-js-patterns","overlook-strategy"],["next-js-patterns","three-altitudes"],["next-js-patterns","gearflip"],["next-js-patterns","somli\u00f8ya"],["next-js-patterns","sanity"],["next-js-patterns","sanity-patterns"],["next-js-patterns","railway"],["sanity-patterns","sanity"],["sanity-patterns","three-altitudes"],["sanity-patterns","somli\u00f8ya"],["sanity-patterns","tinacms"],["sanity-patterns","next-js-patterns"],["living-config-files","overlook-strategy"],["living-config-files","openclaw-architecture"],["living-config-files","autonomous-agent-design-principles"],["living-config-files","claude-code"],["overlook-audio","finn-bennett"],["overlook-audio","overlook-strategy"],["overlook-audio","riptide"],["overlook-audio","berklee-online"],["claude-code","karpathy-llm-wiki-gist"],["claude-code","nate-herk-claude-code-video"],["claude-code","notebooklm-mastering-agentic-workflows"],["claude-code","deep-research-strategic-arbitrage"],["claude-code","openclaw-deep-dive-krentsel"],["claude-code","isenberg-future-of-saas-30-step"],["claude-code","three-layer-architecture"],["claude-code","ingest-operation"],["claude-code","query-operation"],["claude-code","lint-operation"],["claude-code","phase-3-agents"],["claude-code","wat-framework-marketing"],["claude-code","ai-agency-niches"],["claude-code","claude-max-arbitrage"],["claude-code","openclaw"],["claude-code","alex-krentsel"],["claude-code","loopiness-framework"],["claude-code","openclaw-architecture"],["claude-code","living-config-files"],["claude-code","obsidian"],["claude-code","ingest-workflow"],["claude-code","setup-obsidian-vault"],["claude-code","mcp-protocol"],["claude-code","agent-native-saas"],["pgvector","overlook-portal-webapp"],["pgvector","railway"],["pgvector","ollama"],["ollama","overlook-portal-webapp"],["ollama","pgvector"],["ollama","hybrid-llm-workflow"],["tinacms","somli\u00f8ya"],["tinacms","sanity"],["tinacms","vercel"],["kelly-bennett","overlook-strategy-design-system-bundle"],["kelly-bennett","finn-bennett"],["kelly-bennett","notion-life-os"],["kelly-bennett","kelly-bennett-site"],["kelly-bennett","overlook-strategy"],["kelly-bennett","design-tokens"],["openclaw","deep-research-strategic-arbitrage"],["openclaw","notebooklm-overlook-strategy"],["openclaw","openclaw-deep-dive-krentsel"],["openclaw","isenberg-future-of-saas-30-step"],["openclaw","loopiness-framework"],["openclaw","alex-krentsel"],["openclaw","openclaw-architecture"],["openclaw","living-config-files"],["openclaw","discord-hub-pattern"],["openclaw","autonomous-agent-design-principles"],["openclaw","claude-code"],["openclaw","greg-isenberg"],["openclaw","phase-3-agents"],["openclaw","mcp-protocol"],["obsidian","karpathy-llm-wiki-gist"],["obsidian","nate-herk-claude-code-video"],["obsidian","claude-code"],["obsidian","andrej-karpathy"],["obsidian","setup-obsidian-vault"],["vercel","overlook-portal-webapp"],["vercel","three-altitudes"],["vercel","overlook-strategy"],["vercel","gearflip"],["vercel","sanity"],["vercel","notion-life-os"],["vercel","railway"],["greg-isenberg","isenberg-future-of-saas-30-step"],["greg-isenberg","agent-native-saas"],["greg-isenberg","per-task-pricing"],["greg-isenberg","services-first-saas"],["greg-isenberg","media-first-distribution"],["greg-isenberg","orchestration-as-interface"],["alex-krentsel","openclaw-deep-dive-krentsel"],["alex-krentsel","openclaw"],["alex-krentsel","loopiness-framework"],["alex-krentsel","openclaw-architecture"],["alex-krentsel","vibe-coding"],["alex-krentsel","living-config-files"],["sanity","three-altitudes"],["sanity","tinacms"],["sanity","somli\u00f8ya"],["sanity","vercel"],["finn-bennett","overlook-strategy"],["finn-bennett","overlook-audio"],["finn-bennett","three-altitudes"],["finn-bennett","file-organization-pass"],["finn-bennett","notion-life-os"],["overlook-strategy","finn-bennett"],["overlook-strategy","vercel"],["overlook-strategy","railway"],["overlook-strategy","ollama"],["overlook-strategy","pgvector"],["overlook-strategy","somli\u00f8ya"],["overlook-strategy","tinacms"],["overlook-strategy","overlook-strategy-positioning"],["overlook-strategy","ai-agency-niches"],["overlook-strategy","notebooklm-overlook-strategy"],["overlook-strategy","wat-framework-marketing"],["overlook-strategy","claude-max-arbitrage"],["overlook-strategy","ninety-day-launch-plan"],["overlook-strategy","overlook-audio"],["overlook-strategy","overlook-portal-webapp"],["overlook-strategy","admin-client-app-template-ovlk"],["berklee-online","overlook-audio"],["berklee-online","finn-bennett"],["railway","overlook-strategy"],["railway","overlook-portal-webapp"],["railway","vercel"],["railway","ollama"],["railway","pgvector"],["andrej-karpathy","karpathy-llm-wiki-gist"],["andrej-karpathy","notebooklm-overlook-strategy"],["andrej-karpathy","llm-wiki-pattern"],["andrej-karpathy","nate-herk-claude-code-video"],["andrej-karpathy","index-file-navigation"],["andrej-karpathy","karpathy-autoresearch"],["andrej-karpathy","knowledge-graph-llm-wiki"],["README","overlook-strategy-positioning"],["README","gearflip"],["README","copper-and-cast"],["now","isenberg-future-of-saas-30-step"],["now","agent-native-saas"],["now","overlook-strategy-positioning"],["now","build-niche-agent-saas"],["now","per-task-pricing"],["now","pricing-and-rates"],["now","pier-and-point-research"],["now","pier-and-point"],["now","overlook-strategy"],["now","pier-and-point-execution"],["now","ventura-forward"],["network","finn-bennett"],["opportunities","rustler-42"],["opportunities","somli\u00f8ya"],["opportunities","all-in-one-music"],["opportunities","ventura-forward"],["opportunities","johnson-aviation"],["opportunities","overlook-strategy-positioning"],["opportunities","client-portal-as-differentiator"],["opportunities","pricing-and-rates"],["skills","next-js-patterns"],["skills","sanity-patterns"],["skills","berklee-music-supervision-1"],["skills","hybrid-llm-workflow"],["skills","token-conservation-mindset"],["goals","overlook-strategy-positioning"],["goals","overlook-audio-positioning"],["goals","identity-and-brand-architecture"],["ranked","backlog"],["backlog","ranked"],["backlog","archive"],["backlog","business-ideas-backlog"],["backlog","notion-life-os"],["backlog","gearflip"],["backlog","three-altitudes"],["backlog","overlook-portal-webapp"],["backlog","client-portal-as-differentiator"],["backlog","ai-agency-niches"],["backlog","wat-framework-marketing"],["backlog","ninety-day-launch-plan"],["backlog","knowledge-graph-llm-wiki"],["backlog","mcp-protocol"],["backlog","vibe-coding"],["backlog","boring-business-automation"],["backlog","living-config-files"],["backlog","autonomous-agent-design-principles"],["backlog","discord-hub-pattern"],["backlog","agent-native-saas"],["backlog","build-niche-agent-saas"],["backlog","per-task-pricing"],["backlog","claude-code"],["backlog","openclaw"],["backlog","media-first-distribution"],["backlog","orchestration-as-interface"],["backlog","workflow-audit-service"],["backlog","per-task-pilot-on-retainers"],["backlog","portal-orchestration-extension"],["backlog","gcp-credits"],["backlog","pier-and-point"],["backlog","overlook-strategy"],["backlog","ventura-forward"],["backlog","pier-and-point-execution"],["backlog","pier-and-point-monetization"]]};
+
+const typeColors = {
+  'in-progress': {color: '#f59e0b', label: 'In Progress'},
+  'unfinished': {color: '#f59e0b', label: 'Unfinished', dash: true},
+  'deployed': {color: '#f59e0b', label: 'Deployed', dim: true},
+  'abandoned': {color: '#f59e0b', label: 'Abandoned', dim: true},
+  'concept': {color: '#8b5cf6', label: 'Concepts'},
+  'business': {color: '#10b981', label: 'Business'},
+  'client': {color: '#ec4899', label: 'Clients'},
+  'entity': {color: '#6b7280', label: 'Entities'},
+  'tech': {color: '#3b82f6', label: 'Tech'},
+  'personal': {color: '#f97316', label: 'Personal'},
+  'source': {color: '#d1d5db', label: 'Sources'},
+  'workflow': {color: '#06b6d4', label: 'Workflows'},
+  'design': {color: '#a78bfa', label: 'Design'},
+  'finn-os': {color: '#14b8a6', label: 'Finn-OS'},
+};
+
+const filterSets = {
+  all: null,
+  brainstorm: new Set(['finn-os','concept','in-progress','business']),
+  business: new Set(['business','client','entity']),
+  tech: new Set(['tech','entity','in-progress']),
+  active: new Set(['in-progress','unfinished','client'])
+};
+
+// Build legend
+const legend = document.getElementById('legend');
+const shownTypes = ['in-progress','concept','business','client','entity','tech','personal','workflow','source','finn-os'];
+shownTypes.forEach(tp => {
+  const info = typeColors[tp];
+  const item = document.createElement('div');
+  item.className = 'legend-item';
+  item.dataset.type = tp;
+  item.innerHTML = '<div class="legend-dot" style="background:'+info.color+'"></div><span class="legend-label">'+info.label+'</span>';
+  legend.appendChild(item);
+});
+
+// Stats
+document.getElementById('stat-nodes').textContent = graphData.n.length;
+document.getElementById('stat-edges').textContent = graphData.e.length;
+
+// Graph setup
+const container = document.getElementById('graph-container');
+let width = container.clientWidth || window.innerWidth;
+let height = container.clientHeight || Math.max(window.innerHeight * 0.65, 500);
+
+const svg = d3.select('#graph-container')
+  .append('svg')
+  .attr('width', width)
+  .attr('height', height)
+  .style('position', 'absolute')
+  .style('top', '0')
+  .style('left', '0');
+
+const g = svg.append('g');
+
+// Zoom
+const zoom = d3.zoom()
+  .scaleExtent([0.2, 4])
+  .on('zoom', (event) => g.attr('transform', event.transform));
+svg.call(zoom);
+
+// Build node map
+const nodeMap = {};
+graphData.n.forEach(n => { nodeMap[n.id] = n; });
+
+// Build links (only where both endpoints exist)
+const links = graphData.e
+  .filter(e => nodeMap[e[0]] && nodeMap[e[1]])
+  .map(e => ({source: e[0], target: e[1]}));
+
+const nodes = graphData.n.map(n => ({...n}));
+
+// Force simulation
+const simulation = d3.forceSimulation(nodes)
+  .force('link', d3.forceLink(links).id(d => d.id).distance(60).strength(0.15))
+  .force('charge', d3.forceManyBody().strength(-120).distanceMax(400))
+  .force('center', d3.forceCenter(width / 2, height / 2))
+  .force('collision', d3.forceCollide().radius(d => d.s * 1.5 + 4))
+  .force('x', d3.forceX(width / 2).strength(0.03))
+  .force('y', d3.forceY(height / 2).strength(0.03));
+
+// Draw links
+const link = g.append('g')
+  .selectAll('line')
+  .data(links)
+  .join('line')
+  .attr('stroke', '#1a1a1a')
+  .attr('stroke-width', 0.3)
+  .attr('stroke-opacity', 0.6);
+
+// Draw nodes
+const node = g.append('g')
+  .selectAll('circle')
+  .data(nodes)
+  .join('circle')
+  .attr('r', d => Math.max(d.s * 0.7, 3))
+  .attr('fill', d => d.c)
+  .attr('fill-opacity', d => {
+    if (d.tp === 'source') return 0.3;
+    if (d.tp === 'deployed' || d.tp === 'abandoned') return 0.35;
+    return 0.75;
+  })
+  .attr('stroke', d => d.c)
+  .attr('stroke-width', d => d.s >= 10 ? 1.5 : 0.5)
+  .attr('stroke-opacity', 0.4)
+  .style('cursor', 'pointer')
+  .call(d3.drag()
+    .on('start', (event, d) => {
+      if (!event.active) simulation.alphaTarget(0.3).restart();
+      d.fx = d.x; d.fy = d.y;
+    })
+    .on('drag', (event, d) => { d.fx = event.x; d.fy = event.y; })
+    .on('end', (event, d) => {
+      if (!event.active) simulation.alphaTarget(0);
+      d.fx = null; d.fy = null;
+    })
+  );
+
+// Labels for big nodes
+const label = g.append('g')
+  .selectAll('text')
+  .data(nodes.filter(d => d.s >= 8 || d.ib >= 20))
+  .join('text')
+  .text(d => {
+    let t = d.t;
+    if (t.length > 22) t = t.substring(0, 20) + '…';
+    return t;
+  })
+  .attr('font-family', "'JetBrains Mono', monospace")
+  .attr('font-size', d => d.s >= 12 ? 9 : 7)
+  .attr('fill', d => d.c)
+  .attr('fill-opacity', 0.7)
+  .attr('text-anchor', 'middle')
+  .attr('dy', d => -(d.s * 0.7 + 6))
+  .style('pointer-events', 'none');
+
+// Tooltip
+const tooltip = document.getElementById('tooltip');
+
+node.on('mouseover', (event, d) => {
+  const info = typeColors[d.tp] || {label: d.tp};
+  tooltip.innerHTML = '<div class="tt-title" style="color:'+d.c+'">'+d.t+'</div>'
+    + '<div class="tt-type" style="color:'+d.c+'">'+info.label+'</div>'
+    + '<div class="tt-links">'+d.ib+' inbound links</div>';
+  tooltip.style.opacity = 1;
+  tooltip.style.left = (event.pageX + 12) + 'px';
+  tooltip.style.top = (event.pageY - 28) + 'px';
+
+  // Highlight connected
+  const connected = new Set();
+  links.forEach(l => {
+    const sid = typeof l.source === 'object' ? l.source.id : l.source;
+    const tid = typeof l.target === 'object' ? l.target.id : l.target;
+    if (sid === d.id) connected.add(tid);
+    if (tid === d.id) connected.add(sid);
+  });
+  connected.add(d.id);
+
+  node.attr('fill-opacity', n => connected.has(n.id) ? 0.95 : 0.08);
+  link.attr('stroke-opacity', l => {
+    const sid = typeof l.source === 'object' ? l.source.id : l.source;
+    const tid = typeof l.target === 'object' ? l.target.id : l.target;
+    return (sid === d.id || tid === d.id) ? 0.5 : 0.03;
+  }).attr('stroke', l => {
+    const sid = typeof l.source === 'object' ? l.source.id : l.source;
+    const tid = typeof l.target === 'object' ? l.target.id : l.target;
+    return (sid === d.id || tid === d.id) ? d.c : '#1a1a1a';
+  });
+  label.attr('fill-opacity', n => connected.has(n.id) ? 0.9 : 0.1);
+});
+
+node.on('mousemove', (event) => {
+  tooltip.style.left = (event.pageX + 12) + 'px';
+  tooltip.style.top = (event.pageY - 28) + 'px';
+});
+
+node.on('mouseout', () => {
+  tooltip.style.opacity = 0;
+  node.attr('fill-opacity', d => {
+    if (d.tp === 'source') return 0.3;
+    if (d.tp === 'deployed' || d.tp === 'abandoned') return 0.35;
+    return 0.75;
+  });
+  link.attr('stroke', '#1a1a1a').attr('stroke-opacity', 0.6);
+  label.attr('fill-opacity', 0.7);
+});
+
+// Tick
+simulation.on('tick', () => {
+  link.attr('x1', d => d.source.x).attr('y1', d => d.source.y)
+      .attr('x2', d => d.target.x).attr('y2', d => d.target.y);
+  node.attr('cx', d => d.x).attr('cy', d => d.y);
+  label.attr('x', d => d.x).attr('y', d => d.y);
+});
+
+// Filter buttons
+document.querySelectorAll('.graph-controls button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.graph-controls button').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+    const set = filterSets[filter];
+
+    if (!set) {
+      node.attr('display', null).attr('fill-opacity', d => {
+        if (d.tp === 'source') return 0.3;
+        if (d.tp === 'deployed' || d.tp === 'abandoned') return 0.35;
+        return 0.75;
+      });
+      link.attr('display', null);
+      label.attr('display', null);
+    } else {
+      node.attr('fill-opacity', d => set.has(d.tp) ? 0.85 : 0.06);
+      link.attr('stroke-opacity', l => {
+        const s = typeof l.source === 'object' ? l.source : nodeMap[l.source];
+        const t = typeof l.target === 'object' ? l.target : nodeMap[l.target];
+        return (set.has(s.tp) && set.has(t.tp)) ? 0.5 : 0.02;
+      });
+      label.attr('fill-opacity', d => set.has(d.tp) ? 0.8 : 0.05);
+    }
+  });
+});
+
+// Initial zoom to fit
+setTimeout(() => {
+  svg.transition().duration(800).call(
+    zoom.transform,
+    d3.zoomIdentity.translate(width*0.05, height*0.05).scale(0.9)
+  );
+}, 2000);
+
+// ─── Growth animation ───────────────────────────────────────────────
+// Sorts nodes by inbound-link count (hubs first), then reveals them
+// wave by wave. Edges appear the moment both endpoints are visible.
+// Mimics Obsidian's "time-lapse" graph growth.
+
+const growBtn = document.getElementById('grow-btn');
+const growCounter = document.getElementById('grow-counter');
+const growCountVal = document.getElementById('grow-count-val');
+const growTotal = document.getElementById('grow-total');
+let growRunning = false;
+let growAbort = false;
+
+// Build adjacency for BFS-like reveal order
+function buildRevealOrder() {
+  // Sort by inbound links descending — hubs emerge first
+  const sorted = [...nodes].sort((a, b) => b.ib - a.ib);
+  const revealed = new Set();
+  const waves = [];
+
+  // Seed: top 3-5 hub nodes
+  const seedCount = Math.min(5, Math.ceil(sorted.length * 0.04));
+  const seedWave = sorted.slice(0, seedCount).map(n => n.id);
+  seedWave.forEach(id => revealed.add(id));
+  waves.push(seedWave);
+
+  // Build adjacency map
+  const adj = {};
+  nodes.forEach(n => { adj[n.id] = new Set(); });
+  links.forEach(l => {
+    const sid = typeof l.source === 'object' ? l.source.id : l.source;
+    const tid = typeof l.target === 'object' ? l.target.id : l.target;
+    if (adj[sid]) adj[sid].add(tid);
+    if (adj[tid]) adj[tid].add(sid);
+  });
+
+  // BFS-ish waves: each wave = neighbors of previously revealed nodes
+  let safety = 0;
+  while (revealed.size < nodes.length && safety < 100) {
+    safety++;
+    const wave = [];
+    // Collect unrevealed neighbors of all revealed nodes
+    revealed.forEach(id => {
+      (adj[id] || new Set()).forEach(nid => {
+        if (!revealed.has(nid)) wave.push(nid);
+      });
+    });
+
+    if (wave.length === 0) {
+      // Orphans or disconnected components — just add next batch by rank
+      const remaining = sorted.filter(n => !revealed.has(n.id));
+      const batch = remaining.slice(0, Math.max(3, Math.ceil(remaining.length * 0.2)));
+      batch.forEach(n => { wave.push(n.id); });
+    }
+
+    // Dedupe
+    const uniqueWave = [...new Set(wave)];
+    uniqueWave.forEach(id => revealed.add(id));
+    waves.push(uniqueWave);
+  }
+
+  return waves;
+}
+
+async function runGrowth() {
+  if (growRunning) {
+    // Stop
+    growAbort = true;
+    return;
+  }
+
+  growRunning = true;
+  growAbort = false;
+  growBtn.textContent = '■ Stop';
+  growBtn.classList.add('running');
+  growCounter.classList.add('visible');
+  growTotal.textContent = nodes.length;
+
+  const waves = buildRevealOrder();
+  const visibleNodes = new Set();
+  let count = 0;
+
+  // Hide everything
+  node.attr('fill-opacity', 0).attr('stroke-opacity', 0).attr('r', 0);
+  link.attr('stroke-opacity', 0);
+  label.attr('fill-opacity', 0);
+
+  // Reset simulation gently
+  simulation.alpha(0.5).restart();
+
+  // Reveal wave by wave
+  for (let w = 0; w < waves.length; w++) {
+    if (growAbort) break;
+
+    const wave = waves[w];
+    const isFirstWave = w === 0;
+    const waveDelay = isFirstWave ? 600 : Math.max(40, 200 - w * 4);
+
+    for (let i = 0; i < wave.length; i++) {
+      if (growAbort) break;
+
+      const nid = wave[i];
+      visibleNodes.add(nid);
+      count++;
+      growCountVal.textContent = count;
+
+      // Pop in the node
+      const nodeData = nodes.find(n => n.id === nid);
+      const targetR = nodeData ? Math.max(nodeData.s * 0.7, 3) : 3;
+      const targetOpacity = (() => {
+        if (!nodeData) return 0.75;
+        if (nodeData.tp === 'source') return 0.3;
+        if (nodeData.tp === 'deployed' || nodeData.tp === 'abandoned') return 0.35;
+        return 0.75;
+      })();
+
+      node.filter(d => d.id === nid)
+        .transition().duration(350).ease(d3.easeBackOut.overshoot(2.5))
+        .attr('r', targetR)
+        .attr('fill-opacity', targetOpacity)
+        .attr('stroke-opacity', 0.4);
+
+      // Show label if applicable
+      label.filter(d => d.id === nid)
+        .transition().delay(150).duration(300)
+        .attr('fill-opacity', 0.7);
+
+      // Reveal edges where both endpoints are now visible
+      link.filter(l => {
+        const sid = typeof l.source === 'object' ? l.source.id : l.source;
+        const tid = typeof l.target === 'object' ? l.target.id : l.target;
+        return (sid === nid || tid === nid) && visibleNodes.has(sid) && visibleNodes.has(tid);
+      })
+        .transition().duration(250)
+        .attr('stroke-opacity', 0.6)
+        .attr('stroke', '#1a1a1a');
+
+      // Stagger within waves
+      const nodeDelay = isFirstWave ? 200 : Math.max(15, 80 - w * 2);
+      await new Promise(r => setTimeout(r, nodeDelay));
+    }
+
+    // Pause between waves
+    if (!growAbort && w < waves.length - 1) {
+      // Brief kick to the simulation so the layout adjusts as nodes appear
+      simulation.alpha(Math.max(0.05, 0.3 - w * 0.01)).restart();
+      await new Promise(r => setTimeout(r, waveDelay));
+    }
+  }
+
+  // Ensure everything visible at end
+  if (!growAbort) {
+    node.transition().duration(400)
+      .attr('r', d => Math.max(d.s * 0.7, 3))
+      .attr('fill-opacity', d => {
+        if (d.tp === 'source') return 0.3;
+        if (d.tp === 'deployed' || d.tp === 'abandoned') return 0.35;
+        return 0.75;
+      })
+      .attr('stroke-opacity', 0.4);
+    link.transition().duration(400).attr('stroke-opacity', 0.6);
+    label.transition().duration(400).attr('fill-opacity', 0.7);
+    growCountVal.textContent = nodes.length;
+  }
+
+  growRunning = false;
+  growAbort = false;
+  growBtn.textContent = '▶ Grow';
+  growBtn.classList.remove('running');
+
+  // Fade counter after a moment
+  setTimeout(() => { growCounter.classList.remove('visible'); }, 3000);
+}
+
+growBtn.addEventListener('click', runGrowth);
+</script>
+</body>
+</html>

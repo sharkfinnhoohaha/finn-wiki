@@ -1,0 +1,144 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0;padding:0;}
+  body{display:grid;grid-template-columns:1fr 1fr;min-height:100vh;font-family:var(--font-sans);}
+  .panel{padding:40px 48px;box-sizing:border-box;position:relative;display:flex;flex-direction:column;}
+  .panel.light{background:#ffffff;color:#0e2439;}
+  .panel.dark{background:#0e2439;color:#faf6ee;}
+
+  /* Tiny meta tag in the corner */
+  .corner{
+    position:absolute;top:20px;left:24px;
+    font-family:'JetBrains Mono',ui-monospace,monospace;
+    font-size:9px;letter-spacing:.22em;text-transform:uppercase;
+    color:#8b8a84;
+  }
+  .panel.dark .corner{color:rgba(250,246,238,0.55);}
+  .corner-r{left:auto;right:24px;}
+
+  /* ── LEFT: portfolio-hero demo ── */
+  .hero{flex:1;display:grid;place-items:center;min-height:240px;position:relative;}
+  .hero-name{
+    font-family:var(--font-display-mono);
+    font-weight:400;font-size:34px;letter-spacing:.30em;
+    text-transform:uppercase;margin:0;color:inherit;
+  }
+  .hero-name .caret{
+    display:inline-block;width:1px;height:1em;
+    background:currentColor;margin-left:.2em;vertical-align:-0.14em;
+    animation:blink 1.1s steps(2,end) infinite;
+  }
+  @keyframes blink{50%{opacity:0;}}
+
+  .footer{display:flex;justify-content:space-between;align-items:flex-end;margin-top:32px;}
+  .nav-list{display:flex;flex-direction:column;gap:10px;text-align:right;}
+  .nav-list a{
+    font-family:var(--font-display-mono);font-weight:400;font-size:12px;
+    letter-spacing:.26em;text-transform:uppercase;text-decoration:none;
+    color:#8b8a84;transition:color .18s;
+  }
+  .nav-list a:hover{color:inherit;}
+  .footer-meta{
+    font-family:'JetBrains Mono',ui-monospace,monospace;
+    font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:#8b8a84;
+  }
+
+  /* ── RIGHT: editorial usage moment on ink ── */
+  .r-body{
+    flex:1;
+    display:grid;
+    grid-template-rows: 1fr auto;
+    padding:56px 0 0 0;
+  }
+  .r-stage{
+    align-self:center;
+    display:flex;flex-direction:column;gap:28px;
+    max-width:440px;
+  }
+  .r-eyebrow{
+    font-family:'JetBrains Mono',ui-monospace,monospace;
+    font-size:10px;letter-spacing:.28em;text-transform:uppercase;
+    color:rgba(250,246,238,0.55);
+    margin:0;
+  }
+  .r-name{
+    font-family:var(--font-display-mono);
+    font-weight:400;
+    font-size:34px;
+    letter-spacing:.26em;
+    line-height:1.1;
+    text-transform:uppercase;
+    margin:0;
+    color:#faf6ee;
+    white-space:nowrap;
+  }
+  .r-quote{
+    font-family:var(--font-sans);
+    font-weight:300;
+    font-size:15px;line-height:1.55;
+    color:rgba(250,246,238,0.78);
+    margin:0;
+    max-width:360px;
+  }
+  .r-rule{
+    width:40px;height:1px;background:rgba(250,246,238,0.35);
+    margin:4px 0;
+  }
+  .r-footer{
+    display:flex;justify-content:space-between;align-items:flex-end;
+  }
+  .r-footer-meta{
+    font-family:'JetBrains Mono',ui-monospace,monospace;
+    font-size:9px;letter-spacing:.22em;text-transform:uppercase;
+    color:rgba(250,246,238,0.5);
+  }
+  .r-caption{
+    font-family:var(--font-display-mono);
+    font-weight:400;font-size:11px;letter-spacing:.26em;
+    text-transform:uppercase;
+    color:rgba(250,246,238,0.55);
+  }
+</style></head>
+<body>
+
+  <!-- LEFT: portfolio-hero style (kept as-is) -->
+  <div class="panel light">
+    <div class="corner">TYPE // DISPLAY-MONO</div>
+    <div class="corner corner-r">01 / 02</div>
+
+    <div class="hero">
+      <h1 class="hero-name">FINN BENNETT<span class="caret"></span></h1>
+    </div>
+
+    <div class="footer">
+      <div class="footer-meta">34.2746° N // 119.2290° W</div>
+      <nav class="nav-list">
+        <a href="#">Work</a>
+        <a href="#">Approach</a>
+        <a href="#">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- RIGHT: editorial usage on ink — one big name, one italic caption -->
+  <div class="panel dark">
+    <div class="corner">IN USE // ON INK</div>
+    <div class="corner corner-r">02 / 02</div>
+
+    <div class="r-body">
+      <div class="r-stage">
+        <p class="r-eyebrow">Space Mono · 400 · 0.30em</p>
+        <h2 class="r-name">Kelly Bennett</h2>
+        <div class="r-rule"></div>
+        <p class="r-quote">A display voice for names and portfolio titles — when the serif feels too warm and the sans too corporate.</p>
+      </div>
+
+      <div class="r-footer">
+        <div class="r-footer-meta">SPACE MONO // GOOGLE FONTS</div>
+        <div class="r-caption">Advisor / Investor</div>
+      </div>
+    </div>
+  </div>
+
+</body></html>

@@ -1,0 +1,6 @@
+.obsidian/
+.trash/
+templates/
+graphify-out/
+.remember/
+.venv/

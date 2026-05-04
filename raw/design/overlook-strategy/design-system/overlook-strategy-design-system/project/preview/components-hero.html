@@ -1,0 +1,17 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body{margin:0;padding:0;background:var(--paper-50);}
+  .hero{height:220px;background:var(--ink-900);color:var(--paper-50);padding:28px 32px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;}
+  .hero::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");opacity:.035;mix-blend-mode:overlay;pointer-events:none;}
+  .eyebrow{font-family:var(--font-mono);font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--tide-300);opacity:.85;margin:0;}
+  .title{font-family:var(--font-serif);font-weight:300;font-size:40px;line-height:1.05;margin:0;max-width:520px;}
+  .meta{font-family:var(--font-mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--tide-300);opacity:.6;display:flex;justify-content:space-between;}
+</style></head>
+<body>
+  <div class="hero">
+    <p class="eyebrow">Overlook Strategy // Agency</p>
+    <h1 class="title"><em style="font-style:italic">Brand and digital systems,</em> built at the coast.</h1>
+    <div class="meta"><span>Ventura, CA // 34.27° N</span><span>Est. 2019</span></div>
+  </div>
+</body></html>

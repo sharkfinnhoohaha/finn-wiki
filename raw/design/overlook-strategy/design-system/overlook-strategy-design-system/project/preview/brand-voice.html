@@ -1,0 +1,135 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body{
+    margin:0;padding:32px;
+    background:var(--paper-100);
+    font-family:var(--font-sans);
+    color:var(--ink-900);
+  }
+
+  .grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px 24px;
+  }
+
+  /* Section label — display mono, small */
+  .head{
+    font-family:var(--font-display-mono);
+    font-weight:400;
+    font-size:10px;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--fog-700);
+    display:flex;align-items:center;gap:10px;
+    margin-bottom:10px;
+  }
+  .head .dash{width:18px;height:1px;background:currentColor;opacity:.6;}
+  .head.neg{color:#b89a7a;}
+
+  /* Quoted body: cream card with hairline */
+  .body{
+    font-family:var(--font-sans);
+    font-size:13px;line-height:1.6;
+    color:var(--ink-900);
+    margin:0;
+    background:var(--paper-50);
+    padding:16px 18px;
+    border:1px solid var(--paper-300);
+    border-left:2px solid var(--ink-900);
+  }
+  .body.bad{
+    color:var(--fog-700);
+    border-left-color:#c9a775;
+    text-decoration:line-through;
+    text-decoration-color:rgba(14,36,57,0.25);
+  }
+
+  /* Mono sample (eyebrow/meta usage) */
+  .mono-sample{
+    font-family:var(--font-display-mono);
+    font-weight:400;
+    font-size:12px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--ink-900);
+    background:var(--paper-50);
+    padding:16px 18px;
+    border:1px solid var(--paper-300);
+    margin:0;
+  }
+
+  /* Pull quote — now display mono on ink, editorial statement */
+  .pullquote-card{
+    grid-column:1 / -1;
+    background:var(--ink-900);
+    color:#faf6ee;
+    padding:40px 44px;
+    display:grid;
+    grid-template-columns:1fr auto;
+    align-items:end;
+    gap:24px;
+    position:relative;
+  }
+  .pullquote{
+    font-family:var(--font-display-mono);
+    font-weight:400;
+    font-size:22px;
+    letter-spacing:.15em;
+    text-transform:uppercase;
+    line-height:1.35;
+    margin:0;
+    color:#faf6ee;
+    max-width:640px;
+  }
+  .pullquote-meta{
+    font-family:'JetBrains Mono',ui-monospace,monospace;
+    font-size:9px;letter-spacing:.24em;text-transform:uppercase;
+    color:rgba(250,246,238,0.55);
+    text-align:right;
+    line-height:1.6;
+  }
+  .pullquote-head{
+    position:absolute;top:20px;left:44px;
+    font-family:var(--font-display-mono);
+    font-size:10px;letter-spacing:.22em;text-transform:uppercase;
+    color:rgba(250,246,238,0.55);
+  }
+</style></head>
+<body>
+
+  <div class="grid">
+
+    <div>
+      <div class="head"><span class="dash"></span>IN VOICE</div>
+      <p class="body">Small client roster. Half-day kickoff on the bluff, notebook open. Ship a system the team can actually run — twelve weeks, fixed scope, no retainer.</p>
+    </div>
+
+    <div>
+      <div class="head neg"><span class="dash"></span>NOT IN VOICE</div>
+      <p class="body bad">We're crafting unparalleled, world-class brand journeys that empower visionary founders to unlock their full potential.</p>
+    </div>
+
+    <div>
+      <div class="head"><span class="dash"></span>META &amp; EYEBROWS</div>
+      <p class="mono-sample">Selected Work&nbsp;&nbsp;//&nbsp;&nbsp;2024&ndash;2026&nbsp;&nbsp;·&nbsp;&nbsp;Ventura, CA</p>
+    </div>
+
+    <div>
+      <div class="head"><span class="dash"></span>SECTION LABEL</div>
+      <p class="mono-sample">01&nbsp;&nbsp;//&nbsp;&nbsp;The Approach</p>
+    </div>
+
+    <div class="pullquote-card">
+      <div class="pullquote-head">Pull Quote // On Ink</div>
+      <p class="pullquote">Measured Counsel.<br>Fixed Scope. Quiet Work.</p>
+      <div class="pullquote-meta">
+        OVERLOOK STRATEGY<br>
+        34.2746° N // 119.2290° W
+      </div>
+    </div>
+
+  </div>
+
+</body></html>

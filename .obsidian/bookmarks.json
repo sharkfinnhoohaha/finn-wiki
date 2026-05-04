@@ -1,0 +1,536 @@
+{
+  "items": [
+    {
+      "type": "graph",
+      "ctime": 1777093616238,
+      "title": "Master Wiki",
+      "options": {
+        "collapse-filter": false,
+        "search": "",
+        "showTags": true,
+        "showAttachments": false,
+        "hideUnresolved": false,
+        "showOrphans": true,
+        "collapse-color-groups": false,
+        "colorGroups": [
+          {
+            "query": "path:wiki/projects",
+            "color": {
+              "a": 1,
+              "rgb": 4886754
+            }
+          },
+          {
+            "query": "path:wiki/concepts",
+            "color": {
+              "a": 1,
+              "rgb": 3394611
+            }
+          },
+          {
+            "query": "path:wiki/business OR path:wiki/clients",
+            "color": {
+              "a": 1,
+              "rgb": 8530280
+            }
+          },
+          {
+            "query": "path:wiki/tech",
+            "color": {
+              "a": 1,
+              "rgb": 1087451
+            }
+          },
+          {
+            "query": "path:wiki/entities",
+            "color": {
+              "a": 1,
+              "rgb": 10066329
+            }
+          },
+          {
+            "query": "path:wiki/personal",
+            "color": {
+              "a": 1,
+              "rgb": 16744448
+            }
+          },
+          {
+            "query": "path:Finn-OS",
+            "color": {
+              "a": 1,
+              "rgb": 16753920
+            }
+          },
+          {
+            "query": "path:wiki/sources",
+            "color": {
+              "a": 1,
+              "rgb": 7368816
+            }
+          },
+          {
+            "query": "path:wiki/workflows",
+            "color": {
+              "a": 1,
+              "rgb": 43775
+            }
+          },
+          {
+            "query": "path:wiki/design",
+            "color": {
+              "a": 1,
+              "rgb": 14483455
+            }
+          }
+        ],
+        "collapse-display": false,
+        "showArrow": true,
+        "textFadeMultiplier": -1.2,
+        "nodeSizeMultiplier": 0.882213541666667,
+        "lineSizeMultiplier": 1,
+        "collapse-forces": false,
+        "centerStrength": 0.583333333333333,
+        "repelStrength": 13.5260416666667,
+        "linkStrength": 0.26484375,
+        "linkDistance": 390,
+        "scale": 0.09915824310430267,
+        "close": false
+      }
+    },
+    {
+      "type": "graph",
+      "ctime": 1777138000000,
+      "title": "Brainstorming",
+      "options": {
+        "collapse-filter": false,
+        "search": "path:Finn-OS OR path:wiki/concepts OR path:wiki/projects/in-progress OR path:wiki/business",
+        "showTags": false,
+        "showAttachments": false,
+        "hideUnresolved": true,
+        "showOrphans": false,
+        "collapse-color-groups": false,
+        "colorGroups": [
+          {
+            "query": "path:wiki/projects",
+            "color": {
+              "a": 1,
+              "rgb": 4886754
+            }
+          },
+          {
+            "query": "path:wiki/concepts",
+            "color": {
+              "a": 1,
+              "rgb": 3394611
+            }
+          },
+          {
+            "query": "path:wiki/business",
+            "color": {
+              "a": 1,
+              "rgb": 8530280
+            }
+          },
+          {
+            "query": "path:Finn-OS",
+            "color": {
+              "a": 1,
+              "rgb": 16753920
+            }
+          }
+        ],
+        "collapse-display": false,
+        "showArrow": true,
+        "textFadeMultiplier": -0.3,
+        "nodeSizeMultiplier": 1.8,
+        "lineSizeMultiplier": 0.8,
+        "collapse-forces": false,
+        "centerStrength": 0.4,
+        "repelStrength": 14,
+        "linkStrength": 0.4,
+        "linkDistance": 320,
+        "scale": 0.15,
+        "close": false
+      }
+    },
+    {
+      "type": "graph",
+      "ctime": 1777138100000,
+      "title": "Business & Clients",
+      "options": {
+        "collapse-filter": false,
+        "search": "path:wiki/business OR path:wiki/clients OR path:Finn-OS/ideas OR path:Finn-OS/career",
+        "showTags": false,
+        "showAttachments": false,
+        "hideUnresolved": true,
+        "showOrphans": false,
+        "collapse-color-groups": false,
+        "colorGroups": [
+          {
+            "query": "path:wiki/business",
+            "color": {
+              "a": 1,
+              "rgb": 8530280
+            }
+          },
+          {
+            "query": "path:wiki/clients",
+            "color": {
+              "a": 1,
+              "rgb": 4886754
+            }
+          },
+          {
+            "query": "path:Finn-OS/ideas",
+            "color": {
+              "a": 1,
+              "rgb": 16753920
+            }
+          },
+          {
+            "query": "path:Finn-OS/career",
+            "color": {
+              "a": 1,
+              "rgb": 3394611
+            }
+          }
+        ],
+        "collapse-display": false,
+        "showArrow": true,
+        "textFadeMultiplier": -0.3,
+        "nodeSizeMultiplier": 1.6,
+        "lineSizeMultiplier": 0.9,
+        "collapse-forces": false,
+        "centerStrength": 0.5,
+        "repelStrength": 12,
+        "linkStrength": 0.5,
+        "linkDistance": 280,
+        "scale": 0.2,
+        "close": false
+      }
+    },
+    {
+      "type": "graph",
+      "ctime": 1777138200000,
+      "title": "Tech Stack",
+      "options": {
+        "collapse-filter": false,
+        "search": "path:wiki/tech OR (path:wiki/entities AND (tag:#tool OR tag:#service))",
+        "showTags": true,
+        "showAttachments": false,
+        "hideUnresolved": true,
+        "showOrphans": false,
+        "collapse-color-groups": false,
+        "colorGroups": [
+          {
+            "query": "path:wiki/tech",
+            "color": {
+              "a": 1,
+              "rgb": 1087451
+            }
+          },
+          {
+            "query": "path:wiki/entities",
+            "color": {
+              "a": 1,
+              "rgb": 10066329
+            }
+          }
+        ],
+        "collapse-display": false,
+        "showArrow": true,
+        "textFadeMultiplier": -0.3,
+        "nodeSizeMultiplier": 1.5,
+        "lineSizeMultiplier": 1,
+        "collapse-forces": false,
+        "centerStrength": 0.5,
+        "repelStrength": 11,
+        "linkStrength": 0.6,
+        "linkDistance": 250,
+        "scale": 0.2,
+        "close": false
+      }
+    },
+    {
+      "type": "graph",
+      "ctime": 1777138300000,
+      "title": "Active Projects",
+      "options": {
+        "collapse-filter": false,
+        "search": "path:wiki/projects/in-progress OR path:wiki/projects/unfinished",
+        "showTags": false,
+        "showAttachments": false,
+        "hideUnresolved": true,
+        "showOrphans": false,
+        "collapse-color-groups": false,
+        "colorGroups": [
+          {
+            "query": "path:wiki/projects/in-progress",
+            "color": {
+              "a": 1,
+              "rgb": 3394611
+            }
+          },
+          {
+            "query": "path:wiki/projects/unfinished",
+            "color": {
+              "a": 1,
+              "rgb": 16744448
+            }
+          }
+        ],
+        "collapse-display": false,
+        "showArrow": true,
+        "textFadeMultiplier": -0.3,
+        "nodeSizeMultiplier": 1.8,
+        "lineSizeMultiplier": 1,
+        "collapse-forces": false,
+        "centerStrength": 0.5,
+        "repelStrength": 10,
+        "linkStrength": 0.6,
+        "linkDistance": 250,
+        "scale": 0.25,
+        "close": false
+      }
+    },
+    {
+      "type": "graph",
+      "ctime": 1777488800000,
+      "title": "Projects ↔ Stack",
+      "options": {
+        "collapse-filter": false,
+        "search": "path:wiki/projects OR path:wiki/tech/stack OR path:wiki/entities",
+        "showTags": false,
+        "showAttachments": false,
+        "hideUnresolved": true,
+        "showOrphans": false,
+        "collapse-color-groups": false,
+        "colorGroups": [
+          {
+            "query": "path:wiki/projects/in-progress",
+            "color": {
+              "a": 1,
+              "rgb": 3394611
+            }
+          },
+          {
+            "query": "path:wiki/projects/unfinished",
+            "color": {
+              "a": 1,
+              "rgb": 16744448
+            }
+          },
+          {
+            "query": "path:wiki/projects/deployed",
+            "color": {
+              "a": 1,
+              "rgb": 10066329
+            }
+          },
+          {
+            "query": "path:wiki/projects/abandoned",
+            "color": {
+              "a": 1,
+              "rgb": 5921370
+            }
+          },
+          {
+            "query": "path:wiki/tech/stack",
+            "color": {
+              "a": 1,
+              "rgb": 1087451
+            }
+          },
+          {
+            "query": "path:wiki/entities",
+            "color": {
+              "a": 1,
+              "rgb": 13421772
+            }
+          }
+        ],
+        "collapse-display": false,
+        "showArrow": true,
+        "textFadeMultiplier": -0.5,
+        "nodeSizeMultiplier": 1.6,
+        "lineSizeMultiplier": 1,
+        "collapse-forces": false,
+        "centerStrength": 0.5,
+        "repelStrength": 12,
+        "linkStrength": 0.5,
+        "linkDistance": 280,
+        "scale": 0.18,
+        "close": false
+      }
+    },
+    {
+      "type": "graph",
+      "ctime": 1777825008670,
+      "title": "Work life business view",
+      "options": {
+        "collapse-filter": true,
+        "search": "path:Finn-OS OR path:wiki/concepts OR path:wiki/projects/in-progress OR path:wiki/business",
+        "showTags": false,
+        "showAttachments": true,
+        "hideUnresolved": true,
+        "showOrphans": false,
+        "collapse-color-groups": true,
+        "colorGroups": [
+          {
+            "query": "path:wiki/projects",
+            "color": {
+              "a": 1,
+              "rgb": 2027264
+            }
+          },
+          {
+            "query": "path:wiki/concepts",
+            "color": {
+              "a": 1,
+              "rgb": 6488162
+            }
+          },
+          {
+            "query": "path:wiki/business",
+            "color": {
+              "a": 1,
+              "rgb": 1437
+            }
+          },
+          {
+            "query": "path:Finn-OS",
+            "color": {
+              "a": 1,
+              "rgb": 13172736
+            }
+          }
+        ],
+        "collapse-display": true,
+        "showArrow": true,
+        "textFadeMultiplier": -0.5,
+        "nodeSizeMultiplier": 0.929183746212796,
+        "lineSizeMultiplier": 0.8,
+        "collapse-forces": true,
+        "centerStrength": 0.294689003742648,
+        "repelStrength": 8.97344501871324,
+        "linkStrength": 0.517109249688113,
+        "linkDistance": 155,
+        "scale": 0.5360520278462064,
+        "close": false
+      }
+    },
+    {
+      "type": "graph",
+      "ctime": 1777825100599,
+      "title": "Inspo view ",
+      "options": {
+        "collapse-filter": false,
+        "search": "path:Finn-OS OR path:wiki/concepts OR path:wiki/projects/in-progress OR path:wiki/business",
+        "showTags": true,
+        "showAttachments": true,
+        "hideUnresolved": true,
+        "showOrphans": true,
+        "collapse-color-groups": false,
+        "colorGroups": [
+          {
+            "query": "path:wiki/projects",
+            "color": {
+              "a": 1,
+              "rgb": 1143
+            }
+          },
+          {
+            "query": "path:wiki/concepts",
+            "color": {
+              "a": 1,
+              "rgb": 8323059
+            }
+          },
+          {
+            "query": "path:wiki/business",
+            "color": {
+              "a": 1,
+              "rgb": 59905
+            }
+          },
+          {
+            "query": "path:Finn-OS",
+            "color": {
+              "a": 1,
+              "rgb": 16449536
+            }
+          }
+        ],
+        "collapse-display": false,
+        "showArrow": true,
+        "textFadeMultiplier": -2.5,
+        "nodeSizeMultiplier": 1.8,
+        "lineSizeMultiplier": 0.8,
+        "collapse-forces": false,
+        "centerStrength": 0.4,
+        "repelStrength": 14,
+        "linkStrength": 0.4,
+        "linkDistance": 320,
+        "scale": 0.28412503609068207,
+        "close": true
+      }
+    },
+    {
+      "type": "graph",
+      "ctime": 1777834396107,
+      "title": "New color scheme",
+      "options": {
+        "collapse-filter": false,
+        "search": "path:Finn-OS OR path:wiki/concepts OR path:wiki/projects/in-progress OR path:wiki/business",
+        "showTags": false,
+        "showAttachments": true,
+        "hideUnresolved": false,
+        "showOrphans": true,
+        "collapse-color-groups": true,
+        "colorGroups": [
+          {
+            "query": "path:wiki/projects",
+            "color": {
+              "a": 1,
+              "rgb": 12417024
+            }
+          },
+          {
+            "query": "path:wiki/concepts",
+            "color": {
+              "a": 1,
+              "rgb": 16956
+            }
+          },
+          {
+            "query": "path:wiki/business",
+            "color": {
+              "a": 1,
+              "rgb": 163330
+            }
+          },
+          {
+            "query": "path:Finn-OS",
+            "color": {
+              "a": 1,
+              "rgb": 11010048
+            }
+          }
+        ],
+        "collapse-display": true,
+        "showArrow": true,
+        "textFadeMultiplier": 0,
+        "nodeSizeMultiplier": 0.706545138888889,
+        "lineSizeMultiplier": 0.329262152777778,
+        "collapse-forces": false,
+        "centerStrength": 0.408767361111111,
+        "repelStrength": 5.79861111111111,
+        "linkStrength": 0.812239583333333,
+        "linkDistance": 237,
+        "scale": 0.5888952444718092,
+        "close": true
+      }
+    }
+  ]
+}

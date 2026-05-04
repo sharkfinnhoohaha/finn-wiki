@@ -1,0 +1,8 @@
+{
+  "enabledCssSnippets": [
+    "graph-views"
+  ],
+  "translucency": true,
+  "theme": "obsidian",
+  "accentColor": "#2d25a7"
+}

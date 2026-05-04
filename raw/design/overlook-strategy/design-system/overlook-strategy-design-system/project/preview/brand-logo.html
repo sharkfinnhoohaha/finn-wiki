@@ -1,0 +1,83 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body{margin:0;padding:28px;background:var(--paper-100);font-family:var(--font-sans);}
+  .logos{display:flex;gap:28px;align-items:flex-start;flex-wrap:wrap;}
+  .unit{display:flex;flex-direction:column;align-items:center;}
+
+  /* Paper tile — original artwork, untouched */
+  .box{
+    background:var(--paper-50);
+    border:1px solid var(--paper-300);
+    padding:18px;
+    display:flex;align-items:center;justify-content:center;
+    width:140px;height:140px;box-sizing:border-box;
+  }
+  .box.full{width:280px;}
+
+  /* Dark business-card back: wider tile, mark left, wordmark right */
+  .card-dark{
+    background:var(--ink-900);
+    width:280px;height:140px;box-sizing:border-box;
+    padding:22px 26px;
+    display:grid;grid-template-columns:auto 1px 1fr;gap:20px;align-items:center;
+    color:#faf6ee;
+  }
+  .card-dark img{
+    width:72px;height:72px;object-fit:contain;
+    filter:invert(1) hue-rotate(180deg) brightness(1.1);
+  }
+  .card-dark .rule{width:1px;height:64px;background:rgba(250,246,238,0.22);}
+  .card-dark .wm{display:flex;flex-direction:column;gap:8px;}
+  .card-dark .wm-name{
+    font-family:var(--font-display-mono);
+    font-weight:400;font-size:13px;letter-spacing:.22em;
+    text-transform:uppercase;color:#faf6ee;
+  }
+  .card-dark .wm-meta{
+    font-family:'JetBrains Mono',ui-monospace,monospace;
+    font-size:8.5px;letter-spacing:.22em;text-transform:uppercase;
+    color:rgba(250,246,238,0.55);line-height:1.5;
+  }
+
+  img{display:block;}
+  .mark-img{width:88px;height:88px;object-fit:contain;}
+  .full-img{width:240px;height:100px;object-fit:contain;}
+
+  .lbl{
+    font-family:var(--font-mono);font-size:10px;letter-spacing:.2em;
+    text-transform:uppercase;color:var(--fog-700);
+    margin-top:10px;text-align:center;max-width:220px;line-height:1.4;
+  }
+</style></head>
+<body>
+  <div class="logos">
+
+    <div class="unit">
+      <div class="box">
+        <img class="mark-img" src="../assets/overlook-logo.png" alt="Overlook mark on paper">
+      </div>
+      <div class="lbl">Square Mark · on Paper</div>
+    </div>
+
+    <div class="unit">
+      <div class="card-dark">
+        <img src="../assets/overlook-logo.png" alt="Overlook mark">
+        <div class="rule"></div>
+        <div class="wm">
+          <div class="wm-name">Overlook</div>
+          <div class="wm-meta">Strategy<br>Ventura, CA</div>
+        </div>
+      </div>
+      <div class="lbl">Business Card · Back (Ink)</div>
+    </div>
+
+    <div class="unit">
+      <div class="box full">
+        <img class="full-img" src="../assets/overlook-business-card.png" alt="Business card">
+      </div>
+      <div class="lbl">Business Card · Full Lockup</div>
+    </div>
+
+  </div>
+</body></html>

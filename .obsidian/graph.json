@@ -1,0 +1,65 @@
+{
+  "collapse-filter": false,
+  "search": "path:wiki/projects OR path:wiki/tech/stack OR path:wiki/entities",
+  "showTags": false,
+  "showAttachments": false,
+  "hideUnresolved": true,
+  "showOrphans": false,
+  "collapse-color-groups": true,
+  "colorGroups": [
+    {
+      "query": "path:wiki/projects/in-progress",
+      "color": {
+        "a": 1,
+        "rgb": 4678215
+      }
+    },
+    {
+      "query": "path:wiki/projects/unfinished",
+      "color": {
+        "a": 1,
+        "rgb": 8545093
+      }
+    },
+    {
+      "query": "path:wiki/projects/deployed",
+      "color": {
+        "a": 1,
+        "rgb": 7751540
+      }
+    },
+    {
+      "query": "path:wiki/projects/abandoned",
+      "color": {
+        "a": 1,
+        "rgb": 5921370
+      }
+    },
+    {
+      "query": "path:wiki/tech/stack",
+      "color": {
+        "a": 1,
+        "rgb": 5273739
+      }
+    },
+    {
+      "query": "path:wiki/entities",
+      "color": {
+        "a": 1,
+        "rgb": 6499372
+      }
+    }
+  ],
+  "collapse-display": true,
+  "showArrow": true,
+  "textFadeMultiplier": -0.9,
+  "nodeSizeMultiplier": 0.740572916666667,
+  "lineSizeMultiplier": 1,
+  "collapse-forces": false,
+  "centerStrength": 0.5,
+  "repelStrength": 12.7552083333333,
+  "linkStrength": 0.374392361111111,
+  "linkDistance": 500,
+  "scale": 0.23783953624649992,
+  "close": true
+}

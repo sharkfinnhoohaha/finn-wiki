@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Overlook Strategy — Marketing Site UI Kit</title>
+<link rel="stylesheet" href="../../colors_and_type.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<style>
+  html,body{margin:0;background:#ffffff;}
+  :root{
+    --ink-900:#0e2439;--ink-800:#122f39;--ink-700:#1f3d5a;
+    --paper-50:#ffffff;--paper-100:#fbfaf7;--paper-200:#f2f4f2;--paper-300:#e2e4e1;
+    --tide-300:#8fc4c1;--tide-500:#4a9d97;
+    --jade-700:#2f5d46;
+    --fog-500:#8b8a84;--fog-700:#555450;
+    --font-sans:'Inter',system-ui,sans-serif;
+    --font-serif:'Libre Caslon Text','Cormorant Garamond',Georgia,serif;
+    --font-mono:'JetBrains Mono',ui-monospace,monospace;
+  }
+  *{box-sizing:border-box;}
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<script type="text/babel" data-presets="react">
+  const { useState } = React;
+
+  // ── Nav ──────────────────────────────────────────────────────────
+  const Nav = () => {
+    const [hov, setHov] = useState(null);
+    const links = ['Work','Approach','Studio','Contact'];
+    return (
+      <nav style={{
+        position:'absolute',top:0,left:0,right:0,zIndex:50,
+        display:'flex',justifyContent:'space-between',alignItems:'center',
+        padding:'24px 56px',
+        background:'transparent',
+      }}>
+        <a href="#" style={{
+          fontFamily:'var(--font-serif)',fontSize:13,letterSpacing:'0.14em',
+          textTransform:'uppercase',color:'var(--ink-900)',textDecoration:'none',fontWeight:500,
+        }}>Overlook Strategy</a>
+
+        <div style={{display:'flex',gap:32,alignItems:'center'}}>
+          {links.map((l,i)=>(
+            <a key={l} href={`#${l.toLowerCase()}`}
+               onMouseEnter={()=>setHov(i)} onMouseLeave={()=>setHov(null)}
+               style={{
+                fontFamily:'var(--font-sans)',fontSize:12,fontWeight:500,letterSpacing:'0.01em',
+                color: i===0||hov===i ? 'var(--ink-900)' : 'var(--fog-500)',
+                textDecoration:'none',
+                borderBottom: i===0 ? '1px solid var(--ink-900)' : '1px solid transparent',
+                paddingBottom:2,transition:'color 180ms',
+              }}>{l}</a>
+          ))}
+        </div>
+
+        <a href="#contact" style={{
+          fontFamily:'var(--font-sans)',fontSize:12,fontWeight:500,
+          color:'#ffffff',background:'var(--ink-900)',
+          padding:'9px 20px',borderRadius:999,textDecoration:'none',
+        }}>Connect</a>
+      </nav>
+    );
+  };
+
+  // ── Hero ─────────────────────────────────────────────────────────
+  const Hero = () => (
+    <section style={{
+      background:'#ffffff',padding:'180px 56px 120px',
+      borderBottom:'1px solid var(--paper-300)',
+    }}>
+      <div style={{maxWidth:1200,margin:'0 auto'}}>
+        <p style={{
+          fontFamily:'var(--font-mono)',fontSize:10,letterSpacing:'0.3em',
+          textTransform:'uppercase',color:'var(--fog-500)',margin:0,marginBottom:40,
+        }}>Agency — Est. 2019</p>
+
+        <h1 style={{
+          fontFamily:'var(--font-serif)',fontWeight:400,
+          fontSize:'clamp(52px, 7vw, 90px)',lineHeight:1.02,
+          letterSpacing:'-0.02em',maxWidth:860,margin:0,
+          color:'var(--ink-900)',
+        }}>
+          Brand and digital systems, built at the coast.
+        </h1>
+
+        <div style={{marginTop:48,display:'grid',gridTemplateColumns:'1fr auto',alignItems:'end',gap:48,maxWidth:860}}>
+          <p style={{
+            fontFamily:'var(--font-serif)',fontWeight:400,
+            fontSize:17,lineHeight:1.7,margin:0,
+            color:'var(--fog-700)',maxWidth:520,
+          }}>
+            We work with a small number of clients a year. Every engagement
+            starts with a half-day on the bluff — phone off, notebook open —
+            and ends with a system your team can actually run.
+          </p>
+          <div style={{display:'flex',gap:10,flexShrink:0}}>
+            <a href="#contact" style={{
+              fontFamily:'var(--font-sans)',fontSize:13,fontWeight:500,
+              color:'#ffffff',background:'var(--ink-900)',
+              padding:'13px 24px',borderRadius:999,textDecoration:'none',
+            }}>Start a project</a>
+            <a href="#work" style={{
+              fontFamily:'var(--font-sans)',fontSize:13,fontWeight:500,
+              color:'var(--ink-900)',border:'1px solid var(--paper-300)',
+              padding:'12px 24px',borderRadius:999,textDecoration:'none',
+            }}>View work</a>
+          </div>
+        </div>
+
+        <div style={{
+          marginTop:96,display:'flex',gap:48,
+          fontFamily:'var(--font-mono)',fontSize:10,letterSpacing:'0.2em',
+          textTransform:'uppercase',color:'var(--paper-300)',
+        }}>
+          <span>34.2746° N</span>
+          <span>119.2290° W</span>
+          <span>Ventura, CA</span>
+        </div>
+      </div>
+    </section>
+  );
+
+  // ── Approach ─────────────────────────────────────────────────────
+  const APPROACH = [
+    {num:'01',title:'Listen',body:'A half-day on the bluff. You talk, we take notes. We leave with a shared picture of what the business actually is — not what the pitch deck says.'},
+    {num:'02',title:'Draw',body:'Two weeks, on paper first. Identity, voice, and the three screens that matter. We present in person, in one sitting, and cut what does not hold up.'},
+    {num:'03',title:'Build',body:'Six to ten weeks to ship. Real code, real copy, real photography. When we hand over, your team owns the system — files, fonts, deploy keys, the lot.'},
+  ];
+  const Approach = () => (
+    <section id="approach" style={{background:'var(--paper-100)',padding:'96px 56px'}}>
+      <div style={{maxWidth:1200,margin:'0 auto'}}>
+        <div style={{display:'flex',justifyContent:'space-between',alignItems:'baseline',marginBottom:64,paddingBottom:16,borderBottom:'1px solid var(--paper-300)'}}>
+          <span style={{fontFamily:'var(--font-mono)',fontSize:10,letterSpacing:'0.28em',textTransform:'uppercase',color:'var(--fog-500)'}}>Approach</span>
+          <span style={{fontFamily:'var(--font-mono)',fontSize:10,letterSpacing:'0.28em',textTransform:'uppercase',color:'var(--paper-300)'}}>§ 01</span>
+        </div>
+        <h2 style={{fontFamily:'var(--font-serif)',fontWeight:400,fontSize:'clamp(32px,4vw,52px)',lineHeight:1.12,letterSpacing:'-0.015em',color:'var(--ink-900)',margin:0,marginBottom:72,maxWidth:800}}>
+          Three stages, in order. No decks, no retainer creep, no surprises.
+        </h2>
+        <div style={{display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:1,background:'var(--paper-300)'}}>
+          {APPROACH.map(({num,title,body})=>(
+            <div key={num} style={{background:'#ffffff',padding:'36px 32px',display:'flex',flexDirection:'column',gap:20}}>
+              <span style={{fontFamily:'var(--font-mono)',fontSize:10,letterSpacing:'0.3em',color:'var(--fog-500)'}}>{num}</span>
+              <h3 style={{fontFamily:'var(--font-serif)',fontWeight:400,fontSize:26,lineHeight:1.1,color:'var(--ink-900)',margin:0,letterSpacing:'-0.01em'}}>{title}</h3>
+              <p style={{fontFamily:'var(--font-serif)',fontSize:15,lineHeight:1.65,color:'var(--fog-700)',margin:0}}>{body}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+
+  // ── Work ─────────────────────────────────────────────────────────
+  const WORK = [
+    {num:'01',name:'Johnson Aviation',type:'Identity · Web',year:'2025',tag:'Agency Site',desc:'Strategic airport planning firm — land use, facilities, and financial advisory.'},
+    {num:'02',name:'Overlook Audio',type:'Identity · Web',year:'2024',tag:'Studio Site',desc:'Recording studio and live sound production in Ventura.'},
+    {num:'03',name:'Mineral King',type:'Brand · Packaging',year:'2024',tag:'Record Label',desc:'Independent label identity and vinyl sleeve system.'},
+    {num:'04',name:'Channel Coast Surveyors',type:'Identity',year:'2023',tag:'Civic',desc:'Coastal survey cooperative — mark, stationery, and field report template.'},
+    {num:'05',name:'The Long View',type:'Editorial',year:'2023',tag:'Journal',desc:'A small-run printed journal on strategy, slowness, and place.'},
+  ];
+  const Work = () => {
+    const [hov, setHov] = useState(null);
+    return (
+      <section id="work" style={{background:'#ffffff',padding:'96px 56px'}}>
+        <div style={{maxWidth:1200,margin:'0 auto'}}>
+          <div style={{display:'flex',justifyContent:'space-between',alignItems:'baseline',marginBottom:0,paddingBottom:16,borderBottom:'1px solid var(--ink-900)'}}>
+            <span style={{fontFamily:'var(--font-mono)',fontSize:10,letterSpacing:'0.28em',textTransform:'uppercase',color:'var(--fog-500)'}}>Selected Work</span>
+            <span style={{fontFamily:'var(--font-mono)',fontSize:10,letterSpacing:'0.28em',textTransform:'uppercase',color:'var(--fog-500)'}}>{WORK.length} projects · 2023–2026</span>
+          </div>
+          {WORK.map((w,i)=>{
+            const h = hov===i;
+            return (
+              <a key={w.num} href="#"
+                onMouseEnter={()=>setHov(i)} onMouseLeave={()=>setHov(null)}
+                style={{
+                  display:'grid',gridTemplateColumns:'48px 1fr 200px 96px 64px',
+                  gap:24,alignItems:'center',padding:'20px 0',
+                  borderBottom:'1px solid var(--paper-300)',textDecoration:'none',
+                  background: h ? 'var(--paper-100)' : 'transparent',
+                  paddingLeft: h ? 12 : 0, paddingRight: h ? 12 : 0,
+                  transition:'all 200ms ease',
+                }}>
+                <span style={{fontFamily:'var(--font-mono)',fontSize:10,letterSpacing:'0.3em',color:'var(--paper-300)'}}>{w.num}</span>
+                <span style={{fontFamily:'var(--font-serif)',fontWeight:400,fontSize:24,color:'var(--ink-900)',letterSpacing:'-0.01em'}}>{w.name}</span>
+                <span style={{fontFamily:'var(--font-sans)',fontSize:13,color: h ? 'var(--ink-700)' : 'var(--fog-500)'}}>{h ? w.desc : w.type}</span>
+                <span style={{fontFamily:'var(--font-mono)',fontSize:10,letterSpacing:'0.18em',textTransform:'uppercase',color:'var(--fog-500)'}}>{w.tag}</span>
+                <span style={{fontFamily:'var(--font-mono)',fontSize:12,color:'var(--ink-900)',textAlign:'right'}}>{w.year}{h?' →':''}</span>
+              </a>
+            );
+          })}
+          <div style={{marginTop:48,display:'flex',justifyContent:'center'}}>
+            <a href="#" style={{fontFamily:'var(--font-sans)',fontSize:12,fontWeight:500,color:'var(--ink-900)',textDecoration:'none',border:'1px solid var(--paper-300)',borderRadius:999,padding:'11px 22px'}}>Full archive →</a>
+          </div>
+        </div>
+      </section>
+    );
+  };
+
+  // ── Contact ───────────────────────────────────────────────────────
+  const BEACONS = [
+    {label:'hello@overlookstrategy.com',sub:'Email'},
+    {label:'818-292-6974',sub:'Telephone'},
+    {label:'@overlook.strategy',sub:'Instagram'},
+  ];
+  const Contact = () => (
+    <section id="contact" style={{background:'var(--ink-900)',color:'#ffffff',padding:'96px 56px 48px'}}>
+      <div style={{maxWidth:1200,margin:'0 auto'}}>
+        <div style={{display:'flex',justifyContent:'space-between',alignItems:'baseline',paddingBottom:16,borderBottom:'1px solid rgba(255,255,255,0.1)',marginBottom:56}}>
+          <span style={{fontFamily:'var(--font-mono)',fontSize:10,letterSpacing:'0.28em',textTransform:'uppercase',color:'rgba(255,255,255,0.4)'}}>Studio</span>
+          <span style={{fontFamily:'var(--font-mono)',fontSize:10,letterSpacing:'0.28em',textTransform:'uppercase',color:'rgba(255,255,255,0.2)'}}>§ 03</span>
+        </div>
+        <h2 style={{fontFamily:'var(--font-serif)',fontWeight:400,fontSize:'clamp(36px,5.5vw,72px)',lineHeight:1.06,letterSpacing:'-0.02em',color:'#ffffff',margin:0,marginBottom:64,maxWidth:900}}>
+          The fewer meetings, the better. Write, call, or come up to the bluff.
+        </h2>
+        <div style={{display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:1,background:'rgba(255,255,255,0.08)',marginBottom:80}}>
+          {BEACONS.map(b=>(
+            <a key={b.label} href="#" style={{
+              padding:'28px 28px',background:'var(--ink-900)',
+              textDecoration:'none',color:'#ffffff',
+              display:'flex',flexDirection:'column',gap:10,
+              transition:'background 200ms',
+            }}
+            onMouseEnter={e=>e.currentTarget.style.background='var(--ink-800)'}
+            onMouseLeave={e=>e.currentTarget.style.background='var(--ink-900)'}>
+              <span style={{fontFamily:'var(--font-mono)',fontSize:10,letterSpacing:'0.3em',textTransform:'uppercase',color:'var(--tide-300)'}}>{b.sub}</span>
+              <span style={{fontFamily:'var(--font-sans)',fontSize:15,fontWeight:500,color:'#ffffff'}}>{b.label} →</span>
+            </a>
+          ))}
+        </div>
+        <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',paddingTop:24,borderTop:'1px solid rgba(255,255,255,0.1)',fontFamily:'var(--font-mono)',fontSize:10,letterSpacing:'0.2em',textTransform:'uppercase',color:'rgba(255,255,255,0.3)'}}>
+          <span style={{fontFamily:'var(--font-serif)',fontSize:13,letterSpacing:'0.12em',textTransform:'uppercase',color:'rgba(255,255,255,0.6)',fontWeight:500}}>Overlook Strategy</span>
+          <span>34.2746° N // 119.2290° W</span>
+          <span>© 2026 Overlook Strategy, LLC</span>
+        </div>
+      </div>
+    </section>
+  );
+
+  const App = () => (
+    <div style={{position:'relative'}}>
+      <Nav/>
+      <Hero/>
+      <Approach/>
+      <Work/>
+      <Contact/>
+    </div>
+  );
+  ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>
+</body>
+</html>

@@ -1,0 +1,222 @@
+{
+  "main": {
+    "id": "d010060d89a3f8d9",
+    "type": "split",
+    "children": [
+      {
+        "id": "5cc3faae94e85d40",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ac7f415bc417ff2a",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "1be5460195516630",
+    "type": "split",
+    "children": [
+      {
+        "id": "39c4641b951b243f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "29e0d34cae7a7b1b",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "61384af2a021ea5d",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "1ce961922f6588e4",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "8d991a7b1baed1e0",
+    "type": "split",
+    "children": [
+      {
+        "id": "31a9fa5af62c9d30",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c684c3aec931ef63",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "bef101c897d31d96",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "2a1c4029a74bdf81",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "063a4a2ad60271ca",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "cb2dc7d4545b1952",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false,
+      "templater-obsidian:Templater": false,
+      "obsidian-excalidraw-plugin:New drawing": false,
+      "obsidian-kanban:Create new board": false
+    }
+  },
+  "active": "ac7f415bc417ff2a",
+  "lastOpenFiles": [
+    "overlook-strategy-design-system-overview.md",
+    "graphify-out/wiki/Project_Status_Dashboard.md",
+    "Untitled Kanban 2.md",
+    "Excalidraw/Drawing 2026-04-26 09.52.45.excalidraw.md",
+    "Untitled Kanban 1.md",
+    "Untitled 1.base",
+    "2026-04-26.md",
+    "Untitled 2.canvas",
+    "wiki/concepts/llm-wiki-pattern.md",
+    "Untitled 1.canvas",
+    "Untitled Kanban.md",
+    "Excalidraw/Drawing 2026-04-25 13.42.54.excalidraw.md",
+    "Excalidraw",
+    "Untitled.base",
+    "wiki/entities/stack-tools.md",
+    "wiki/projects/abandoned-archive.md",
+    "wiki/tech/living-config-files.md",
+    "wiki/tech/openclaw-architecture.md",
+    "wiki/concepts/discord-hub-pattern.md",
+    "wiki/concepts/autonomous-agent-design-principles.md",
+    "wiki/concepts/living-config-files.md",
+    "wiki/concepts/loopiness-framework.md",
+    "wiki/entities/alex-krentsel.md",
+    "wiki/sources/krentsel-openclaw-deep-dive.md",
+    "wiki/sources/openclaw-deep-dive-krentsel.md",
+    "raw/openclaw-deep-dive-krentsel.md",
+    "raw/krentsel-openclaw-deep-dive.md",
+    "wiki/entities/trigger-dev.md",
+    "wiki/entities/n8n.md",
+    "wiki/entities/lindy-ai.md",
+    "wiki/entities/openclaw.md",
+    "raw/simple-ui-viral-ai-app-strategies",
+    "raw/overlook-strategy-notebooklm",
+    "raw/mastering-agentic-workflows-with-claude-code",
+    "Untitled.canvas"
+  ]
+}
