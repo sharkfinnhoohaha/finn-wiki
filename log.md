@@ -964,3 +964,40 @@ Pages created: [[openclaw-airtable-spine]]
 Pages updated: [[index]] (in-progress count 15→16, added under OpenClaw fleet subsection)
 Finn-OS touched: no
 Open threads: 5 verification questions for Finn (HyperAgent trigger semantics, PAT scoping, notes ergonomics, auto-merge policy, events retention).
+
+## [2026-05-06] ingest | YouTube — Isenberg × Frey Chu: I built a Cash Flowing Online Directory in 54 minutes
+
+Source: `https://youtu.be/6rAHkSyzfNA?si=lY5wl1qZiNUC_7Ag` — Greg Isenberg's *Startup Ideas* podcast (54:11), guest Frey Chu, originally aired 2025-02-12. 316,616 views / 8,014 likes / 476 comments at ingest. Frey's first podcast appearance — "online directory king" per Greg, sits on multiple monetized properties (first one running 18 months at ~$2,300/mo on ~15 min/mo of upkeep). Pulled transcript via yt-dlp; full plain-text + timestamped + VTT + info.json all in `raw/`. Finn dropped this for ingest pre-bedtime, no angle steer — filed per the standard Frey-Chu / Isenberg rhythm.
+
+Pages created (5):
+- [[isenberg-frey-chu-directory-2025]] (`wiki/sources/`) — full source summary with TL;DR, six-step methodology recap, Greg's directories-as-SaaS-funnel thesis, examples table (Roadside America / Atlas Obscura / Find a Grave / BringFido / NyaBone / CSA-farms), and a candidate-niches table for Finn-domain directories
+- [[profitable-directory-pattern]] (`wiki/concepts/`) — methodology page, end-to-end. Six ordered steps, selection criteria, stack mapping, what-can-go-wrong, connection table to existing wiki concepts ([[boring-business-automation]], [[services-first-saas]], [[agent-native-saas]], [[overlook-vertical-landing-pages]], [[pier-and-point]])
+- [[static-pillar-page-directory]] (`wiki/concepts/`) — the SEO format Frey uses inside the build. One enormous static page structured by city sections, out-SEOs prettier programmatic directories on the highest-volume keyword cluster
+- [[frey-chu]] (`wiki/entities/`) — new entity. Self-described "encoder," first podcast appearance, multiple monetized directories. YouTube `@freychu`, X `@freychu`. Calls Claude "Cloe"
+- [[outscraper]] (`wiki/entities/`) — new entity. Google Maps scraping tool, Frey's default for step 3 of the methodology. Capabilities, quirks, alternatives
+- [[business-ideas-finn-domain-directories]] (`wiki/business/`) — meta-page indexing Finn-specific directory candidates against Frey's selection criteria. Six niches scored: recording studios, music supervisors, mastering/mixing engineers, FBO directory, yacht brokers, Ventura County local services. Most promising: Ventura County as a layer underneath [[pier-and-point]]
+
+Pages updated (4):
+- [[greg-isenberg]] (`wiki/entities/`) — fourth source from this channel; added [[frey-chu]] under recurring guests; updated `sources` and `Related` lists
+- [[boring-business-automation]] (`wiki/concepts/`) — added "Directories as the demand-side surface" section. Frey Chu's pattern is the missing tactical front-end for this concept — earn the audience via SEO instead of cold email
+- [[services-first-saas]] (`wiki/concepts/`) — added "Three free-distribution wedges into the SaaS layer" section. SEO-as-distribution via directories joins services-first and media-first as the third composable wedge
+- [[business-ideas-backlog]] (`wiki/business/`) — added "Directories (Isenberg × Frey Chu, May 2026)" section indexing the six candidate niches with one-liner positioning per niche
+- [[index.md]] — added [[frey-chu]] to People & organizations, [[outscraper]] + [[ahrefs]] to Tools & services, new "Directory operator pile" subsection under Business, new "Directory pattern" subsection under Concepts → Distribution / category theses, and the new source line under Sources
+
+### Career/business relevance: YES (dual-filed)
+
+[[Finn-OS/ideas/backlog]]: appended seven new bullets under "New ideas" (one meta-bullet for the directory pattern + six per-niche candidate bullets, all linking [[business-ideas-finn-domain-directories]] / the source page / [[profitable-directory-pattern]]). Bumped `updated` to 2026-05-06.
+
+[[Finn-OS/now]]: not modified. Frey's methodology is captured into ideas/backlog rather than now.md because no time-bound commitment exists yet — the build hasn't been picked, so the open thread is "decide the niche during weekly review" not "execute this week."
+
+[[Finn-OS/career/opportunities]] / [[skills]] / [[goals]]: not modified.
+
+### Why this earned its place
+
+This source closes a tactical gap in the existing strategic frame. The wiki already has [[boring-business-automation]] (the meta-target market), [[services-first-saas]] (sequencing thesis), and [[agent-native-saas]] (the SaaS shape). What was missing was a concrete, ordered recipe for getting from zero to first-traffic without sales effort. Frey's methodology is that recipe. The Greg-thesis update — directories as SEO-as-distribution into a vertical SaaS — also closes the third side of the distribution triangle that started forming at the [[isenberg-future-of-saas-30-step|30-step ingest]] (services-first, media-first, now SEO-as-distribution).
+
+Six Finn-domain candidate niches scored. Sequencing recommendation in [[business-ideas-finn-domain-directories]] is to run a 30-min Ahrefs pass against the candidate list before committing — the methodology is gated on niche selection.
+
+### Token discipline notes
+
+Single Opus session, no subagents — full transcript fit comfortably in context (~8.6K words plain text). Used yt-dlp directly in the sandbox for transcript pull (no JS runtime warnings caused issues). No web-fetch beyond YouTube oEmbed for title/channel verification. Total ingest is ~33K tokens including this log entry.

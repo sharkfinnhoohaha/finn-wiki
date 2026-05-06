@@ -1,17 +1,15 @@
 ---
 title: "Business Ideas — Backlog"
 type: business
-tags: [ideas, backlog, gearflip, overlook-strategy, three-altitudes, chrome-extensions]
+tags: [ideas, backlog, gearflip, overlook-strategy, three-altitudes, chrome-extensions, directories]
 created: 2026-04-24
-updated: 2026-04-30
-weight: high
-node_size: 10
-sources: [[local_1cfa988a-77d5-42b5-acb8-90109fcff213]], [[local_2a27ba0d-cb52-43ef-bbf7-83d2f5f1888f]], [[local_dec9a139-56d8-4a6c-8e9c-ad17f2bf5a53]], [[local_65f6bd58-1447-4afc-948b-6b9efd97150a]], [[isenberg-paid-chrome-extensions-2024]]
+updated: 2026-05-06
+sources: [[local_1cfa988a-77d5-42b5-acb8-90109fcff213]], [[local_2a27ba0d-cb52-43ef-bbf7-83d2f5f1888f]], [[local_dec9a139-56d8-4a6c-8e9c-ad17f2bf5a53]], [[local_65f6bd58-1447-4afc-948b-6b9efd97150a]], [[isenberg-paid-chrome-extensions-2024]], [[isenberg-frey-chu-directory-2025]]
 ---
 
 ## TL;DR
 
-Captured ideas across Finance/Life OS, GearFlip, the Overlook AI features, and the [[three-altitudes]] portfolio. Not yet built.
+Captured ideas across Finance/Life OS, GearFlip, the Overlook AI features, the [[three-altitudes]] portfolio, paid Chrome extensions, and the directory pattern. Not yet built.
 
 ## Finance / Life OS
 
@@ -59,6 +57,18 @@ From [[isenberg-paid-chrome-extensions-2024]]. Each idea has its own page; this 
 - **[[business-ideas-audio-sampler]]** — Tape Notes-style audio clipper for browser tabs. UX is the moat
 - **[[business-ideas-llm-wiki-clipper]]** — wraps [[finn-wiki-ingest]] as a one-click capture surface. Strategic alignment with [[llm-wiki-pattern]]
 
+## Directories (Isenberg × Frey Chu, May 2026)
+
+From [[isenberg-frey-chu-directory-2025]]. Greg's updated thesis: directories are SEO-as-distribution into a vertical SaaS the same operator owns. Mechanics in [[profitable-directory-pattern]] / [[static-pillar-page-directory]]. Candidate Finn-domain niches in [[business-ideas-finn-domain-directories]].
+
+- **[[business-ideas-finn-domain-directories]]** — meta-page indexing the candidate niches. Most promising: Ventura County local services as a layer underneath [[pier-and-point]]; second-most: recording studios by location as a domain-leverage play
+- **Recording studios near me** — [[overlook-audio]] + Berklee competence moat. Enrichment angle is strong (gear, engineers in residence, hourly rates, isolation booth count). SaaS-on-top: studio booking
+- **Music supervisors directory** — [[berklee-music-supervision-1]] + Alchemy adjacency. Low volume but extremely high per-query LTV (each click is a filmmaker with a budget)
+- **Mastering / mixing engineers near me** — same domain. Existing options (Gearspace, Soundbetter) are walled-garden marketplaces, not SEO-ranking directories
+- **Aviation: airport + FBO directory with live fuel prices** — niche pilot population but zero churn. Adjacent to [[business-ideas-taf-metar-decoder]]
+- **Yacht brokers by region** — pairs with [[rustler-42]] case study + the [[overlook-vertical-landing-pages]] yacht broker page already on the build list. Low total volume, very high per-transaction value
+- **Ventura County local services** — most promising overall. Direct adjacency to [[pier-and-point]] and [[ventura-forward]]; SaaS-on-top reuses [[overlook-portal-webapp]] infrastructure; doubles operator leverage by sharing audience with Pier and Point
+
 ## Sources
 
 - `local_1cfa988a-77d5-42b5-acb8-90109fcff213` — "Build Life OS in Notion with Claude"
@@ -66,3 +76,4 @@ From [[isenberg-paid-chrome-extensions-2024]]. Each idea has its own page; this 
 - `local_dec9a139-56d8-4a6c-8e9c-ad17f2bf5a53` — "Clean up repository branches and merge fixes"
 - `local_65f6bd58-1447-4afc-948b-6b9efd97150a` — "Evolve portfolio into cinematic autobiography"
 - [[isenberg-paid-chrome-extensions-2024]] — "Business idea: Paid Chrome Extension" YT short, Greg Isenberg / Cody Schneider, June 2024
+- [[isenberg-frey-chu-directory-2025]] — "I built a Cash Flowing Online Directory in 54 minutes" Greg Isenberg / Frey Chu, Feb 2025

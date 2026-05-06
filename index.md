@@ -94,6 +94,7 @@ This vault has two parallel structures (see `CLAUDE.md` for the full model):
 - [[greg-isenberg]]: Startup Ideas podcast host, author of the 30-step agent-SaaS playbook
 - [[cody-schneider]]: Founder / Shopify-app operator, guest on Isenberg's paid-Chrome-extension thesis episode
 - [[scott-belsky]]: Behance founder / ex-Adobe CPO, quoted on orchestration as the new interface layer
+- [[frey-chu]]: Indie operator who builds profitable local directory websites — first-time podcast guest on Isenberg, source for the directory pattern (Feb 2025)
 
 ### Tools & services
 
@@ -114,6 +115,8 @@ This vault has two parallel structures (see `CLAUDE.md` for the full model):
 - [[hyperagent]]: Howie Liu's agent-builder product at Airtable. "Macintosh to OpenClaw / Claude Code's Linux." First-class fleet command center. Finn has $1k credits + 2.5x Opus 4.6 subsidy via [[hyperagent-playbook]] (added 2026-05-04)
 - [[alex-krentsel]]: UC Berkeley / Google Research, OpenClaw architecture deep dive
 - [[ideabrowser]]: Subniche-discovery tool (Isenberg recommendation)
+- [[outscraper]]: Google Maps scraping tool for directory data acquisition (Frey Chu's default — added 2026-05-06)
+- [[ahrefs]]: Keyword research / SEO tool (Frey Chu's default niche-discovery surface — added 2026-05-06)
 - [[apple-card]]: Flagged for NSF returns
 - [[berklee-online]]: School portal
 - [[jetbrains]]: All Products Pack free for verified students; Webstorm/DataGrip/PyCharm
@@ -268,6 +271,12 @@ Anchor: [[paid-chrome-extensions]] — thesis page (under Concepts).
 - [[business-ideas-audio-sampler]]: Tape Notes-style audio clipper for browser tabs. UX is the moat
 - [[business-ideas-llm-wiki-clipper]]: Wraps [[finn-wiki-ingest]] as a one-click capture surface. Strategic alignment with [[llm-wiki-pattern]]
 
+### Directory operator pile (added with Isenberg / Frey Chu ingest 2026-05-06)
+
+Anchor: [[profitable-directory-pattern]] — methodology page (under Concepts).
+
+- [[business-ideas-finn-domain-directories]]: Meta-page indexing the candidate niches that intersect Finn's competence moats with Frey Chu's selection criteria — recording studios, music supervisors, mastering engineers, FBO directory, yacht brokers, Ventura County local services. Most promising overall: Ventura County as a layer underneath [[pier-and-point]].
+
 ### Pier and Point — Ventura hyperlocal news venture (added 2026-04-25, updated 2026-04-28)
 
 Anchor: [[pier-and-point]] — concept and vision page. AI-assisted hyperlocal news outlet for Ventura under the Overlook umbrella. Domain `pierandpoint.com` claimed.
@@ -363,6 +372,11 @@ Anchor: [[pier-and-point]] — concept and vision page. AI-assisted hyperlocal n
 
 - [[paid-chrome-extensions]]: Why the Chrome extension category is asymmetrically attractive in 2024–26 — collapsing build cost (AI scaffolds), distribution still works the old way, browser is a privileged surface for capture / transform / detect plays. Six concrete idea pages live in `wiki/business/`
 
+### Directory pattern (added with Isenberg / Frey Chu ingest 2026-05-06)
+
+- [[profitable-directory-pattern]]: End-to-end methodology for SEO-driven local directory sites generating mailbox-money revenue ($2–10K/mo, ~15 min/mo upkeep). Six ordered steps — niche on Ahrefs, validate on SERP+Reddit, scrape via Outscraper, enrich with AI, build as static pillar page, monetize three-layer
+- [[static-pillar-page-directory]]: The deliberately-dumb SEO format inside the directory build — one enormous static page structured by city sections. Out-SEOs prettier programmatic competitors on the highest-volume keyword cluster (city-specific listings)
+
 ## Sources
 
 - [[karpathy-llm-wiki-gist]]: Karpathy's original gist introducing the pattern (Apr 4, 2026)
@@ -385,6 +399,7 @@ Anchor: [[pier-and-point]] — concept and vision page. AI-assisted hyperlocal n
 - [[isenberg-howieliu-hyperagent-2026-04-29]]: Howie Liu (Airtable / HyperAgent) on Greg Isenberg's pod — TAM is white-collar GDP, opportunity-cost pricing, skills as primitive, rubrics + LLM-as-judge, fleet command center. The operator source for [[agentic-services-positioning]]. (April 29, 2026)
 - `raw/_extracts/2026-04-29-karpathy-howieliu-digest.md`: Chapter-by-chapter digest, deck-ready quotes, glossary. Used to build [[agentic-services-positioning]] and the 10 new concept pages
 - [[isenberg-paid-chrome-extensions-2024]]: Greg Isenberg + Cody Schneider 58s YouTube short on paid Chrome extensions as a category — "AI builds them, the Web Store still distributes them." Source for [[paid-chrome-extensions]] and six idea pages in `wiki/business/`. (Original June 2024, ingested April 30, 2026)
+- [[isenberg-frey-chu-directory-2025]]: Greg Isenberg × Frey Chu 54-min episode walking through a complete directory build (niche → Ahrefs → Outscraper → enrichment → static pillar page → monetization). Source for [[profitable-directory-pattern]], [[static-pillar-page-directory]], [[business-ideas-finn-domain-directories]], and the [[frey-chu]] / [[outscraper]] entity stubs. Greg's updated thesis: directories monetized only through AdSense leave the real money on the table — use directories as SEO-as-distribution into a vertical SaaS the same operator owns. (Original Feb 12, 2025, ingested May 6, 2026)
 - [[youtube-jack-roberts-openclaw-antigravity]]: Jack Roberts' YouTube — "I replaced OpenClaw with AntiGravity… its WILD." 60K views, 99.2% like ratio. Reference material for [[mission-control]] v0.2+ vision — what mission-control could grow into via [[antigravity|AntiGravity]] / [[hyperagent|HyperAgent]] as the meta-builder. **Transcript not available** at ingest time. (Ingested 2026-05-04)
 
 ## Design

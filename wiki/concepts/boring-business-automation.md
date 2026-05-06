@@ -3,10 +3,10 @@ title: "Boring business automation"
 type: concept
 tags: [concept, automation, ai-agency, scraping, local-business]
 created: 2026-04-24
-updated: 2026-04-25
+updated: 2026-05-06
 weight: high
 node_size: 10
-sources: [[notebooklm-simple-ui-viral-ai]], [[notebooklm-overlook-strategy]], [[isenberg-future-of-saas-30-step]]
+sources: [[notebooklm-simple-ui-viral-ai]], [[notebooklm-overlook-strategy]], [[isenberg-future-of-saas-30-step]], [[isenberg-frey-chu-directory-2025]]
 ---
 
 # Boring business automation
@@ -50,6 +50,16 @@ The 2026-04-25 [[isenberg-future-of-saas-30-step|Isenberg ingest]] uses *exactly
 
 If Finn ever pursues this, the [[build-niche-agent-saas]] checklist is the operational recipe and [[agent-native-saas]] is the category description.
 
+## Directories as the demand-side surface (Frey Chu, Feb 2025)
+
+The 2026-05-06 [[isenberg-frey-chu-directory-2025|Frey Chu ingest]] adds the missing tactical front-end for this concept: instead of cold-emailing local-business owners, **build a directory that ranks for their customers' searches**, then sell software back into the listings.
+
+Mechanics in [[profitable-directory-pattern]]. The structural advantage over cold outbound is that the directory both:
+1. Generates AdSense / affiliate revenue at the SEO layer ($2–10K/mo at the floor), so the build is profitable before any SaaS layer is shipped, and
+2. Earns the audience's permission before the SaaS pitch — operators on the directory want to be there because the directory drives them customers.
+
+The CSA-farms example in the Frey Chu source — directory → CSA-management SaaS sold to listed farms — is the canonical execution. Same shape as boring-business-automation, different distribution mechanic. SEO-as-distribution instead of cold-email-as-distribution. See also [[business-ideas-finn-domain-directories]] for the candidate niches that intersect Finn's competence moats with this front-end.
+
 ## Related
 
 - [[ai-agency-niches]]
@@ -58,5 +68,8 @@ If Finn ever pursues this, the [[build-niche-agent-saas]] checklist is the opera
 - [[notebooklm-simple-ui-viral-ai]]
 - [[notebooklm-overlook-strategy]]
 - [[isenberg-future-of-saas-30-step]]
+- [[isenberg-frey-chu-directory-2025]]
 - [[build-niche-agent-saas]]
 - [[agent-native-saas]]
+- [[profitable-directory-pattern]]
+- [[business-ideas-finn-domain-directories]]

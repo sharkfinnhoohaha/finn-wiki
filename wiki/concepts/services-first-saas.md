@@ -3,10 +3,10 @@ title: "Services-first SaaS"
 type: concept
 tags: [concept, saas, sequencing, agency, productization]
 created: 2026-04-25
-updated: 2026-04-25
+updated: 2026-05-06
 weight: medium
 node_size: 5
-sources: [[isenberg-future-of-saas-30-step]]
+sources: [[isenberg-future-of-saas-30-step]], [[isenberg-frey-chu-directory-2025]]
 ---
 
 # Services-first SaaS
@@ -54,11 +54,24 @@ The risk is that running a services-first SaaS during the agency phase splits at
 2. Pricing the manual phase higher than the agent phase will be (so each automation step improves margin)
 3. Limiting the manual phase to ≤3 customers before automating, to keep the time commitment bounded
 
+## Three free-distribution wedges into the SaaS layer
+
+Services-first is one of three free-distribution channels into the SaaS layer Isenberg has surfaced across his 2026 episodes. Each lowers the customer-acquisition cost for the SaaS by earning audience attention through a non-SaaS surface first:
+
+1. **Services-first** — earn customers by being the human operator. Direct revenue, slow scale. The original framing in this concept.
+2. **[[media-first-distribution|Media-first]]** — earn customers by running a content engine in the niche. Indirect revenue, fast brand. Steps 6–10 of the 30-step playbook.
+3. **SEO-as-distribution via directories** — earn customers by ranking for their searches. Both direct (AdSense / affiliate at the directory layer) and indirect (SaaS upsell to listed businesses) revenue. New in 2026-05 — [[isenberg-frey-chu-directory-2025|Isenberg × Frey Chu]] surfaces it as a parallel wedge to services-first; tactical recipe in [[profitable-directory-pattern]].
+
+The three are composable. A services-first SaaS founder running a media engine and a directory captures three distribution surfaces for one SaaS. Each is a different work mode (operator, content engine, SEO build), but each is also a different audience entry point.
+
 ## Related
 
 - [[isenberg-future-of-saas-30-step]]
+- [[isenberg-frey-chu-directory-2025]]
 - [[agent-native-saas]]
 - [[productized-services]]
 - [[ninety-day-launch-plan]]
 - [[per-task-pricing]]
 - [[overlook-strategy-positioning]]
+- [[media-first-distribution]]
+- [[profitable-directory-pattern]]

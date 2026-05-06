@@ -1,0 +1,1209 @@
+[None] WEBVTT
+[None] Kind: captions
+[None] Language: en
+[00:00:00] in this episode I sat down with Frey
+[00:00:02] Frey is an online directory King he
+[00:00:06] teaches us how to build an online
+[00:00:08] directory that does anywhere between two
+[00:00:11] and $10,000 a month of actual passive
+[00:00:15] income something that you can work on
+[00:00:17] Just for about 15 minutes a week he
+[00:00:20] talks about how do you find an idea how
+[00:00:22] do you validate that idea what tools do
+[00:00:25] you need um and this was a super special
+[00:00:28] episode because uh this is actually
+[00:00:31] Frey's first podcast that he's ever been
+[00:00:33] on he's an upand cominging Creator he's
+[00:00:36] got only a few thousand subscribers um
+[00:00:39] but the guy sits on a treasure chest of
+[00:00:43] gold um and you're going to learn a lot
+[00:00:46] around how to build a directory from 0
+[00:00:48] to one in this episode I hope you enjoy
+[00:00:52] [Music]
+[00:00:57] it baby
+[00:01:01] okay we got Frey on the Pod how I met
+[00:01:04] Frey is actually pretty interesting he
+[00:01:05] did a reaction video to my John Rush how
+[00:01:10] to build a 10K a month online directory
+[00:01:13] video that his reaction video went viral
+[00:01:16] I invited him on the Pod and what are we
+[00:01:19] going to learn today Frey yeah so today
+[00:01:23] I wanted to show you guys how I built my
+[00:01:27] first directory website um this was
+[00:01:29] built back in October of
+[00:01:32] 2022 and uh it's really different than
+[00:01:35] what most people think of when they
+[00:01:37] think of a directory website you know
+[00:01:39] most people think of just a simple and
+[00:01:41] modern website you put in your address
+[00:01:44] your ZIP code your city and then there's
+[00:01:46] a modern map that pops up um this is way
+[00:01:51] simpler and the reason I love this is
+[00:01:53] because um you know at least for my
+[00:01:57] first directory website it's been
+[00:01:59] monetized for 18 months straight it's uh
+[00:02:03] takes me you know about 15 minutes a
+[00:02:05] month to maintain so it's Evergreen and
+[00:02:08] location based uh which is my favorite
+[00:02:10] kind of directory to build um last month
+[00:02:12] I think it did around $2,300 in revenue
+[00:02:16] and so overall it's just a really easy
+[00:02:19] way to get started in your in your first
+[00:02:21] directory build and um yeah you don't
+[00:02:25] need to use AI tools although I
+[00:02:27] recommend it for some parts uh and yeah
+[00:02:29] it's just a it's a great start to get to
+[00:02:31] your first 2 to 10K in mrr as an encoder
+[00:02:35] which is which I am and by the end of
+[00:02:38] this episode what will people be able to
+[00:02:41] do so by the end I really wanted to
+[00:02:45] focus on finding and validating a niche
+[00:02:47] but I'm going to show you how you can go
+[00:02:49] out and basically create a really basic
+[00:02:52] directory that's optimized for SEO you
+[00:02:56] know it's a um it's a really simple step
+[00:02:59] of finding an idea validating that the
+[00:03:02] idea and making sure that the directory
+[00:03:04] Niche that you're choosing is actually
+[00:03:06] solving a problem I'll show you how to
+[00:03:08] get some data clean the data and enrich
+[00:03:11] it um and then we'll go into how to
+[00:03:15] implement it on on a on a WordPress
+[00:03:18] website but you can use any content
+[00:03:19] management content management system uh
+[00:03:22] that you beautiful all right let's get
+[00:03:25] our hands dirty all right so before we
+[00:03:28] go into the T tutorial before we go into
+[00:03:31] the tutorial I wanted to play a game so
+[00:03:35] one of the things that I like to do in
+[00:03:37] my free time is find different weird
+[00:03:40] directory
+[00:03:42] websites
+[00:03:44] and I want you to just guess how much
+[00:03:46] monthly traffic this is getting and then
+[00:03:48] I'll go into some stats around how much
+[00:03:49] I think it's making um and just just a
+[00:03:52] couple stats but this is the first
+[00:03:54] website we have
+[00:03:56] roadsideamerica.com
+[00:03:58] right off the bat not the prettiest
+[00:04:00] website but just looking what you know
+[00:04:02] and I'll give you a little context this
+[00:04:04] is a directory on quirky roadside
+[00:04:08] attractions in the United States So
+[00:04:11] based on what you're looking at what are
+[00:04:12] you thinking here I'm gonna say 50,000
+[00:04:14] uniques a month okay that's pretty good
+[00:04:17] let's let's take a look
+[00:04:19] here H reps yeah I and the reason I say
+[00:04:24] that is first of all it's it's hideous
+[00:04:26] it's got like what is that is that comic
+[00:04:29] Sands you know for Roadside America like
+[00:04:31] if you're close to Comics SS like uh you
+[00:04:35] know yeah May Lord be with you you know
+[00:04:38] what I mean you need all the help you
+[00:04:39] can get but I do think that this
+[00:04:42] Niche I bet you that it's it's there's
+[00:04:46] not that much
+[00:04:47] competition yeah it's it's definitely an
+[00:04:49] interesting one so this one's getting
+[00:04:52] 85,000 monthly visitors um pretty
+[00:04:56] impressive here and um
+[00:05:00] couple things I want to point out so you
+[00:05:02] know beyond the impressive traffic you
+[00:05:04] know we have monetization through
+[00:05:07] display ads so it's plastered with a
+[00:05:09] bunch of display ads there um I think
+[00:05:11] it's around like 96% tier one traffic so
+[00:05:15] US Canada Australia UK those kind of
+[00:05:19] countries and if anyone knows SEO you
+[00:05:21] know the last two years have been insane
+[00:05:23] like the the Google core updates have
+[00:05:25] been uh you know it's it's been a it's
+[00:05:29] been demolished out here you know don't
+[00:05:31] get me started bro don't get me started
+[00:05:33] yeah so this has been pretty resilient
+[00:05:35] um if I were to guess how much this is
+[00:05:37] making I would probably conservatively
+[00:05:39] say 5 to 7,000 a month very passively
+[00:05:43] because of the display ads but um yeah
+[00:05:46] that's the first website um super basic
+[00:05:49] like static directory as as simple as
+[00:05:51] you can get and um I'll make a quick
+[00:05:54] note and say the tutorial I'm I'm
+[00:05:56] showing today is a static website so
+[00:05:58] it'll be kind of similar ilar to this
+[00:06:00] build all right let's move on to the
+[00:06:02] second one here which is
+[00:06:05] atlasobscura.com
+[00:06:06] this is um this is a directory about
+[00:06:11] it's so it's a worldwide directory and
+[00:06:12] it's about um like attractions that are
+[00:06:16] off the beaten path things that maybe
+[00:06:18] only the locals would know if you're
+[00:06:19] visiting a certain
+[00:06:21] country quick break in the Pod to tell
+[00:06:24] you a little bit about startup Empire so
+[00:06:27] startup Empire is my private membership
+[00:06:30] where it's a bunch of people like me
+[00:06:34] like you who want to build out their
+[00:06:36] startup ideas now they're looking for
+[00:06:39] content to help accelerate that they're
+[00:06:41] looking for potential co-founders
+[00:06:43] they're looking for uh tutorials from
+[00:06:46] people like me to come in and tell them
+[00:06:48] how do you do email marketing how do you
+[00:06:50] build an audience how do you go viral on
+[00:06:52] Twitter all these different things
+[00:06:54] that's exactly what startup Empire is
+[00:06:57] and it's for people who want to start a
+[00:06:59] startup but are looking for ideas or
+[00:07:02] it's for people who have a startup but
+[00:07:04] just they're not seeing the traction uh
+[00:07:06] that they need so you can check out the
+[00:07:08] link to Startup empire.co in the
+[00:07:12] description I'm going to say 35,000
+[00:07:15] uniques a month
+[00:07:18] okay 30 okay okay 35,000 let's take a
+[00:07:26] look oh my God million
+[00:07:29] uh insanely impressive uh directory
+[00:07:32] website also
+[00:07:34] noticing very little to no effect from
+[00:07:37] the Google core updates um you know we
+[00:07:39] got 90 91% uh tier one traffic monetized
+[00:07:44] through display ads um you know we can
+[00:07:46] start to see some of these ads from
+[00:07:50] AdSense they're also selling a book
+[00:07:52] which is interesting but if I were to
+[00:07:54] guess how much this is making I think a
+[00:07:56] really conservative guess just from
+[00:07:58] AdSense is around 30 ,000 a month but I
+[00:08:01] really think it's probably closer to 50
+[00:08:03] or 60 um it's always hard to tell but
+[00:08:06] very nice website and props to whoever
+[00:08:08] owns this it's a nice one props to the
+[00:08:11] millionaire who owns it from their
+[00:08:14] Chateau yeah yeah and um yeah I mean
+[00:08:18] this is just super useful too so I'm all
+[00:08:21] about creating directory websites that
+[00:08:22] actually like provide entertainment or
+[00:08:25] solve a problem so that's that's really
+[00:08:26] cool all right let's go to the last one
+[00:08:28] here
+[00:08:29] this one's a little bit morbid but we
+[00:08:32] have the findagrave.com website
+[00:08:35] directory you can find where dead
+[00:08:38] presidents are buried you can find all
+[00:08:40] sorts of interesting burial sites but uh
+[00:08:44] what what are you thinking here just
+[00:08:46] based on what you see here in the niche
+[00:08:49] I think I think it's big I think this is
+[00:08:52] at least a million uniques a
+[00:08:54] month I think that is a pretty good
+[00:08:57] guess
+[00:08:59] take a look 1.4 million monthly
+[00:09:04] visitors absolutely crushing it um also
+[00:09:08] resilient to Google absolutely killing
+[00:09:11] it absolutely killing it an amazing this
+[00:09:13] is like one of my favorite because I've
+[00:09:16] never heard of this website and I just
+[00:09:17] found it and I can't believe there's
+[00:09:20] this much interest
+[00:09:21] around um where where people are buried
+[00:09:24] it's just not something that has ever
+[00:09:26] come across my interest I mean it makes
+[00:09:28] sense right like it makes sense it does
+[00:09:31] it does you're trying to you're trying
+[00:09:32] to find where someone's buried and
+[00:09:34] you're looking for an easy way to do it
+[00:09:35] findagrave.com yep exactly so I don't
+[00:09:39] see this going going away anytime soon
+[00:09:42] um and this I would say so again 92%
+[00:09:47] tier one traffic AdSense um is their
+[00:09:51] main form of monetization they have all
+[00:09:53] sorts of stuff here this is I'm going to
+[00:09:56] put this I think this could be a
+[00:09:57] $100,000 a month website but I think you
+[00:10:00] know 60 70k like is a very fair estimate
+[00:10:04] here um but really like this just shows
+[00:10:10] how large of a directory website you can
+[00:10:12] go build and that is possible out there
+[00:10:16] um and uh it kind of breaks my brain I
+[00:10:18] don't know about you it's it's kind of
+[00:10:21] kind of nutty to think
+[00:10:22] about I think it's nty to think about
+[00:10:24] also cuz my thesis on director and I
+[00:10:28] kind and I spoke a little about this in
+[00:10:29] the John Rush
+[00:10:32] episode is that it's a really good place
+[00:10:35] like I think people are monetizing
+[00:10:37] directory is wrong like they're just
+[00:10:38] putting AdSense we saw one example of
+[00:10:40] someone literally selling a
+[00:10:42] book um the opportuni is actually to
+[00:10:45] build software on top of these
+[00:10:47] directories so you use directories to
+[00:10:49] get the traffic you get all these
+[00:10:51] eyeballs in a particular Niche you build
+[00:10:54] software now you can use AI to build
+[00:10:55] software
+[00:10:57] instantly and you get SAS like
+[00:11:01] multiples uh on that software business
+[00:11:04] and then you've got the consistent
+[00:11:06] traffic that you're getting from the
+[00:11:07] directory 100% 100% I totally agree um I
+[00:11:12] still like the I still will say AdSense
+[00:11:16] has been the closest thing that I've
+[00:11:18] ever experienced to passive income so
+[00:11:20] there's that if people are going to
+[00:11:21] optimize a lifestyle business then okay
+[00:11:24] that's fine but if you're going for
+[00:11:25] something that's you know that's big
+[00:11:29] then I totally agree and I will just
+[00:11:31] really quickly show you one boring
+[00:11:33] website that wasn't on the list but this
+[00:11:35] is a directory on you know farms and
+[00:11:39] csas and their biggest call to action is
+[00:11:42] their SAS so they actually just like
+[00:11:45] have these little like advertisements
+[00:11:48] for this software that they own um I'm
+[00:11:52] pretty sure they own it because it
+[00:11:53] shares the same like business domain but
+[00:11:55] yeah like this is a perfect example of
+[00:11:57] them funneling relevant website traffic
+[00:12:00] into a SAS product that they own which I
+[00:12:03] think is incredibly
+[00:12:05] smart so that's
+[00:12:08] cool um awesome so should we dive into
+[00:12:12] how to build a profitable directory I I
+[00:12:15] don't see why not all right let's do it
+[00:12:18] um so the thing with my so like my
+[00:12:22] favorite kinds of directories are
+[00:12:24] evergreen location-based
+[00:12:26] directories and the reason for that is
+[00:12:28] because
+[00:12:29] once you have a directory it's not
+[00:12:31] really fun a year or two down the line
+[00:12:34] when you have to upkeep data and so it's
+[00:12:36] nice to to find things that you don't
+[00:12:38] have to update very often so the thing
+[00:12:40] that I do to find ideas is I'll go to
+[00:12:43] HRS and I'll type in near me into the
+[00:12:46] keyword
+[00:12:48] Explorer and this is just going to show
+[00:12:50] me this long list of local queries that
+[00:12:53] are getting tons of search volume and
+[00:12:57] this is my favorite way to just on a
+[00:12:59] Saturday afternoon I'm just going to
+[00:13:01] browse this and look for different ideas
+[00:13:04] and you can basically start looking for
+[00:13:08] keywords that have really high monthly
+[00:13:10] search volume and low keyword difficulty
+[00:13:13] um these are quite big and in my
+[00:13:17] experience I've learned what to avoid uh
+[00:13:20] my sweet spot is actually around 30 to
+[00:13:23] 100,000 uh monthly searches so I'll
+[00:13:26] click you know into the later pages and
+[00:13:28] start to look look for different types
+[00:13:30] of ideas um but you know a couple things
+[00:13:34] that I'll avoid just sharing some things
+[00:13:37] that I've learned the hard way um I
+[00:13:40] personally don't like niches where it's
+[00:13:42] really seasonal so I think one of these
+[00:13:44] said pumpkin patches near me oh yeah
+[00:13:47] there it is so 152,000 monthly searches
+[00:13:51] um but it's so seasonal I don't really
+[00:13:54] want a website that I put a lot of time
+[00:13:56] and effort in just to monetize really
+[00:13:58] well for a month
+[00:13:59] um the second thing I avoid are you know
+[00:14:02] niches where the data might be difficult
+[00:14:04] to get so one of these says earthquake
+[00:14:07] near me and I imagine at least for me I
+[00:14:12] don't I wouldn't know how to go and get
+[00:14:14] data on earthquakes um and it also
+[00:14:17] sounds like something that is kind of
+[00:14:19] competitive and the third thing that I
+[00:14:21] would avoid are really big branded
+[00:14:23] keywords so Taco Bell near me right um
+[00:14:26] couple reasons why I avoid this the
+[00:14:28] first thing is that they're probably
+[00:14:31] already going to have an updated
+[00:14:33] directory and they' probably already
+[00:14:35] solved the problem of driving their
+[00:14:37] customers to you know a Taco Bell near
+[00:14:40] them but the second reason I think is
+[00:14:43] more important which is it's just two
+[00:14:45] one-dimensional
+[00:14:47] like people looking for taco B Bell near
+[00:14:50] me in Google aren't looking for
+[00:14:52] different types of Taco Bell there's
+[00:14:54] like very one-dimensional um search
+[00:14:57] intent and that's not what I'm looking
+[00:14:59] for I want to um and I'll I'll show you
+[00:15:03] an example that I found uh I actually
+[00:15:05] think it's it's somewhere on like the
+[00:15:08] 14th page or something but we're going
+[00:15:10] to be using the example dog parks near
+[00:15:13] me for this tutorial today so I'll show
+[00:15:17] you
+[00:15:19] that so dog park near me this is one
+[00:15:22] that I found using that exact same
+[00:15:24] method and get 73,000 monthly visitors
+[00:15:28] uh or searches I should say and uh not
+[00:15:31] too difficult a 27 out of 100 in terms
+[00:15:33] of keyword difficulty so that's not too
+[00:15:37] bad but check out all of these other
+[00:15:40] keywords that contain dog park indoor
+[00:15:43] dog park offleash dog park dog water
+[00:15:45] park there's a lot of fragmentation in
+[00:15:47] the search in tent and it's
+[00:15:49] multi-dimensional if you will but the
+[00:15:52] point is like people aren't satisfied
+[00:15:54] looking for just any dog park they're
+[00:15:57] looking for certain types of dog Parks
+[00:16:00] maybe ones that offer water fountains
+[00:16:03] you know benches to sit on
+[00:16:05] shade and all sorts of different types
+[00:16:08] of uh amenities that you could basically
+[00:16:12] capitalize on you know when you build
+[00:16:14] out a directory like this I'm thinking
+[00:16:16] okay I can include these uh to enrich my
+[00:16:19] directory and make it more useful save
+[00:16:22] people more time rather than having to
+[00:16:24] go to Google Maps and click around in
+[00:16:26] the reviews and figure out if there's
+[00:16:28] shade or benches or not so that's kind
+[00:16:30] of the first thing that I look for high
+[00:16:33] search volume relatively low keyword
+[00:16:36] difficulty and a good amount of
+[00:16:37] fragmentation when it comes to the
+[00:16:39] search intent which we can see here um
+[00:16:42] what what what sort of keyword
+[00:16:45] difficulty is good in your opinion I
+[00:16:48] think anything under 20 is pretty easy
+[00:16:51] in my opinion um I think keyword
+[00:16:55] difficulty is a little bit misleading
+[00:16:56] too because there are some uh very low
+[00:17:00] keyword difficulty
+[00:17:01] niches um and I'll give you a quick
+[00:17:05] example um it says that you know fast
+[00:17:09] food near me is a keyword difficulty for
+[00:17:12] but it's really not going to be easy to
+[00:17:14] rank for that um and there's a lot of
+[00:17:17] examples where keyword difficulty is
+[00:17:18] really low but there's a lot of
+[00:17:21] competition or there's few competition
+[00:17:23] but their their backlinks are so
+[00:17:27] dominant you're just not going to be
+[00:17:28] able would outrank them and get traffic
+[00:17:30] to your website but overall generally
+[00:17:32] speaking I think under 20 is a pretty
+[00:17:35] good bet
+[00:17:38] um and um yeah yeah I would say under 20
+[00:17:42] um that's pretty good if you know what
+[00:17:44] you're doing then I think 40 to 50 is
+[00:17:47] also possible uh I've had some like
+[00:17:51] programmatic directories that I've built
+[00:17:53] where I've targeted keyword difficulty
+[00:17:56] 70 keywords that are getting 60,000
+[00:17:58] monthly visitors and I've created like
+[00:18:02] on a fresh domain I was able to rank on
+[00:18:04] the first page in like two months for
+[00:18:06] some of the keywords so it just really
+[00:18:08] depends and keyword difficulty is kind
+[00:18:11] of a weird metric but it's a start it's
+[00:18:13] a good start to know how easy it
+[00:18:17] is um so after we figure out people are
+[00:18:22] looking for different types of dog parks
+[00:18:25] I'm going to go into some competitive
+[00:18:27] research and for that I just use good
+[00:18:29] old Google so I'm just going to type in
+[00:18:31] Dog Park Los Angeles for
+[00:18:36] example and I'm just going to scroll
+[00:18:38] through and look for any kinds of
+[00:18:40] directories that are on the first page
+[00:18:44] so you can see here I found this one
+[00:18:46] right here this is a um pretty big dog
+[00:18:51] related website I don't know if you ever
+[00:18:53] heard of it but bring fedo pretty
+[00:18:56] massive
+[00:18:57] website and they do have a dog park
+[00:19:00] directory and I might just click
+[00:19:02] around and ask
+[00:19:04] myself is this a directory that I can
+[00:19:07] improve on can I build something that's
+[00:19:10] better than this um and so this is
+[00:19:13] pretty nice um I also like to check how
+[00:19:17] much traffic uh some of these are
+[00:19:19] getting but let's just compile a couple
+[00:19:23] different um competitors so that was
+[00:19:27] kind of the main one I I'll also just
+[00:19:29] type in dog park near me which is the
+[00:19:31] exact match um I also found this one
+[00:19:35] this is an interesting
+[00:19:37] competitor and it's a really basic
+[00:19:40] directory so let's just see how much
+[00:19:42] this one's getting in terms of
+[00:19:44] traffic all right so yeah I remember
+[00:19:48] this one this one was interesting
+[00:19:50] because it's getting 21,000 monthly
+[00:19:52] visitors but when you look at it it's
+[00:19:55] super basic and if we put in a sample
+[00:19:58] zip code just put like a Los Angeles zip
+[00:20:01] code it's so simple it just tells you
+[00:20:04] the name and the address of the dog park
+[00:20:07] but if I were a dog park own if I were a
+[00:20:09] dog owner which I am and I was taking my
+[00:20:11] dog to the park I would want to know a
+[00:20:14] little bit more information so off the
+[00:20:16] bat I'm already thinking there's ways to
+[00:20:18] improve this there's features that
+[00:20:20] aren't listed here that aren't that
+[00:20:22] helpful and it's are it's still getting
+[00:20:25] 21,000 monthly visitors so this is a
+[00:20:28] great website where I'm making a mental
+[00:20:31] note and I'm like this is this is my
+[00:20:32] bounty I'm gonna set a bounty on this I
+[00:20:34] can do I can do better than this when
+[00:20:36] you when you see something like
+[00:20:38] this smile goes on your face right
+[00:20:41] you're like okay there's not only have I
+[00:20:45] identified that there's an opportunity
+[00:20:46] to build a directory here there's a not
+[00:20:50] the leading directory but you know top
+[00:20:53] directory one of the top
+[00:20:55] directories couldn't be more basic if it
+[00:20:58] tried exactly it's it's all it's got a
+[00:21:03] lot of positive signals that yeah this
+[00:21:07] is pretty unhelpful yet people are going
+[00:21:11] to websites like this and it just shows
+[00:21:13] you that Google Maps is not satisfying
+[00:21:17] everyone's needs if Google Maps was
+[00:21:19] doing that people would probably just
+[00:21:21] not come to a website like this but this
+[00:21:23] is a really really good sign that um
+[00:21:27] people are looking elsewhere
+[00:21:29] and websites like these are taking
+[00:21:32] advantage of that so why not just build
+[00:21:33] something and um take that traffic from
+[00:21:37] them basically you know it is it is what
+[00:21:39] it is right SEO is a a PVP game you know
+[00:21:42] we can't all be Top Rank and and
+[00:21:45] unfortunately I'm gonna have to set a
+[00:21:46] bounty on you nyab bone that's just how
+[00:21:48] it is it's nothing personal but it's
+[00:21:50] just it's just what's going to happen um
+[00:21:52] so this is really cool and um you know
+[00:21:56] this is also a good example um
+[00:21:59] I think I looked up the traffic for so
+[00:22:02] if we look at this example and we just
+[00:22:05] try to figure out how much traffic uh
+[00:22:08] dog parks are on this website just get
+[00:22:12] an idea real quick all right so 13,000
+[00:22:16] not too bad um it's significant enough
+[00:22:19] where I'm still ex you know I'm still
+[00:22:21] excited like that's that's not too bad I
+[00:22:24] don't think they specialize in or
+[00:22:27] they're not targeting dog parks the
+[00:22:29] general keyword that gets you know
+[00:22:32] 70,000 monthly searches seems like
+[00:22:34] offleash dog parks is kind of the the
+[00:22:37] area that they optimize their their
+[00:22:40] pages on but still still good and for
+[00:22:44] this I would say like it's more useful
+[00:22:46] to
+[00:22:47] see what kind of competition I'm up
+[00:22:49] against because it's way better than
+[00:22:51] nyab bone it's much more filled out
+[00:22:53] there's better
+[00:22:55] photos but again
+[00:22:57] like where
+[00:22:59] you know where are the where are the
+[00:23:01] features saying whether this has dog
+[00:23:03] bags or water fountains or benches and
+[00:23:06] um all the all the other good stuff that
+[00:23:08] I want to know if I'm taking my dog to
+[00:23:10] the dog park so this is uh yeah so I I
+[00:23:14] would probably spend another you know 30
+[00:23:17] minutes to an hour looking at different
+[00:23:19] competition on Google uh for dog park
+[00:23:22] related keywords but I think this is
+[00:23:25] good enough especially in isab bone for
+[00:23:27] me to go ahead and say all right this is
+[00:23:30] good so the next thing after I have my
+[00:23:33] competition I'm going to just look it up
+[00:23:35] uh I'm just going to try and use Reddit
+[00:23:38] to confirm or not confirm if this is a
+[00:23:42] problem worth solving so if I just type
+[00:23:44] in you know Dog Park Los Angeles
+[00:23:49] Reddit so looking on Reddit for dog park
+[00:23:51] Los Angeles for an example we can
+[00:23:54] already see a bunch of different forums
+[00:23:56] where people are looking for dog parks
+[00:23:58] so again another great sign that people
+[00:24:01] are looking elsewhere they're not over
+[00:24:03] Reliant and finding everything they need
+[00:24:05] on Google Maps so there's always some
+[00:24:08] discussion you can skim through um you
+[00:24:10] can also just compile a bunch of
+[00:24:12] different links and stick them into chat
+[00:24:14] gbt and ask for you know you can prompt
+[00:24:16] it for a sentiment analysis and do it
+[00:24:19] that way but I like to do the good
+[00:24:21] oldfashioned way look it up and read the
+[00:24:23] comments and one thing I found because
+[00:24:26] I've been kind of using dog parks as a
+[00:24:29] case study so I know I know this to be
+[00:24:32] true but I looked up dog park in New
+[00:24:36] York and I realized that in New York for
+[00:24:39] some reason they don't call dog parks
+[00:24:42] dog park necessarily they call them dog
+[00:24:44] run and so that led me to a rabbit hole
+[00:24:47] where I you know looked up all sorts of
+[00:24:49] Reddit posts and I landed on this this
+[00:24:53] is a post from six years ago where
+[00:24:55] someone literally just made a post
+[00:24:58] sharing their Google Map pins of all the
+[00:25:00] dog parks and what's interesting about
+[00:25:03] this post is it got a decent amount of
+[00:25:06] upvotes you know 115 upvotes there's a
+[00:25:08] lot of interaction here around you know
+[00:25:12] different dog parks in
+[00:25:14] Brooklyn um but there are some uh yeah
+[00:25:20] so this this is an interesting comment I
+[00:25:22] think this is the one that stuck out to
+[00:25:23] me this person said I wish I had time to
+[00:25:26] visit all of them and make descriptions
+[00:25:27] and take photos not all dog dog runs are
+[00:25:30] created equal so it' be cool to find out
+[00:25:33] about really nice ones that aren't near
+[00:25:35] nearby I mean you can't get more you
+[00:25:39] can't get more uh you know you can't get
+[00:25:40] better than that in terms of a social
+[00:25:42] signal that's showing you that people
+[00:25:44] want curation people want hypers
+[00:25:47] specific uh features uh when they're
+[00:25:50] looking for dog parks so this is just
+[00:25:52] another green flag that says yeah this
+[00:25:54] is this is a problem that could be worth
+[00:25:57] solving
+[00:26:00] um so just to recap you know we
+[00:26:03] basically just found an idea that has
+[00:26:06] high search volume low competition it
+[00:26:09] has fragmented search volume that we
+[00:26:11] could take advantage of there is some
+[00:26:13] competition out there so we set a bounty
+[00:26:15] on
+[00:26:16] nyone that is already getting a decent
+[00:26:19] amount of monthly visitors and then we
+[00:26:21] also verified through social listening
+[00:26:23] on Reddit to confirm that yeah people
+[00:26:26] are having a hard time finding these dog
+[00:26:29] parks and they're talking about it so
+[00:26:31] let's go build out the actual dog park
+[00:26:34] directory um that's going to cater to
+[00:26:36] these people's needs um at this point by
+[00:26:41] the way Frey are you gonna publish like
+[00:26:43] are you gonna publish this dog
+[00:26:45] park
+[00:26:47] directory I think so I think there's
+[00:26:49] like a couple things that I'm worried
+[00:26:51] about so I've noticed anytime I mention
+[00:26:55] a website people make copycats
+[00:26:57] immediately
+[00:26:58] and SEO is one of those things where you
+[00:27:01] know I'm not going to have any back
+[00:27:02] links if I launch something like this so
+[00:27:04] there a little bit of vulnerability but
+[00:27:06] yes the short answer is I do plan on
+[00:27:09] launching this eventually I'm just right
+[00:27:13] now optimizing the best ways to automate
+[00:27:17] some of the data enrichment and some of
+[00:27:19] the implementation on a CMS through Ai
+[00:27:22] and like using bolt. I'm playing around
+[00:27:25] with different tools to streamline that
+[00:27:27] but I do want to publish this and just
+[00:27:29] see how it goes cool all right let's
+[00:27:32] build Baby Let's Do It um let's get some
+[00:27:35] data uh that was a this was a big topic
+[00:27:38] I think a lot of people ask me where do
+[00:27:40] you get your
+[00:27:41] data and the simple answer is web
+[00:27:44] scraping
+[00:27:45] tools I know there's a lot of different
+[00:27:47] web scraping tools out there but I just
+[00:27:49] use outs scraper not affiliated just
+[00:27:52] what I've always used and um they have
+[00:27:55] this Google Map scraper here
+[00:27:58] and the first thing I do is I actually
+[00:28:02] land what before I even scrape data I go
+[00:28:05] to Google Maps and I type in you know
+[00:28:08] Dog Park Los
+[00:28:12] Angeles and what I'm looking for here
+[00:28:14] are actual Google categories for my
+[00:28:19] Niche so luckily we have this that says
+[00:28:22] dog park you know there's some Athletic
+[00:28:25] Park is Apparently one but I want to
+[00:28:27] look for a Google category because
+[00:28:29] scraping data when there's an actual
+[00:28:31] dedicated category for that is a lot
+[00:28:34] easier so this is cool um I've confirmed
+[00:28:37] that we do have dog park which means we
+[00:28:41] can just click on this category here and
+[00:28:45] we can click on exact match so it'll
+[00:28:47] basically get us all the data for dog
+[00:28:50] parks on Google Maps um now if you're
+[00:28:52] working in a niche where you don't have
+[00:28:54] a category you can always just
+[00:28:58] enter a plane
+[00:28:59] query so let's just say for example off
+[00:29:02] leash dog parks was the thing you could
+[00:29:04] go ahead and scrape all the data related
+[00:29:09] to off Le dog parks it'll be way more
+[00:29:11] data and there will be a lot of junk um
+[00:29:14] but it is one option so you're not
+[00:29:17] limited that way and by the way if you
+[00:29:19] get I I I'd imagine that that's more
+[00:29:23] common than people think like that
+[00:29:24] happens more common than people think if
+[00:29:27] you do get a lot of junk data how do you
+[00:29:29] normally parse that data to make it
+[00:29:31] useful yeah so I have um so there are
+[00:29:37] ways
+[00:29:39] that um I do have a really big data
+[00:29:43] sheet I have 100 I have a data sheet
+[00:29:45] with
+[00:29:47] 119,000 um rows that I basically parsed
+[00:29:51] it down to 5,000 uh there's a couple
+[00:29:53] ways you can do it so with a lot of junk
+[00:29:57] data you
+[00:29:58] can with dog parks uh with dog parks
+[00:30:03] specifically like the way I would do it
+[00:30:05] is probably just delete all the listings
+[00:30:07] and rows that don't have addresses so
+[00:30:10] that's that's an easy one that will
+[00:30:11] remove some and then there will be a a
+[00:30:14] good amount that have um you know no
+[00:30:18] reviews or like one review you can get
+[00:30:20] rid of a lot that way
+[00:30:23] um I uh I covered it in a video it's
+[00:30:26] it's quite a long it's a tedious process
+[00:30:28] um I've tried to use chat gbt to data
+[00:30:32] yeah that was basically my question like
+[00:30:34] have you I was I was wondering if you're
+[00:30:36] going to get there like do you use chat
+[00:30:37] GPT or Cloe as I call it Cloe everyone
+[00:30:41] makes fun of me um
+[00:30:43] Claude um to basically go through the
+[00:30:47] data to help you figure that out I do I
+[00:30:50] think you just need to have a really
+[00:30:52] solid prompt but sometimes it's easier
+[00:30:54] to manually parse the data first cuz
+[00:30:58] you'll get some data like Big Lots or
+[00:31:00] like you know Walmart and it's it has
+[00:31:03] nothing to do with dog park but because
+[00:31:06] someone mentioned dog in the reviews
+[00:31:08] it's just pulling up that data somehow
+[00:31:11] so I would yeah I would I would use Chad
+[00:31:14] GT um but I would first manually just
+[00:31:17] get rid of the big ones um and yeah
+[00:31:22] there there's yeah I guess you could use
+[00:31:25] it off the bat too um
+[00:31:29] but I guess I like to manually do it
+[00:31:31] because I like to make sure I get all
+[00:31:35] the dog parks and I've noticed that it
+[00:31:38] can get rid of a lot of the good quality
+[00:31:40] listings if you just go straight into
+[00:31:44] chat gbt and have it remove what it
+[00:31:47] doesn't think a dog park is if that
+[00:31:49] makes sense the the old uh throw the
+[00:31:51] baby out with the bath water whatever
+[00:31:53] that quote means really like I know what
+[00:31:56] it means but like I don't know where
+[00:31:57] it's stems from um it's very odd all
+[00:32:00] right yeah let's let's get back to it
+[00:32:02] all right um yeah I mean I never heard
+[00:32:06] of that but uh let's uh yeah so
+[00:32:09] basically um yeah so basically we're
+[00:32:12] lucky we have a dog park as a category
+[00:32:14] um we're going to make sure to click
+[00:32:17] exact match otherwise you're going to
+[00:32:19] get a massive data sheet with a bunch of
+[00:32:22] junk and for me I like to create
+[00:32:24] Nationwide directories because why not
+[00:32:27] take advantage of all that search volume
+[00:32:30] so I just keep this as
+[00:32:31] defaulted um and then really the only
+[00:32:33] place I touch um is the parameters and
+[00:32:38] this is just the basics right think
+[00:32:40] about what people would want to know if
+[00:32:42] they're coming to a dog park directory
+[00:32:44] they're probably going to want to know
+[00:32:45] the the name maybe a phone number if
+[00:32:48] it's some kind of like indoor dog park
+[00:32:50] address Street postal code State you
+[00:32:53] know there are some maybe some reviews
+[00:32:57] that you want to include
+[00:32:58] dude I always like to add street view
+[00:33:01] you know working
+[00:33:02] hours and most recently I've been adding
+[00:33:06] location link which I'll show you why is
+[00:33:08] really important in a moment it's great
+[00:33:10] for data enrichment and yeah so but
+[00:33:14] these are the basics you know and then
+[00:33:15] I'll go ahead and just click get
+[00:33:18] data it'll give us an idea of how much
+[00:33:20] it's going to cost how many
+[00:33:23] rows sometimes this is just completely
+[00:33:25] off like I know it's completely off but
+[00:33:27] but you would go ahead and click
+[00:33:30] confirm and I am not going to spend more
+[00:33:34] money so I pulled up the result uh it's
+[00:33:39] usually pretty quick too uh I know most
+[00:33:41] times it says it's going to take 12 to
+[00:33:44] like 30 hours or something but this took
+[00:33:46] two hours um I've never had it take too
+[00:33:51] long but um let's pull this up here cool
+[00:33:59] all right so here we have
+[00:34:03] 6245 different dog parks so quite large
+[00:34:08] you know this is a lot of data
+[00:34:11] and um probably not the most uh beginner
+[00:34:16] friendly for a static directory build
+[00:34:20] that I'm going to show you but it's okay
+[00:34:22] you will use it ex as an example if you
+[00:34:25] wanted to start like cleaning this data
+[00:34:28] a little bit um you know I'm not an
+[00:34:30] Excel Pro but I kind of just like to use
+[00:34:34] the reviews maybe if it doesn't have
+[00:34:37] that many reviews I would get rid of you
+[00:34:40] know anything under you know 10 reviews
+[00:34:42] or something like that um but this is
+[00:34:45] basically our data sheet and because we
+[00:34:48] do have that exact match category in
+[00:34:50] Google we don't have to do too much
+[00:34:52] cleaning um but if we did have a plain
+[00:34:55] query that's when you know you would
+[00:34:58] really want to spend some time uh and
+[00:35:01] there's a lot of ways you can do it um I
+[00:35:04] made a video on it it's maybe not the
+[00:35:06] best but it gets rid of a lot of the
+[00:35:08] junk um I I think I yeah 119,000 rows
+[00:35:11] down to like 5,000 rows and in that
+[00:35:14] video
+[00:35:15] but um since I know it's already
+[00:35:19] cleaned I'm basically going to jump to
+[00:35:22] the data enrichment and this is really
+[00:35:26] important because
+[00:35:28] I'm going to try to include all the
+[00:35:30] different features that we were looking
+[00:35:31] at um from our keyword if we go back
+[00:35:37] to dog park near
+[00:35:41] me I'm going to basically enrich the
+[00:35:44] data and use my knowledge of HRS you
+[00:35:50] know indoor dog park off Le dog park I
+[00:35:52] want to rank for all these keywords that
+[00:35:53] are getting traffic but I also want to
+[00:35:57] look on Google Maps and this is the way
+[00:36:00] I typically like to enrich data let's
+[00:36:03] just click on one
+[00:36:05] here and what I'll do is I'll go to the
+[00:36:08] reviews and I'll just start looking at
+[00:36:10] the different types of tags and as I
+[00:36:13] click through these reviews I'm making a
+[00:36:15] mental note of the same types of tags
+[00:36:19] and I guess features of dog parks that
+[00:36:22] keep showing up so this one has shade
+[00:36:25] you know parking um you know we just
+[00:36:27] kind of keep on going with um shade
+[00:36:31] again shade trees but I basically am
+[00:36:34] going through and trying to do some
+[00:36:36] pattern recognition water
+[00:36:39] parking a lot of the same stuff starts
+[00:36:41] popping up um
+[00:36:43] so because I already spent like 30
+[00:36:47] minutes doing this I can tell you that a
+[00:36:49] lot of the most common things people
+[00:36:51] want in their dog parks are water
+[00:36:55] fountains for their dogs they want some
+[00:36:58] shade they want benches to sit on and
+[00:37:02] they want you know dog bags some people
+[00:37:05] also want like you know apparently trash
+[00:37:07] cans and stuff but for the most part
+[00:37:09] those are the core things that I'm
+[00:37:11] making a mental note of uh in addition
+[00:37:13] to it being an indoor dog park and off
+[00:37:16] offleash dog park so what we can do
+[00:37:20] here and this is pretty manual but this
+[00:37:24] is how I did it back when I first
+[00:37:25] started it basically make all these
+[00:37:27] different um
+[00:37:30] columns for data
+[00:37:33] Arrangement you know water is there
+[00:37:36] shade and so you'd basically continue
+[00:37:38] doing
+[00:37:39] this we'll just we'll just use this as
+[00:37:42] an
+[00:37:43] example the old way that I would do it
+[00:37:46] back then was super manual like if you
+[00:37:49] think about the Journey of someone
+[00:37:51] finding a dog park with this um or if
+[00:37:54] you think about the journey that someone
+[00:37:56] has to
+[00:37:57] uh the or I guess the way people go out
+[00:38:00] and find dog parks with shade it's super
+[00:38:03] manual right they have to like look on
+[00:38:06] Google maybe there's a shade button
+[00:38:08] maybe there's not and they have to type
+[00:38:09] in shade manually it's just not that
+[00:38:13] fast and not that convenient so
+[00:38:17] um basically when you're enriching data
+[00:38:20] like you can do it manually but it's
+[00:38:24] it's God awful and I wouldn't recommend
+[00:38:26] it it's extremely tedious especially
+[00:38:28] with um a niche with 6,000 listings um
+[00:38:32] so I am working on a tool that automates
+[00:38:36] this uh and this is where the location
+[00:38:38] ID comes in so this isn't available it's
+[00:38:42] just something I'm working on with
+[00:38:43] someone but it's very much a scratcher
+[00:38:47] own itch project that we chose where I
+[00:38:50] have this sample data if we look at it
+[00:38:53] we can see I have the location ID um
+[00:38:58] and it's basically going to automate the
+[00:39:01] data enrichment aspect of this which is
+[00:39:03] easily the most tedious so if we just
+[00:39:06] put in shade and
+[00:39:08] then have it look for the keyword shade
+[00:39:12] I'll prompt it and
+[00:39:14] say um does this dog park have
+[00:39:17] shade we can add different columns you
+[00:39:20] know for benches and other things like
+[00:39:22] that but um basically I
+[00:39:27] we'll process
+[00:39:29] this and this is save this is going to
+[00:39:32] save me so much time I mean well yeah
+[00:39:35] back in October 2022 I did everything
+[00:39:38] manually granted that first directory
+[00:39:41] website I only had like 130 different
+[00:39:44] listings so it was not too bad but
+[00:39:46] something with this much data you're
+[00:39:49] going to want to be able to utilize um
+[00:39:53] some automation whether it's you know
+[00:39:55] CLA or Cloe or
+[00:39:58] something like that cool shots fired
+[00:40:02] shots
+[00:40:03] fired um this is it I mean basically
+[00:40:07] what it did is it read the URL so like
+[00:40:12] if you're going to do this just a pro
+[00:40:14] tip for anyone out there who's building
+[00:40:15] this um or wanting to automate the data
+[00:40:18] enrichment it basically needs to read
+[00:40:21] the Google URL for that specific dog
+[00:40:24] park and then it can
+[00:40:28] basically look through the reviews and
+[00:40:30] tell you if there's a sha a shaded area
+[00:40:32] or benches and stuff so using that we
+[00:40:35] using that
+[00:40:37] URL um it basically shows us the review
+[00:40:42] it created this new column for shade
+[00:40:44] which we we had up there and in this
+[00:40:46] case it says true because multiple
+[00:40:48] reviews mention the presence of shade um
+[00:40:51] although some reviewers wish more so I'd
+[00:40:54] basically like you know use this to
+[00:40:57] enrich the data rather than manually
+[00:41:00] going and saying like yes and going down
+[00:41:03] the line that way so that it's just
+[00:41:05] something that I'm building with someone
+[00:41:08] uh just to scratch my own itch and uh
+[00:41:10] it's it's not like available but you
+[00:41:13] know if if it is in demand I guess maybe
+[00:41:16] we'll release it uh that's the
+[00:41:19] plan uh but that's essentially the big
+[00:41:21] idea enrich your data because again
+[00:41:24] we're trying to make something better
+[00:41:26] than the bone we're trying to make
+[00:41:28] something better than bring fedo and as
+[00:41:31] great as bring fedo
+[00:41:33] is you know how how do I know if I
+[00:41:36] forget my dog bags how do I know quiet
+[00:41:39] water Waters Park is going to have it
+[00:41:40] you know I'm just it's a water park like
+[00:41:43] I don't know what am I going to have to
+[00:41:44] call them so there are some
+[00:41:46] opportunities even with the most
+[00:41:48] dominant dog park directories where I'm
+[00:41:51] like yeah this data enrichment is going
+[00:41:53] to be what sets me apart and it's going
+[00:41:55] to be what brings people back to the
+[00:41:56] webs site because I went so deep to list
+[00:42:01] all this
+[00:42:02] information um so imagine this is all
+[00:42:05] you know cleaned out
+[00:42:08] um we can now go into how we actually
+[00:42:11] format it onto the the website uh and
+[00:42:14] for this I'm I'm doing it the dumb way I
+[00:42:16] have WordPress up somewhere here I'll
+[00:42:20] clean this W I didn't expect you to say
+[00:42:21] WordPress got to be real I've been
+[00:42:24] playing with framer so I've been seeing
+[00:42:26] so many builds with framer so I'm I'm
+[00:42:28] learning that um bolt. new is super
+[00:42:32] interesting but I I I guess I just
+[00:42:35] wanted to bring people back to how I did
+[00:42:38] it and it's easily probably the dumbest
+[00:42:41] way nowadays but it's so dumb it's
+[00:42:44] inspiring it's like you can brute force
+[00:42:47] it if you want and just start it's not
+[00:42:49] the best way at all but um I did just
+[00:42:52] create a WordPress website as a example
+[00:42:55] for the format
+[00:42:57] so any CMS works I've seen some amazing
+[00:43:01] builds with framer so if you know framer
+[00:43:03] I'd probably recommend that but you can
+[00:43:06] use WordPress and really basic themes
+[00:43:10] like my first directory website was
+[00:43:12] using Elementor Pro which is like I mean
+[00:43:16] love them but not the best way to create
+[00:43:18] a website not the only option to create
+[00:43:21] a website um but I created a sample
+[00:43:25] directory here and
+[00:43:28] the reason I I'm showing you this is
+[00:43:30] because this is what I call a static
+[00:43:33] pillar page directory uh and remember
+[00:43:36] when I said that it it's totally
+[00:43:38] different than what most people think of
+[00:43:40] when they think of a
+[00:43:41] directory this is the kind of slept on
+[00:43:44] format and the reason for that is it's
+[00:43:48] basically a super long page it's
+[00:43:50] completely it's like level one of
+[00:43:52] directory builds and um you know it's it
+[00:43:57] works really well it uses what's called
+[00:43:59] a pillar page which I feel like is kind
+[00:44:01] of an outdated SEO principle but
+[00:44:04] essentially very comprehensive page with
+[00:44:07] all of your
+[00:44:08] content on a single page and um as silly
+[00:44:13] as this
+[00:44:15] looks it works really well from an SEO
+[00:44:17] perspective so let's let's just break
+[00:44:19] this down like I think anyone who's
+[00:44:21] watching this will be able to create a
+[00:44:23] web website like this um but you know
+[00:44:27] have your you know you have your header
+[00:44:29] one with your keyword you have your
+[00:44:32] table of
+[00:44:33] contents and then you essentially are
+[00:44:35] targeting all of
+[00:44:36] these City specific um dog park keywords
+[00:44:41] so Dog Park Long Beach you also have
+[00:44:44] Rosy's dog beach um which is an example
+[00:44:47] listing a nice photo here is where your
+[00:44:50] data enrichment would be and then your
+[00:44:53] basic you know address phone number
+[00:44:55] hours and then we have a map Ed you can
+[00:44:57] throw on some reviews or you can leave
+[00:44:59] it out but I would say don't sleep on
+[00:45:02] this format like if you're just starting
+[00:45:04] your directory and you want to create
+[00:45:06] one pretty quickly and see how well it
+[00:45:08] does try this out because from an SEO
+[00:45:13] perspective this is essentially taking
+[00:45:16] advantage of the highest search volume
+[00:45:18] keywords which would be like dog parks
+[00:45:20] Long Beach dog parks Los
+[00:45:22] Angeles and even if you were to go out
+[00:45:25] and create a programmatic directory you
+[00:45:27] know which I have those
+[00:45:30] directories the most searched pages on
+[00:45:33] those directories are the location pages
+[00:45:36] so I I'll give you a quick example
+[00:45:38] without veering too far off but if we
+[00:45:40] look at this bring fedo
+[00:45:43] website and we just look at the site
+[00:45:46] Explorer and we look at their top
+[00:45:50] pages all of their most traffic pages
+[00:45:53] are the location pages so dogf friendly
+[00:45:56] Restaurant New York
+[00:45:58] work pet friendly hotels in
+[00:46:01] Dallas it's not necessarily the actual
+[00:46:04] listings that are getting traffic so
+[00:46:06] what you're doing with a really watered
+[00:46:08] down pillar page static directory like
+[00:46:13] um like this one is you're basically
+[00:46:16] targeting those keywords that are
+[00:46:18] already getting the most traffic and
+[00:46:20] you're putting them on one page um
+[00:46:23] so another thing with this is that
+[00:46:27] um it's perfect for display ad
+[00:46:30] monetization uh there
+[00:46:33] are naturally they really long pages so
+[00:46:36] you're going to be able to fit a lot of
+[00:46:37] AD placements just like how a YouTuber
+[00:46:40] would make more money from an hourong
+[00:46:42] video with more ad placements it's kind
+[00:46:44] of the same way so if you were to go
+[00:46:47] with that monetization it's pretty good
+[00:46:50] another thing is that with
+[00:46:53] this um you know with this area down
+[00:46:56] here this is basically your internal
+[00:46:58] linking strategy it's super simple super
+[00:47:01] straightforward where people will end up
+[00:47:04] clicking on different states to look at
+[00:47:07] those dog
+[00:47:08] parks and that's really it um one of the
+[00:47:13] biggest advantages with a pillar page
+[00:47:16] static directory is the keyword clusters
+[00:47:19] that you're going to end up ranking for
+[00:47:21] so with my first
+[00:47:23] directory one of my state pages will
+[00:47:26] rank for like 1,300 keywords and it's
+[00:47:30] because I'm targeting all of these kind
+[00:47:33] of City specific keywords here so that's
+[00:47:36] kind of the Simplicity of it um again
+[00:47:41] very very
+[00:47:43] basic level one of directories but
+[00:47:46] amazing if you just want to dip your
+[00:47:47] feet in in the water and um you know get
+[00:47:52] to I would say like two to 2 to 10K in
+[00:47:55] Mr is definitely possible um that first
+[00:47:57] website I showed you is a static
+[00:47:59] directory so this is
+[00:48:02] like this is this is pretty nice it's
+[00:48:05] actually kind of one of my favorite
+[00:48:06] builds because of how simple and dumb it
+[00:48:09] is
+[00:48:11] um yeah I think what's cool about it is
+[00:48:14] you can go and build this use you know
+[00:48:17] use WordPress use framer use whatever um
+[00:48:22] and have it just be this $2,000 $5,000 a
+[00:48:26] month thing that just sends you what I
+[00:48:28] you know I use the term mailbox money um
+[00:48:32] someone once told me that years ago the
+[00:48:34] concept is every single month you know
+[00:48:37] it's like they send you a check and in
+[00:48:40] your mailbox and it's enough money to
+[00:48:42] just like pay for your bills pay for
+[00:48:44] your rent um which allows you maybe to
+[00:48:47] work on other stuff maybe you have a
+[00:48:49] full-time job that you really care about
+[00:48:52] um or you can
+[00:48:55] actually like was saying earlier you can
+[00:48:57] use this as the foundation of a really
+[00:49:00] much bigger idea so you can take dog
+[00:49:03] park near me and eventually turn it
+[00:49:06] into some SAS product for public parks
+[00:49:12] or maybe it's a consumer product that
+[00:49:15] sells you know that's a competitor to um
+[00:49:19] the farmer's dog which does $500 million
+[00:49:21] a year in Revenue so um the choice is
+[00:49:25] yours and
+[00:49:27] that's why I think directory that's why
+[00:49:29] I've been bringing on more and more
+[00:49:30] directories onto the uh people onto the
+[00:49:32] the Pod because I think that the
+[00:49:34] average you know Tech founder isn't
+[00:49:37] thinking about building directories
+[00:49:39] totally totally I think they're
+[00:49:42] extremely underrated
+[00:49:45] and so 1996 as someone said in my
+[00:49:49] comment section so boring look how
+[00:49:51] boring like look at this you know I
+[00:49:54] couldn't I yawned in this in this
+[00:49:57] interview at one point that's totally
+[00:49:59] acceptable in fact I'm happy you did
+[00:50:01] because I think people are going to look
+[00:50:03] at this and be like there's no way this
+[00:50:05] works but this is literally how I built
+[00:50:08] my first directory and yeah you could
+[00:50:10] doesn't take too many of these types of
+[00:50:13] websites to have enough to keep you AF
+[00:50:15] float pay your bills um maybe leave your
+[00:50:19] full-time job to build something even
+[00:50:21] greater uh something more similar to you
+[00:50:24] know what we what like the directory
+[00:50:27] websites I showed in the very beginning
+[00:50:29] but um I will say there's a lot of other
+[00:50:31] directories that are like way higher in
+[00:50:34] terms of earning potential um you know
+[00:50:36] programmatic SEO has been a really hot
+[00:50:39] topic so that's been like a programmatic
+[00:50:42] directory where you sell leads to
+[00:50:43] service-based businesses that's amazing
+[00:50:47] there's so many different opportunities
+[00:50:49] there um but even with this like I think
+[00:50:54] anything in the pet space is interesting
+[00:50:57] because there's a lot of affiliate plays
+[00:50:59] that you can include there's also even a
+[00:51:02] potential to create some kind of lead
+[00:51:04] magnet where you collect a lot of data
+[00:51:07] so I'm sure you've heard of um BarkBox
+[00:51:10] this is the company that Kevin oi I
+[00:51:13] think on Shark Tank invested in and it's
+[00:51:17] it's an interesting one because they I
+[00:51:20] think we're only doing like three or
+[00:51:22] four million in Revenue but they got
+[00:51:24] acquired for like 90 million and the
+[00:51:26] reason for that was because the actual
+[00:51:29] like data so they sell DNA kits for dogs
+[00:51:32] and cats the data that they acquired was
+[00:51:34] way more valuable than their actual like
+[00:51:36] annual revenue so there might be a way
+[00:51:40] to maybe create a newsletter on the dog
+[00:51:44] directory somehow collect data around
+[00:51:48] dogs um but even in its most simplest
+[00:51:51] form BarkBox does have an affiliate
+[00:51:53] program if people are looking for dog
+[00:51:55] parks maybe there some alignment with
+[00:51:57] the Searchers intent where people want
+[00:51:59] to know more about the health of their
+[00:52:01] dogs so this is a play like I would
+[00:52:05] definitely experiment with this if I
+[00:52:06] were to publish a dog park directory so
+[00:52:09] you have like money coming through ads
+[00:52:11] maybe an affiliate
+[00:52:13] play perhaps build some kind of email
+[00:52:16] list or lead magnet to collect more
+[00:52:18] information on dog owners there's just a
+[00:52:20] lot that you can do once you start
+[00:52:22] monetizing it and once you get a lot of
+[00:52:25] traffic
+[00:52:26] um but yeah very simple format
+[00:52:30] and kind of just speaks for
+[00:52:32] itself if you enjoyed this episode
+[00:52:35] please let us know in the comment
+[00:52:36] section I read every single comment uh
+[00:52:40] so we would love to see you in there
+[00:52:41] Frey thank you so much for giving us
+[00:52:43] this tutorial where could people find
+[00:52:46] you on the internet yeah so um YouTube I
+[00:52:50] just started posting more directory
+[00:52:51] content on YouTube it's just my name
+[00:52:54] foru um you can follow me on x again
+[00:52:57] just freay chew and yeah that's the best
+[00:53:00] way cool we'll include that in the show
+[00:53:02] notes uh hope everyone feels a little
+[00:53:05] more
+[00:53:07] sophisticated uh with online directories
+[00:53:09] in a way um we didn't create the most
+[00:53:12] beautiful directory but we did create a
+[00:53:14] directory that people needed and you can
+[00:53:16] always add the the lipstick afterwards
+[00:53:18] so um I'm proud of what what you came
+[00:53:22] I'm proud of what we built today and um
+[00:53:25] hopefully uh people enjoy this and we
+[00:53:26] can have you on again Frey that sounds
+[00:53:29] good yeah um appreciate you having me
+[00:53:32] and uh I I'll just end it on this which
+[00:53:34] is whether you're going and building
+[00:53:37] something big or something small like
+[00:53:38] this those first two steps are the same
+[00:53:41] you know finding that idea validating
+[00:53:43] that that idea getting and parsing data
+[00:53:46] so um yeah I I I I think it doesn't
+[00:53:50] matter what you're building those are
+[00:53:52] where you want to focus most of your
+[00:53:53] time and I'll leave it at that amen
+[00:53:57] all right see you later thanks Greg
