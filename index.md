@@ -17,7 +17,7 @@ This vault has two parallel structures (see `CLAUDE.md` for the full model):
 
 **Start here:** [[status-dashboard]] — at-a-glance view of every coding project by status (in-progress / unfinished / abandoned / deployed).
 
-### In-progress (15) — `wiki/projects/in-progress/`
+### In-progress (16) — `wiki/projects/in-progress/`
 
 - [[three-altitudes]]: Cinematic four-stage scrolling portfolio site, Next.js + Three.js + Sanity
 - [[overlook-portal-webapp]]: Client portal for overlookstrategy.com, Next.js + FastAPI/Railway
@@ -34,6 +34,7 @@ This vault has two parallel structures (see `CLAUDE.md` for the full model):
 - [[notion-life-os]]: Personal Life OS in Notion (6-area buckets)
 - [[hybrid-llm-workflow]]: Local LLM + Sonnet hybrid setup
 - [[mission-control]]: Command-center dashboard for Finn's OpenClaw-shaped local agent system. v0.1 = 5-screen dashboard. v0.2+ vision triggered by [[youtube-jack-roberts-openclaw-antigravity|Jack Roberts' OpenClaw → AntiGravity video]]
+- [[openclaw-airtable-spine]]: Schema spec for the OpenClaw Airtable state spine — three tables (fleet_state, events, lessons) wired to HyperAgent record-change trigger. Spec only; lands after Telegram supergroup migration and webhook backup.
 
 ### Unfinished (5) — `wiki/projects/unfinished/` — the "80% pile"
 
@@ -423,4 +424,5 @@ Anchor: [[pier-and-point]] — concept and vision page. AI-assisted hyperlocal n
 - [[kevin-agent]]: Pipeline operator (stub).
 - [[otto-agent]]: Scribe agent (stub).
 - [[bridge-agent]]: Webdev specialist, currently blocked (stub).
+- [[openclaw-airtable-spine]]: Schema spec for the three-table Airtable state spine (fleet_state, events, lessons). HyperAgent record-change trigger surface. Spec only; lands after Telegram supergroup migration and webhook backup.
 

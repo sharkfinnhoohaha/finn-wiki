@@ -955,3 +955,12 @@ Open threads:
 - Command-receiver webhook contract for Atlas (Day-22 prerequisite)
 - Smoke-test Kevin Asks / Otto Asks routing into Atlas
 - Cost telemetry (spend.jsonl)
+
+## [2026-05-05] new-page | openclaw-airtable-spine
+
+Spec for the OpenClaw Airtable state spine — three tables (fleet_state, events, lessons) wired to HyperAgent record-change trigger. Spec only, no Airtable bases created until Telegram supergroup migration and webhook backup land. Sits below [[mission-control]] and beside [[openclaw-fleet]].
+
+Pages created: [[openclaw-airtable-spine]]
+Pages updated: [[index]] (in-progress count 15→16, added under OpenClaw fleet subsection)
+Finn-OS touched: no
+Open threads: 5 verification questions for Finn (HyperAgent trigger semantics, PAT scoping, notes ergonomics, auto-merge policy, events retention).
