@@ -17,7 +17,7 @@ This vault has two parallel structures (see `CLAUDE.md` for the full model):
 
 **Start here:** [[status-dashboard]] — at-a-glance view of every coding project by status (in-progress / unfinished / abandoned / deployed).
 
-### In-progress (14) — `wiki/projects/in-progress/`
+### In-progress (15) — `wiki/projects/in-progress/`
 
 - [[three-altitudes]]: Cinematic four-stage scrolling portfolio site, Next.js + Three.js + Sanity
 - [[overlook-portal-webapp]]: Client portal for overlookstrategy.com, Next.js + FastAPI/Railway
@@ -33,6 +33,7 @@ This vault has two parallel structures (see `CLAUDE.md` for the full model):
 - [[berklee-music-supervision-1]]: Lessons 10/11/12 coursework for Alchemy (CBS)
 - [[notion-life-os]]: Personal Life OS in Notion (6-area buckets)
 - [[hybrid-llm-workflow]]: Local LLM + Sonnet hybrid setup
+- [[mission-control]]: Command-center dashboard for Finn's OpenClaw-shaped local agent system. v0.1 = 5-screen dashboard. v0.2+ vision triggered by [[youtube-jack-roberts-openclaw-antigravity|Jack Roberts' OpenClaw → AntiGravity video]]
 
 ### Unfinished (5) — `wiki/projects/unfinished/` — the "80% pile"
 
@@ -108,6 +109,8 @@ This vault has two parallel structures (see `CLAUDE.md` for the full model):
 - [[obsidian]], [[claude-code]], [[obsidian-web-clipper]], [[marp]], [[dataview]], [[qmd]], [[notebooklm]]: Wiki tooling
 - [[graphify]]: Knowledge-graph layer over Finn-Wiki (MCP server `graphify-finn-wiki` + `wiki-*` zsh aliases)
 - [[openclaw]], [[lindy-ai]], [[n8n]], [[trigger-dev]], [[manus]]: 2026 agent ecosystem
+- [[antigravity]]: Google's Gemini 3.1-anchored agent IDE. Vibe-coding-first, end-to-end build substrate. Stub page; candidate for [[mission-control]] v0.2+ build substrate (added 2026-05-04 with [[youtube-jack-roberts-openclaw-antigravity|Jack Roberts video]] ingest)
+- [[hyperagent]]: Howie Liu's agent-builder product at Airtable. "Macintosh to OpenClaw / Claude Code's Linux." First-class fleet command center. Finn has $1k credits + 2.5x Opus 4.6 subsidy via [[hyperagent-playbook]] (added 2026-05-04)
 - [[alex-krentsel]]: UC Berkeley / Google Research, OpenClaw architecture deep dive
 - [[ideabrowser]]: Subniche-discovery tool (Isenberg recommendation)
 - [[apple-card]]: Flagged for NSF returns
@@ -353,6 +356,7 @@ Anchor: [[pier-and-point]] — concept and vision page. AI-assisted hyperlocal n
 - [[fleet-of-agents]]: Every company gets ~20 agents mapped to humanoid org-chart roles. Context-window physics + matching legacy infra make it inevitable
 - [[agentic-inflection-late-2025]]: The threshold both speakers point at. Karpathy: December 2025. Howie: Opus 4.5 (~Nov 2025). Same inflection, different vocabularies
 - [[understanding-as-bottleneck]]: Karpathy's closing thesis. "You can outsource your thinking but you can't outsource your understanding." The bottleneck migration: typing → spec/oversight/taste → understanding
+- [[agentic-workflows]]: **Recipe index for agent-anchored work** (added 2026-05-04 with [[youtube-jack-roberts-openclaw-antigravity|Jack Roberts video]] ingest). Sits one layer below [[agentic-engineering]] — engineering is the discipline, workflows are the recipes. Catalogs agent-builds-tool, spec-first-fill-in-blanks, fleet-of-agents, skills-as-primitives, living-config-files, heartbeat-sessions, inter-step-human-review, quote-then-answer, llm-as-judge, per-task-pricing, discord-hub, outbound-mcp-server
 
 ### Distribution / category theses (added with Isenberg paid-extension ingest 2026-04-30)
 
@@ -380,6 +384,7 @@ Anchor: [[pier-and-point]] — concept and vision page. AI-assisted hyperlocal n
 - [[isenberg-howieliu-hyperagent-2026-04-29]]: Howie Liu (Airtable / HyperAgent) on Greg Isenberg's pod — TAM is white-collar GDP, opportunity-cost pricing, skills as primitive, rubrics + LLM-as-judge, fleet command center. The operator source for [[agentic-services-positioning]]. (April 29, 2026)
 - `raw/_extracts/2026-04-29-karpathy-howieliu-digest.md`: Chapter-by-chapter digest, deck-ready quotes, glossary. Used to build [[agentic-services-positioning]] and the 10 new concept pages
 - [[isenberg-paid-chrome-extensions-2024]]: Greg Isenberg + Cody Schneider 58s YouTube short on paid Chrome extensions as a category — "AI builds them, the Web Store still distributes them." Source for [[paid-chrome-extensions]] and six idea pages in `wiki/business/`. (Original June 2024, ingested April 30, 2026)
+- [[youtube-jack-roberts-openclaw-antigravity]]: Jack Roberts' YouTube — "I replaced OpenClaw with AntiGravity… its WILD." 60K views, 99.2% like ratio. Reference material for [[mission-control]] v0.2+ vision — what mission-control could grow into via [[antigravity|AntiGravity]] / [[hyperagent|HyperAgent]] as the meta-builder. **Transcript not available** at ingest time. (Ingested 2026-05-04)
 
 ## Design
 
@@ -407,3 +412,15 @@ Anchor: [[pier-and-point]] — concept and vision page. AI-assisted hyperlocal n
 
 - [[llm-wiki-vs-rag]]: Persistent wiki synthesis vs retrieval-augmented generation
 - [[ai-news-failures-curriculum]]: The eight burned operators (CNET, SI, Gannett LedeAI, Microsoft MSN, Apple Intelligence, Hoodline, BNN, NewsBreak) — failure modes, dates, outcomes, and what the editorial constraints imply for [[pier-and-point]] (added 2026-04-28)
+
+<!-- openclaw-fleet-2026-05-05 -->
+### OpenClaw fleet (added 2026-05-05)
+
+- [[openclaw-fleet]]: Project index for Finn's local OpenClaw-shaped agent fleet (Atlas / Kevin / Otto / Bridge). HyperAgent-hosted runtime, Telegram surface, GitHub-backed living config files. Sits below [[mission-control]].
+- [[openclaw-fleet-2026-05-05-atlas-online]]: Progress note — Atlas online, Day 2 of Phase 1 silent ingest; Kevin filed first wiki contribution; Bridge blocked on secrets.
+- [[openclaw-fleet-timeline-atlas-rollout]]: Atlas rollout schedule — Phase 1 (5/5–5/12 silent ingest), starter-five at 5/12 close, Phase 2 (5/13–5/26 observer-coach), Day 22 gate (5/27 autonomous).
+- [[atlas-agent]]: HyperAgent-hosted meta-coach / Professor (stub).
+- [[kevin-agent]]: Pipeline operator (stub).
+- [[otto-agent]]: Scribe agent (stub).
+- [[bridge-agent]]: Webdev specialist, currently blocked (stub).
+

@@ -904,3 +904,54 @@ Raw (1): `raw/isenberg-paid-chrome-extensions-2024.md`
 ### Token discipline notes
 
 Source content was captured from Finn's paraphrase rather than the YouTube auto-caption track (signed URL had expired before retrieval). Saved a re-fetch cycle but left the parent episode (`kP6ZsZMl81E`) un-ingested. Used a single `general-purpose` subagent to extract structured metadata from the cached HTML (1MB) rather than reading the file directly. Page writing was main-context (Opus) since Finn explicitly preferred output quality on this one.
+
+## [2026-05-04] ingest | YouTube — Jack Roberts: I replaced OpenClaw with AntiGravity… its WILD
+
+Source: `https://youtu.be/C4fTWiOGXpM?si=nkqWbmnknc5w5KOK` — Jack Roberts (`@Itssssss_Jack`), 60,513 views, 99.2% like ratio (1,423 / 11). Finn shared as reference material for [[mission-control]] v0.2+ vision: "this is a pretty good example of what I kinda want my mission control to do… building out my OpenClaw system… using antigravity or especially hyper agent to build it would be a really, really impactful thing on productivity."
+
+Pages created (5):
+- [[youtube-C4fTWiOGXpM]] (`raw/_extracts/`) — raw extract with metadata, keyword tags, description fragment, transcript-not-available audit, and inferred-content disclaimer
+- [[youtube-jack-roberts-openclaw-antigravity]] (`wiki/sources/`) — source summary with TL;DR, audience-signal analysis, inferred-content section (clearly marked), patterns-to-study table, and open threads
+- [[mission-control]] (`wiki/projects/in-progress/`) — **new project page**. v0.1 = current 5-screen dashboard (architecture undocumented in wiki), v0.2+ vision section captures the build-out fork. Full life-os-daily frontmatter contract populated. Backfill of v0.1 architecture flagged as a blocker on the page
+- [[agentic-workflows]] (`wiki/concepts/`) — recipe index for agent-anchored work, sits below [[agentic-engineering]]. Twelve recipes catalogued (agent-builds-tool, spec-first, fleet-of-agents, skills-as-primitives, living-config-files, heartbeat-sessions, inter-step-human-review, quote-then-answer, llm-as-judge, per-task-pricing, discord-hub, outbound-mcp-server) with stack-mapping table
+- [[hyperagent]] (`wiki/entities/`) — Howie Liu's Airtable command-center product. Capabilities, position-vs-alternatives table, Finn's intended use including the $1k credits + 2.5x Opus 4.6 subsidy reference
+- [[antigravity]] (`wiki/entities/`) — Google's Gemini 3.1-anchored agent IDE. Stub page; flagged for firsthand testing before more substantive content lands. Adds the missing entry that's been showing up in [[notebooklm-overlook-strategy]] and [[notebooklm-mastering-agentic-workflows]] without a home page
+
+Pages updated (3):
+- [[openclaw]] — appended `[[antigravity]]` / `[[hyperagent]]` / `[[mission-control]]` / `[[agentic-workflows]]` to source frontmatter and Related list. Added one-paragraph "migration narrative" callout flagging the recurring genre (creators replacing OpenClaw with X). Did not change the page's framing — Jack's video isn't the field's verdict.
+- [[index.md]] — Mission Control added to In-progress (now 15, was 14). [[antigravity]] and [[hyperagent]] added to Tools & services under "2026 agent ecosystem." [[agentic-workflows]] added to Concepts → Agentic ecosystem section. [[youtube-jack-roberts-openclaw-antigravity]] added to Sources
+- (none of the existing concept / entity pages touched beyond the cross-links above — preserved their voice)
+
+### Career/business relevance: YES (dual-filed)
+
+[[Finn-OS/now]]: appended one open thread under "From projects" — Mission Control v0.2+ vision needs a one-pager, three forks open (substrate / spec / credits). Bumped `updated` to 2026-05-04.
+
+[[Finn-OS/ideas/backlog]]: appended one new bullet under "New ideas" — build Mission Control v0.2+ as the meta-builder pattern, point AntiGravity / HyperAgent at the existing dashboard. Linked to [[mission-control]] and [[agentic-workflows]]. Bumped `updated` to 2026-05-04.
+
+[[Finn-OS/career/opportunities]] / [[skills]] / [[goals]]: not modified.
+
+### Limitations / open threads
+
+- **Transcript not available.** Workspace bash was wedged with `useradd: No space left on device`, blocking python slicing of the 1MB cached watch-page (line 24 alone was ~280K tokens, over the file-tool read cap). All transcript routes (oEmbed, Invidious / Piped instances, youtube-transcript public services, timedtext API variants) failed in the delegated subagent. Source-summary page flags this clearly. Re-ingest if a transcript surfaces; do not modify the raw extract.
+- **Push to GitHub blocked in this session** — workspace bash unavailable. The `~/.openclaw/tmp/finn-wiki-sync/push-after-write.sh` script needs to run from Finn's terminal directly. Handed off in the session report.
+- **Mission Control v0.1 architecture undocumented.** Page is a stub for the existing 5-screen dashboard — backfill on next session that touches Mission Control directly.
+- **Substrate decision (AntiGravity vs HyperAgent vs Cowork) is the deciding fork** for v0.2+. Worth a `wiki/comparisons/` page on its own.
+
+### Token discipline notes
+
+Used a single `general-purpose` subagent for the cached-HTML metadata extraction (~140k tokens, returned title / channel / view count / dislikes / 28 keyword tags / OG description fragment). Main-context (Opus) for all page writing because Finn flagged "optimize for output quality, do not worry about conserving tokens." Did not attempt to ingest Jack Roberts' broader channel — the value was in this one video as a Mission Control trigger, not in Jack's full body of work.
+
+## [2026-05-05] progress + roadmap | OpenClaw fleet — Atlas online
+
+Captured today's fleet progress and the Atlas rollout schedule into the wiki. Atlas is HyperAgent-hosted, currently Day 2 of self-imposed Phase 1 silent ingest (days 1–7). Six-channel Telegram surface is live; channel-admin grant on Openclaw Fleet Ops landed (Finn=owner, Dispatch=admin, Atlas=admin). FLEET-CORPUS.md (91,297 bytes / 2,012 lines) ingested into `/agent/workspace/atlas/foundation-corpus/` via Exa HTTPS pull from public GitHub. Baseline probe clean; 11-item gap list produced. Kevin filed the day's first agent-contribution. Otto contribute path live-but-unverified. Bridge blocked on three secrets.
+
+Pages created: [[openclaw-fleet]], [[openclaw-fleet-2026-05-05-atlas-online]], [[openclaw-fleet-timeline-atlas-rollout]], [[atlas-agent]], [[kevin-agent]], [[otto-agent]], [[bridge-agent]]
+Pages updated: [[index]] (registered new pages), [[status-dashboard]] (added openclaw-fleet to in-progress)
+Finn-OS touched: no
+Open threads:
+- Bridge secrets (GH_TOKEN_BRIDGE_OVERLOOK, BRIDGE_GIT_EMAIL, TAILSCALE_AUTHKEY_BRIDGE)
+- Wiki-contribute crontab — Finn must install locally (TCC blocks SSH)
+- Atlas read path to Kevin's MEMORY/processed.jsonl + cron logs
+- Command-receiver webhook contract for Atlas (Day-22 prerequisite)
+- Smoke-test Kevin Asks / Otto Asks routing into Atlas
+- Cost telemetry (spend.jsonl)

@@ -48,6 +48,7 @@ Projects with active work, recent sessions, and a clear next step.
 | [[berklee-music-supervision-1]] | Apr ~6 | — | Submit Lessons 10/11/12 deliverables (Alchemy cue sheet + video sync) |
 | [[notion-life-os]] | Apr 2 | — | Multi-column layout drag-drop; filter views; CSV import polish |
 | [[hybrid-llm-workflow]] | Apr 2 | — | Verify `setup_hybrid.sh` actually ran; test the local/Sonnet handoff |
+| [[openclaw-fleet]] | May 5 | — (HyperAgent + local) | Atlas Phase 1 silent ingest (days 1–7); land Bridge secrets in parallel |
 
 ---
 
