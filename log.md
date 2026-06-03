@@ -1001,3 +1001,64 @@ Six Finn-domain candidate niches scored. Sequencing recommendation in [[business
 ### Token discipline notes
 
 Single Opus session, no subagents — full transcript fit comfortably in context (~8.6K words plain text). Used yt-dlp directly in the sandbox for transcript pull (no JS runtime warnings caused issues). No web-fetch beyond YouTube oEmbed for title/channel verification. Total ingest is ~33K tokens including this log entry.
+
+## [2026-05-07] ingest | openclaw-autonomous-ops | this conversation
+
+**Pages created (1)**
+- `wiki/projects/in-progress/openclaw-autonomous-ops.md`
+
+**Pages updated (2)**
+- `index.md` — added bullet to In-progress (count 16→17)
+- `Finn-OS/now.md` — added bullet to From career / business
+
+**Career/business relevance: YES** — flagship use case for OpenClaw fleet, primary OS revenue lever.
+
+**Why this earned its place**
+
+The operational endgame for OpenClaw fleet — first capture of "Kevin runs OS autonomously" as a project. Pulls together the Kevin-as-team-lead architecture, the closed-loop Airtable pattern, Phase Check rubric, Themis judge, and Atlas Phase 3 teaching role into one concrete venture: cron-driven lead research + website drafting for Ventura small businesses. Atlas first Phase 3 priority. Greenfield audit confirmed: no existing OS-on-Kevin pipeline currently runs (only manual workflows + the separate overlook-portal-webapp). This doc is the bootstrap.
+
+**Token discipline notes**
+
+Source already drafted (in Cowork outputs as `wiki-os-autonomous-ops.md`); base64 transport over SSH avoided heredoc-escape costs. Single page touched in `wiki/projects/in-progress/`. Aggregators: this log entry, top-level index.md (count 16→17), Finn-OS/now.md "From career/business". Pending entity pages: [[OS-ICP]], [[sourcer-agent]], [[mailer-agent]] — they will spawn when those agents stand up. Push BLOCKED — `GH_TOKEN_PUBLISHER` is read-only on this repo; awaiting fresh PAT or `gh auth login`.
+
+## [2026-06-02] audit | Notion Tasks DB deep-audit
+
+Deep-audited the Tasks DB (93 tasks) for active work surface: Today (10) + Doing (9) + Next (14) + Done-last-30d (13) = 46 active tasks.
+
+Key findings:
+- **Amsterdam trip** — departure today (June 2). One open errand (smoke shop), rest Done.
+- **Passport crisis** — 9 sequential Next tasks with stale May 15-20 due dates. Highest-stakes personal block post-trip.
+- **Overlook Strategy / OpenClaw** — OVLK.tech website build is highest-energy Today task (High, 120m). Ventura Forward dashboard test shipped (500m). Autonomous ops skills in flight.
+- **Website design pipeline** — finnbennett.com build + Claude design-token burn in Doing. OVLK.tech design system queued.
+- **Berklee** — Dr. Arana letter (stale Today) + contact-method decision (Next). Shawn Everett tutorial Done.
+- **Stale-date drift** — ~20 tasks have pre-June due dates and need triage post-trip.
+
+Pages created:
+- `wiki/sources/notion-active-work-audit-2026-06-02.md` — full structured summary by project/theme with stale-date triage list
+
+Pages recommended for update (pending Finn approval / separate edit):
+- `Finn-OS/now.md` — replace April 29 stale content with current four urgent themes
+- `wiki/clients/ventura-forward.md` — add App Exploration rewards-thesis context
+- `wiki/projects/in-progress/openclaw-autonomous-ops.md` — add current Doing items (skill creation, atlas comms)
+- `wiki/personal/` — consider creating `passport-urgent-travel.md` if crisis extends post-trip
+
+## [2026-06-02] update | Wiki refresh — Notion audit + Jack Roberts Hermes research
+
+**Pages created (2)**
+- `wiki/concepts/hermes-agentic-os.md` — synthesized from 5 Jack Roberts videos covering Agentic OS, memory architecture, Claude Code handshake, NotebookLM integration, cost hygiene
+- `wiki/sources/notion-active-work-audit-2026-06-02.md` — full structured audit of Notion Tasks DB (93 tasks, 46 active)
+
+**Pages updated (4)**
+- `Finn-OS/now.md` — replaced April 29 stale content with June 2 reality: OVLK.tech build (ROI 9), passport crisis (ROI 8), finnbennett.com (ROI 7). Added Amsterdam departure focus, stale-date triage note, Hermes skills shipped, and last-week retro.
+- `wiki/clients/ventura-forward.md` — added active work section (OVLK.tech build, dashboard test shipped, App Exploration rewards thesis, Jot Form, update email). Updated `updated` field.
+- `wiki/projects/in-progress/openclaw-autonomous-ops.md` — added June 2026 status block: fleet paused 2026-05-24, Hermes evolution note, skills in flight, approval model unchanged. Updated `updated` field.
+- `log.md` — this entry
+
+**Key decisions**
+- Pier-and-Point and landing-page batch decisions moved to open threads (not top-3 money items anymore)
+- Stale-date drift flagged: ~20 tasks with pre-June due dates need triage post-Amsterdam
+- Agentic-engineering positioning for Overlook Strategy remains confirmed and active
+
+**Anti-hallucination notes**
+- `[[ovlk-website]]`, `[[passport-urgent-travel]]`, `[[finnbennett-com]]` are NOT wiki pages — they are shorthand references in now.md pointing at Notion tasks / real-world items. Do not create stub pages for them unless Finn explicitly asks.
+- All active work reflects Notion Tasks DB state as of 2026-06-02; some due dates are stale (May 15-31).

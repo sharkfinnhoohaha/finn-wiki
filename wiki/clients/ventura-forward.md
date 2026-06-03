@@ -4,7 +4,7 @@ type: client
 status: active
 tags: [client, overlook-strategy, retainer, recurring]
 created: 2026-04-24
-updated: 2026-04-24
+updated: 2026-06-02
 weight: medium
 node_size: 5
 sources: [[local_1cfa988a-77d5-42b5-acb8-90109fcff213]]
@@ -28,6 +28,14 @@ sources: [[local_1cfa988a-77d5-42b5-acb8-90109fcff213]]
 
 None broken out separately — retainer arrangement implies ongoing maintenance/support rather than discrete deliverables. Worth confirming with Finn what the $300 covers (hosting? edits? hours?).
 
+## Active work (June 2026)
+
+- **OVLK.tech website build** — in flight, High energy, 120m estimate. Blocks client update email.
+- **Ventura Forward Dashboard test** — shipped (500m). Full onboarding dry-run for the rewards app. Overlook Strategy tested as client.
+- **Ventura Forward App Exploration** — stablecoin/crypto rewards thesis for local community engagement (shopping, news reporting, good deeds). See [[ventura-forward-app]].
+- **Jot Form** — in Doing, client-facing form integration
+- **Send update email to Ventura Forward** — queued Today task, low energy, 10m
+
 ## Retainer / $
 
 - **$300 / month** (confirmed in batch-1 session 3 seed data, "Ventura Forward (recurring retainer income, $300)")
@@ -42,6 +50,8 @@ Not in source.
 - Whether they use the [[overlook-portal-webapp]] client portal — would be a natural fit given the recurring nature
 - Whether the engagement is a website + maintenance setup or something else (audio? branding?)
 - Connection to Ventura, CA local network
+- **App rewards thesis** — needs Finn decision on whether to pitch the stablecoin/community rewards angle
+- **OVLK.tech delivery** — website build is the current block on client communication
 
 ## Related
 

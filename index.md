@@ -17,7 +17,7 @@ This vault has two parallel structures (see `CLAUDE.md` for the full model):
 
 **Start here:** [[status-dashboard]] — at-a-glance view of every coding project by status (in-progress / unfinished / abandoned / deployed).
 
-### In-progress (16) — `wiki/projects/in-progress/`
+### In-progress (17) — `wiki/projects/in-progress/`
 
 - [[three-altitudes]]: Cinematic four-stage scrolling portfolio site, Next.js + Three.js + Sanity
 - [[overlook-portal-webapp]]: Client portal for overlookstrategy.com, Next.js + FastAPI/Railway
@@ -35,6 +35,7 @@ This vault has two parallel structures (see `CLAUDE.md` for the full model):
 - [[hybrid-llm-workflow]]: Local LLM + Sonnet hybrid setup
 - [[mission-control]]: Command-center dashboard for Finn's OpenClaw-shaped local agent system. v0.1 = 5-screen dashboard. v0.2+ vision triggered by [[youtube-jack-roberts-openclaw-antigravity|Jack Roberts' OpenClaw → AntiGravity video]]
 - [[openclaw-airtable-spine]]: Schema spec for the OpenClaw Airtable state spine — three tables (fleet_state, events, lessons) wired to HyperAgent record-change trigger. Spec only; lands after Telegram supergroup migration and webhook backup.
+- [[openclaw-autonomous-ops]]: Kevin runs OS for me — multi-agent autonomous ops for Overlook Strategy via Sourcer/Mailer/Bridge/Atlas
 
 ### Unfinished (5) — `wiki/projects/unfinished/` — the "80% pile"
 
