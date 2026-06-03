@@ -1,15 +1,23 @@
 ---
-title: "Ventura Forward App"
+title: Ventura Forward App
 type: project
 status: active
-tags: [civic, ventura, supabase, nextjs]
+tags:
+- civic
+- ventura
+- supabase
+- nextjs
 created: 2026-04-24
-updated: 2026-04-28
+updated: '2026-06-03'
 weight: high
 node_size: 10
-sources: [ventura-forward-app, cc-batch-a]
-
-# --- life-os-daily contract ---
+sources:
+- ventura-forward-app
+- cc-batch-a
+last_touched: '2026-06-03'
+next_action: Ventura Forward Jot Form
+blocker: ''
+--- life-os-daily contract ---
 revenue_type: retainer
 revenue_score: 7
 effort_score: 5

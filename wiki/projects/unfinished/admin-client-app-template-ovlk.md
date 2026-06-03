@@ -1,15 +1,22 @@
 ---
-title: "Overlook Admin/Client App Template"
+title: Overlook Admin/Client App Template
 type: project
 status: dormant
-tags: [overlook-strategy, template, superseded]
+tags:
+- overlook-strategy
+- template
+- superseded
 created: 2026-04-24
-updated: 2026-04-28
+updated: '2026-06-03'
 weight: low
 node_size: 2
-sources: [overlook-strategy-admin-client-template-ovlk, cc-batch-a]
-
-# --- life-os-daily contract ---
+sources:
+- overlook-strategy-admin-client-template-ovlk
+- cc-batch-a
+last_touched: '2026-06-03'
+next_action: OVLK.tech website build
+blocker: OVLK.tech Claude design system
+--- life-os-daily contract ---
 revenue_type: non-revenue
 revenue_score: 1
 effort_score: 2

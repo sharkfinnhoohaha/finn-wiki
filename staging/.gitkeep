@@ -1,0 +1,9 @@
+# Staging area for `wiki/capture` skill drafts.
+# Files here are NOT canonical wiki — they are pending Finn-approval.
+# Skill workflow:
+#   1. Hermes drafts → staging/<original-target-folder>/<slug>.md
+#   2. Telegram preview surfaces
+#   3. On YES → file moves out of staging into target folder + git commit + push
+#   4. On NO  → file deleted from staging
+# Periodically inspect this tree. If > 20 stragglers live here, the approval
+# loop is being neglected — guard G6 flags this on every draft.
