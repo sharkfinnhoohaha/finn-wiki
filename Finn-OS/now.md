@@ -1,7 +1,7 @@
 ---
 title: "Now"
 type: finn-os
-updated: 2026-06-02
+updated: 2026-06-11
 ---
 
 # Now
@@ -14,8 +14,8 @@ What's on your mind THIS WEEK. Update Monday morning. If something's been on thi
 ## Money items (top 3)
 
 1. OVLK.tech website — Ship OVLK.tech site (High energy, 120m). Blocks Ventura Forward client update · ROI 9
-2. Passport urgent travel — Resolve lost-passport crisis post-Amsterdam (9 sequential tasks queued) · ROI 8
-3. finnbennett.com — Complete finnbennett.com build (design tokens burn + site ship) · ROI 7
+2. finnbennett.com — Complete finnbennett.com build (design tokens burn + site ship) · ROI 7
+3. CMMC Evidence Autopilot — Market validation + MVP build via Claude Code dispatch · ROI 6
 
 ## Area pulses
 
@@ -28,8 +28,8 @@ What's on your mind THIS WEEK. Update Monday morning. If something's been on thi
 ## Current focus (pick 1-3)
 
 - Ship OVLK.tech website build (Today, High energy, 120m)
-- Amsterdam departure — final errand (smoke shop), then travel day
-- Post-trip triage: passport crisis, stale-dated tasks (~20 items pre-June)
+- Invoice Ventura Forward — Month 2 of payment plan ($500 due by end of week)
+- Post-trip triage: stale-dated tasks (~20 items pre-June), CMMC build dispatch
 
 ## Open threads carried in
 
@@ -108,3 +108,6 @@ What's on your mind THIS WEEK. Update Monday morning. If something's been on thi
 
 
 > **Auto-sync** (2026-06-11): 2 project(s) touched in Notion today.
+
+
+> **Auto-sync** (2026-06-12): 2 project(s) touched in Notion today.
