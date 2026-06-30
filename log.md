@@ -1062,3 +1062,12 @@ Pages recommended for update (pending Finn approval / separate edit):
 **Anti-hallucination notes**
 - `[[ovlk-website]]`, `[[passport-urgent-travel]]`, `[[finnbennett-com]]` are NOT wiki pages — they are shorthand references in now.md pointing at Notion tasks / real-world items. Do not create stub pages for them unless Finn explicitly asks.
 - All active work reflects Notion Tasks DB state as of 2026-06-02; some due dates are stale (May 15-31).
+
+## 2026-06-29 — Hermes-Capture
+
+- Published [[hermes-webhook-setup]] to wiki/tech/ (event-driven agent triggers, Tailscale Funnel, GitHub/Stripe/Vercel subscriptions)
+- Vault cleanup: removed 13 empty/Untitled files (daily notes, canvas files, kanban stubs)
+- Moved finn-context.md from staging to wiki/personal/
+- Pushed 37 pending daily-sync commits (June 21-24)
+- Updated index.md with webhook page
+- Full vault audit: 415 .md files, 0 empty files, 385 broken wikilinks across 126 files (mostly local_ UUIDs from Notion imports and shorthand references), 2 frontmatter issues, 12 pages not in index, 14 stale index entries
