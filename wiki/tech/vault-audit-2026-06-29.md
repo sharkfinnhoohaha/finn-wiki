@@ -136,12 +136,12 @@ Full audit of the Finn-Wiki Obsidian vault (415 .md files) on 2026-06-29. Found 
 ## Prevention Checklist
 
 - [x] Run `regenerate-index.py` in daily sync cron
-- [ ] Run empty-file sweep in daily sync cron
-- [ ] Run frontmatter validation in daily sync cron
+- [x] Run empty-file sweep in daily sync cron
+- [x] Run frontmatter validation in daily sync cron
 - [ ] Run broken-wikilink scan weekly (cron or manual)
 - [x] Install graphify MCP + register in Hermes config
 - [ ] Lower staging-clutter threshold from 20 to 5
-- [ ] Add push-verification to wiki-daily-sync script
+- [x] Add push-verification to wiki-daily-sync script
 - [ ] Strip `local_*` Notion UUID links in bulk pass
 - [ ] Add MCP server health check to daily sync
 
