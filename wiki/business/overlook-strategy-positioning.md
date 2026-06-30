@@ -6,7 +6,7 @@ created: 2026-04-24
 updated: 2026-04-29
 weight: high
 node_size: 15
-sources: [[local_b7e57647-0d6d-464c-9ae8-fbd083e1d078]], [[local_c49c7f7b-15a7-4256-8a5f-b71125d9e309]], [[local_dec9a139-56d8-4a6c-8e9c-ad17f2bf5a53]], [[local_65f6bd58-1447-4afc-948b-6b9efd97150a]], [[overlook-vertical-landing-pages-2026-04-26]], [[karpathy-vibe-to-agentic-2026-04-29]], [[isenberg-howieliu-hyperagent-2026-04-29]]
+sources: ,  ,  [[overlook-vertical-landing-pages-2026-04-26]], [[karpathy-vibe-to-agentic-2026-04-29]], [[isenberg-howieliu-hyperagent-2026-04-29]]
 ---
 
 ## TL;DR

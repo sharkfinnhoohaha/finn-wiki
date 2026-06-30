@@ -4,7 +4,7 @@ type: business
 tags: [ideas, backlog, gearflip, overlook-strategy, three-altitudes, chrome-extensions, directories]
 created: 2026-04-24
 updated: 2026-05-06
-sources: [[local_1cfa988a-77d5-42b5-acb8-90109fcff213]], [[local_2a27ba0d-cb52-43ef-bbf7-83d2f5f1888f]], [[local_dec9a139-56d8-4a6c-8e9c-ad17f2bf5a53]], [[local_65f6bd58-1447-4afc-948b-6b9efd97150a]], [[isenberg-paid-chrome-extensions-2024]], [[isenberg-frey-chu-directory-2025]]
+sources: ,  ,  [[isenberg-paid-chrome-extensions-2024]], [[isenberg-frey-chu-directory-2025]]
 ---
 
 ## TL;DR

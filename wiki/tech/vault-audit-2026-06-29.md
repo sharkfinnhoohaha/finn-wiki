@@ -35,7 +35,7 @@ Full audit of the Finn-Wiki Obsidian vault (415 .md files) on 2026-06-29. Found 
 **What:** 385 `[[wikilinks]]` point to pages that don't exist in the vault.
 
 **Root cause:** Three categories:
-1. **Notion import artifacts (~60%)** — Links like `[[local_1cfa988a-77d5-42b5-acb8-90109fcff213]]` are Notion block IDs that got converted to wikilinks during export. They're meaningless outside Notion and should be stripped or converted to plain text.
+1. **Notion import artifacts (~60%)** — Links like `` are Notion block IDs that got converted to wikilinks during export. They're meaningless outside Notion and should be stripped or converted to plain text.
 2. **Shorthand references (~25%)** — Links like `[[mission-control]]`, `[[antigravity]]`, `[[claude]]` that were written as shorthand but never got their own pages. Some reference concepts that are described inline in other pages but don't warrant a dedicated file.
 3. **Deleted page references (~15%)** — Links to pages that were deleted or renamed without updating backlinks. Obsidian shows these as unresolved links but doesn't auto-fix them.
 

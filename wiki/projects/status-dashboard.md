@@ -6,7 +6,7 @@ created: 2026-04-24
 updated: 2026-04-24
 weight: medium
 node_size: 5
-sources: [[local_inventory-2026-04-24]]
+sources: []
 ---
 
 # Project Status Dashboard

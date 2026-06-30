@@ -6,7 +6,7 @@ created: 2026-04-24
 updated: 2026-04-27
 weight: high
 node_size: 10
-sources: [[local_1cfa988a-77d5-42b5-acb8-90109fcff213]], [[local_4d1ab0f2-2c30-4017-be7a-4bb9f275e22e]], [[isenberg-future-of-saas-30-step]], [[overlook-vertical-landing-pages-2026-04-26]], [[overlook-vertical-landing-pages-2026-04-27]]
+sources: ,  [[isenberg-future-of-saas-30-step]], [[overlook-vertical-landing-pages-2026-04-26]], [[overlook-vertical-landing-pages-2026-04-27]]
 ---
 
 ## TL;DR

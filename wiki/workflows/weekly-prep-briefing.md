@@ -6,7 +6,7 @@ created: 2026-04-24
 updated: 2026-04-24
 weight: high
 node_size: 10
-sources: [[local_61169dbe-038c-43f9-97e0-2e7601654671]]
+sources: []
 ---
 
 ## TL;DR

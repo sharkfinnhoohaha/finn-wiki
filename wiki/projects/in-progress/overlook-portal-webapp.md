@@ -8,7 +8,7 @@ created: 2026-04-24
 updated: 2026-04-28
 weight: high
 node_size: 15
-sources: [[local_ac05b833-2a5a-44bd-97e8-58c840d59483]], [[local_1f40bcce-863b-4387-a4ad-ad704bcd0a73]], [[local_c49c7f7b-15a7-4256-8a5f-b71125d9e309]], [[local_dec9a139-56d8-4a6c-8e9c-ad17f2bf5a53]], [[local_b7e57647-0d6d-464c-9ae8-fbd083e1d078]]
+sources: ,  ,  
 
 # --- life-os-daily contract ---
 revenue_type: non-revenue
