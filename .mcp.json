@@ -2,8 +2,8 @@
   "mcpServers": {
     "graphify-finn-wiki": {
       "type": "stdio",
-      "command": ".venv/bin/python",
-      "args": ["-m", "graphify.serve", "graphify-out/graph.json"]
+      "command": "/Users/Finn/Code/Finn-Wiki/.venv/bin/python",
+      "args": ["-m", "graphify.serve", "/Users/Finn/Code/Finn-Wiki/graphify-out/graph.json"]
     }
   }
 }

@@ -2,3 +2,5 @@
 # graphify build artifacts
 graphify-out/
 .venv/
+.venv/
+graphify-out/
