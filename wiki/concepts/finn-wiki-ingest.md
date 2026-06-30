@@ -33,7 +33,7 @@ Fires on phrases like "add this to my wiki", "ingest this source", "where does t
 
 - [[ingest-operation]] — the abstract pattern this implements
 - [[llm-wiki-pattern]] — overall vault pattern
-- The `obsidian-vault-organization` skill — folder conventions used during filing (see [[CLAUDE]] for the canonical schema)
+- The `obsidian-vault-organization` skill — folder conventions used during filing (see CLAUDE.md for the canonical schema)
 
 ## Linked from
 

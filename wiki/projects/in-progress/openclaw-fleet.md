@@ -31,7 +31,7 @@ The fleet pattern follows [[openclaw-architecture|the OpenClaw architecture]] (C
 ## Roster
 
 - [[atlas-agent|Atlas]] — meta-coach / Professor. HyperAgent-hosted. Just landed 2026-05-05. Currently Day 2 of Phase 1 silent ingest. Surface: Telegram. Hard Rule #10 sets six channels and grants Atlas channel-admin on *Openclaw Fleet Ops*.
-- [[kevin-agent|Kevin]] — pipeline operator. Runs the [[pier-and-point-post|Pier and Point]] publishing pipeline plus auxiliary scribe duties. Online and contributing wiki entries (`wiki/agent-contributions/kevin/`).
+- [[kevin-agent|Kevin]] — pipeline operator. Runs the [[pier-and-point|Pier and Point]] publishing pipeline plus auxiliary scribe duties. Online and contributing wiki entries (`wiki/agent-contributions/kevin/`).
 - [[otto-agent|Otto]] — scribe agent. Wiki-contribute test fire kicked off 2026-05-05; not verified end-to-end yet.
 - [[bridge-agent|Bridge]] — webdev specialist. Staged but blocked on three missing secrets only Finn can supply.
 - [[mission-control]] — separate project (the dashboard, not a fleet member). Audited on its own track.

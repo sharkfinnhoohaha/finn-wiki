@@ -56,7 +56,7 @@ llm-wiki/
 └── wiki/            ← LLM-owned, mutable
 ```
 
-The schema ([[CLAUDE|CLAUDE.md]]) sets up the folder conventions, frontmatter format, workflow steps, and tone rules.
+The schema (CLAUDE.md) sets up the folder conventions, frontmatter format, workflow steps, and tone rules.
 
 ## Related
 

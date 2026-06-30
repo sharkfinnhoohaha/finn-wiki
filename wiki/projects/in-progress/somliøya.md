@@ -37,7 +37,7 @@ Active [[overlook-strategy]] client engagement — Next.js + [[tinacms]] (Git-ba
 ## Stack
 
 - **Framework:** Next.js (App Router)
-- **CMS:** [[tinacms]] (Git-based — see [[tinacms-vs-sanity]])
+- **CMS:** [[tinacms]] (Git-based — see TinaCMS vs Sanity)
 - **Hosting:** Presumed [[vercel]] (consistent with Finn's stack default)
 
 ## Status

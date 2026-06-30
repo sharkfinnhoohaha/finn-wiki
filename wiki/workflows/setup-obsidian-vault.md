@@ -30,7 +30,7 @@ Getting from nothing to a working LLM-maintained wiki. Budget: roughly five minu
 
 3. **Open the folder in Obsidian.** File → Open vault → Open folder as vault → select the directory. Trust the author when prompted.
 
-4. **Write the schema.** Create `CLAUDE.md` at the vault root. Paste Karpathy's gist as a starting point, then edit to your preferences. Or copy [[CLAUDE|this vault's CLAUDE.md]] as a template; it already encodes page conventions, frontmatter, and workflows.
+4. **Write the schema.** Create `CLAUDE.md` at the vault root. Paste Karpathy's gist as a starting point, then edit to your preferences. Or copy CLAUDE.md as a template; it already encodes page conventions, frontmatter, and workflows.
 
 5. **Create the navigation files.** Empty but structured:
    - `index.md` with section headers for Sources, Concepts, Entities, Workflows, Comparisons
@@ -68,7 +68,7 @@ Getting from nothing to a working LLM-maintained wiki. Budget: roughly five minu
 - A new entry in `log.md`
 - The graph view in Obsidian lighting up with cross-references
 
-If any of that doesn't happen, your `CLAUDE.md` needs tightening. See [[CLAUDE]] for a working reference.
+If any of that doesn't happen, your `CLAUDE.md` needs tightening. See CLAUDE.md for a working reference.
 
 ## Optional: add the explicit graph layer
 

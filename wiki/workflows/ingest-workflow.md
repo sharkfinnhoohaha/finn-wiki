@@ -33,7 +33,7 @@ In [[claude-code|Claude Code]] from the vault root:
 ingest raw/your-source.md
 ```
 
-The maintainer follows the workflow defined in [[CLAUDE]]. For this vault, that means:
+The maintainer follows the workflow defined in CLAUDE.md. For this vault, that means:
 
 1. Read the source end to end
 2. Summarize in chat, ask what to emphasize

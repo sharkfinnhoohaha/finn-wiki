@@ -27,7 +27,7 @@ Two reasons that bit Finn personally:
 
 ## How Claude should use this
 
-This is enforced via the root [[CLAUDE]] file under "Stack recommendation rules" — when Finn asks about a tool / service / framework choice, **read the relevant page in this folder before answering**. Not after. Not while answering. Before.
+This is enforced via the root CLAUDE.md file under "Stack recommendation rules" — when Finn asks about a tool / service / framework choice, **read the relevant page in this folder before answering**. Not after. Not while answering. Before.
 
 If the page doesn't exist yet for the category being discussed, create it using the template below and ask Finn for his current take before recommending.
 

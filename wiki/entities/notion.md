@@ -6,7 +6,7 @@ created: 2026-04-24
 updated: 2026-04-24
 weight: low
 node_size: 2
-sources: [[session-9366a9eb]], [[session-1cfa988a]]
+sources: []
 ---
 
 # Notion
@@ -48,4 +48,4 @@ The Life OS build session (see session-1cfa988a) included a destructive edit: Cl
 
 - [[notion-life-os]]
 - [[finance-hub]]
-- [[csv-import-workflow]]
+- CSV import workflow

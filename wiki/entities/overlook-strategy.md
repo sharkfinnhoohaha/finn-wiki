@@ -6,7 +6,7 @@ created: 2026-04-24
 updated: 2026-04-24
 weight: high
 node_size: 15
-sources: [[session-c49c7f7b]], [[session-dec9a139]], [[session-b7e57647]], [[session-ac05b833]], [[session-65f6bd58]]
+sources: ,  ,  
 ---
 
 # Overlook Strategy

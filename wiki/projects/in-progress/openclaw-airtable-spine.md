@@ -11,20 +11,20 @@ aliases: [airtable-fleet-schema, openclaw-state-spine, fleet-spine]
 
 # OpenClaw Airtable Spine
 
-Schema spec for Finn's [[openclaw]] agent fleet — three Airtable tables that serve as the canonical state spine for the fleet AND wire into [[hyperagent]]'s native record-change trigger to invoke [[atlas]].
+Schema spec for Finn's [[openclaw]] agent fleet — three Airtable tables that serve as the canonical state spine for the fleet AND wire into [[hyperagent]]'s native record-change trigger to invoke [[atlas-agent]].
 
 **Status:** Spec only. No bases or tables to be created until Finn signals go.
 **Lands after:** Telegram supergroup migration (this week) and webhook backup (Atlas Phase 1 ingest, ends 2026-05-12).
 **Authoritative copy:** This page IS the spec. The Cowork session that produced it stored an identical Markdown file at `~/Library/Application Support/Claude/local-agent-mode-sessions/.../outputs/airtable-fleet-schema-spec.md` — but use this wiki page as the canonical reference going forward.
 
 > [!note]
-> See also: [[atlas]], [[mission-control]], [[hyperagent]], [[kevin]], [[otto]], [[bridge]], [[openclaw]]. The Telegram + webhook + Airtable redundancy plan is documented in [[openclaw]]'s communication-paths section.
+> See also: [[atlas-agent]], [[mission-control]], [[hyperagent]], [[kevin-agent]], [[otto-agent]], [[bridge-agent]], [[openclaw]]. The Telegram + webhook + Airtable redundancy plan is documented in [[openclaw]]'s communication-paths section.
 
 ---
 
 ## 0. Why this exists
 
-OpenClaw's fleet runs on three redundant communication paths into [[atlas]]: Telegram (humans-in-the-loop, narrative), webhook (programmatic, fast), and Airtable (this spec). Airtable earns the third slot for three reasons that don't all overlap with the other two:
+OpenClaw's fleet runs on three redundant communication paths into [[atlas-agent]]: Telegram (humans-in-the-loop, narrative), webhook (programmatic, fast), and Airtable (this spec). Airtable earns the third slot for three reasons that don't all overlap with the other two:
 
 1. **HyperAgent's native trigger surface.** Airtable is HyperAgent's parent product. The record-change trigger fires on writes and is the cheapest, most-supported way to invoke an agent without writing a transport layer. Telegram and webhooks both require Atlas's poller or an exposed endpoint; Airtable is push-from-the-platform.
 2. **A structured-instruction surface for Finn.** Telegram is good for prose. Airtable is good for "set status to `blocked`, paste a diff into `proposed_diff`, change `reviewed_by` to `Finn`." Phone-editable, schema-enforced, no prompt engineering required from the orchard owner's deck.
@@ -47,7 +47,7 @@ At spec time, Finn's Airtable account contains two bases, both named **"Overlook
 
 **One row per agent. The "where is everyone right now" snapshot.**
 
-This table is small (5 rows today: [[kevin]], [[otto]], [[bridge]], [[atlas]], [[mission-control]]) and gets a high ratio of reads-to-writes. It is the table Finn looks at first on his phone, the table Mission Control's `/` route renders, and the first thing Atlas reads on a scheduled run before he reads `events`.
+This table is small (5 rows today: [[kevin-agent]], [[otto-agent]], [[bridge-agent]], [[atlas-agent]], [[mission-control]]) and gets a high ratio of reads-to-writes. It is the table Finn looks at first on his phone, the table Mission Control's `/` route renders, and the first thing Atlas reads on a scheduled run before he reads `events`.
 
 ### Fields
 

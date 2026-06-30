@@ -27,7 +27,7 @@ AI safety company. Maker of [[claude-code]], the Claude API, and the Claude desk
 
 ## Token discipline
 
-The guiding principle in [[CLAUDE]]: prefer cheaper Anthropic models for grunt work, reserve Sonnet/Opus for synthesis and judgment.
+The guiding principle in CLAUDE.md: prefer cheaper Anthropic models for grunt work, reserve Sonnet/Opus for synthesis and judgment.
 
 ## Related
 

@@ -21,7 +21,7 @@ Client deliverable. Vercel `spencers-dashboard` READY 2026-04-21. A one-off dash
 
 ## Open follow-ups
 
-- Confirm client identity and create a [[clients]] page
+- Confirm client identity and create a clients page
 - Confirm the deliverable scope is done vs. iterating
 
 ## Related

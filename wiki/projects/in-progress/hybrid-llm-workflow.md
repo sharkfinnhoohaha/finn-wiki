@@ -59,7 +59,7 @@ Memory note included so Sonnet remembers the workflow across sessions.
 
 ## Hard-coded knowledge in `~/.claude/CLAUDE.md`
 
-- Finn's stack: see [[finn-stack]]
+- Finn's stack: see Finn's stack
 - Self-description: "vibe coder"
 - Hardware: 64GB M1 Max
 - What local model can handle (vs what Sonnet should keep)
@@ -90,7 +90,7 @@ Same philosophy shows up across his work:
 
 - [[hybrid-llm-workflow]] (this page)
 - [[ollama]], [[aider]], [[claude-code]]
-- [[finn-stack]] — what the stack is
+- Finn's stack — what the stack is
 - [[notion-life-os]], [[file-organization-pass]] — same cost-conservation pattern in other projects
 
 ## Sources

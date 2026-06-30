@@ -29,7 +29,7 @@ Delete the `frontend` Vercel project.
 ## Related
 
 - [[overlook-portal-webapp]] — the real Overlook product surface
-- [[claude-overlook-webapp]] — the repo
+- claude_Overlook-webapp — the repo
 
 ## Sources
 

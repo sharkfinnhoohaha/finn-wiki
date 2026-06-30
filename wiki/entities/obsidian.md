@@ -16,7 +16,7 @@ Desktop and mobile note-taking app built around a folder of local markdown files
 ## Why it fits the pattern
 
 - **Files on disk, not a database.** The LLM can read and write them with normal file operations. No API required.
-- **Native wikilinks.** `[[page]]` syntax generates backlinks and powers the graph view.
+- **Native wikilinks.** ``[[page]]`` syntax generates backlinks and powers the graph view.
 - **Graph view.** Shows the shape of the wiki, what's connected, what's orphaned. At around 150 pages, several practitioners report the graph view replacing `index.md` as primary navigation.
 - **Plugin ecosystem.** [[dataview]] for frontmatter queries, [[marp]] for slide decks, Obsidian Web Clipper ([[obsidian-web-clipper]]) for capture.
 - **Local-first.** Vaults are just folders. Version with git, sync with whatever, back up however.

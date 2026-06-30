@@ -43,7 +43,7 @@ When you hit those limits, options:
 
 ## In this vault
 
-See [[index|index.md]] at the vault root. The schema ([[CLAUDE|CLAUDE.md]]) requires the LLM to update it on every ingest.
+See [[index|index.md]] at the vault root. The schema (CLAUDE.md) requires the LLM to update it on every ingest.
 
 ## Related
 

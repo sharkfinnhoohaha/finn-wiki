@@ -21,7 +21,7 @@ URL: <https://blockclubchicago.org>
 
 - **Newsletter-first hyperlocal that converted to paid subscriptions** at scale (20K paying members). Validates the membership tier strategy.
 - **Neighborhood-resident reporters** as the moat — not parachuted-in stringers. Same staffing principle Finn would apply in Ventura.
-- **Nonprofit + AJP grant pipeline** is the Cityside/Berkeleyside path. Year 2 decision on whether to convert via [[institute-for-nonprofit-news|INN fiscal sponsorship]].
+- **Nonprofit + AJP grant pipeline** is the Cityside/Berkeleyside path. Year 2 decision on whether to convert via INN fiscal sponsorship.
 
 ## Related
 

@@ -76,7 +76,7 @@ Theo's stated solution is a `CLAUDE.md` with stack preferences. He shows example
 - "use pnpm if existing else bun, never npm/yarn"
 - "never run dev/build unless asked"
 
-The Finn-Wiki implementation: the [[stack/README|wiki/tech/stack/]] folder is the deep version, the **Stack recommendation rules** block in [[CLAUDE]] is the always-read pointer that future Claude instances must consult before recommending a tool.
+The Finn-Wiki implementation: the [[stack/README|wiki/tech/stack/]] folder is the deep version, the **Stack recommendation rules** block in CLAUDE.md is the always-read pointer that future Claude instances must consult before recommending a tool.
 
 ## Closing reference (Simon Willison)
 
@@ -96,7 +96,7 @@ Theo closes with a callback to Simon Willison's [["perhaps not boring technology
 - [[stack/design-tools]] (created)
 - [[stack/audio-tools]] (created)
 - [[Finn-OS/stack-decisions]] (created)
-- [[CLAUDE]] (updated — added Stack recommendation rules block)
+- CLAUDE.md (updated — added Stack recommendation rules block)
 
 ## See also
 

@@ -13,7 +13,7 @@ sources: [[graphify-cheat-sheet]]
 
 CLI + MCP server that builds and queries an explicit knowledge graph layered over Finn-Wiki. Installed via `uv tool install graphifyy`. Lives at `Finn-Wiki/graphify-out/`. The MCP server (`graphify-finn-wiki`) auto-loads when [[claude-code|Claude Code]] is launched from the vault.
 
-Graphify is the operational answer to [[knowledge-graph-llm-wiki]]: instead of relying purely on Obsidian's implicit `[[wikilinks]]` graph, it extracts an explicit graph (EXTRACTED + INFERRED edges) and exposes traversal tools to Claude.
+Graphify is the operational answer to [[knowledge-graph-llm-wiki]]: instead of relying purely on Obsidian's implicit ``[[wikilinks]]`` graph, it extracts an explicit graph (EXTRACTED + INFERRED edges) and exposes traversal tools to Claude.
 
 ## Terminal aliases
 

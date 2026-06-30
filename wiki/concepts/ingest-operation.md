@@ -34,7 +34,7 @@ Two styles, both valid:
 - **High-touch.** One source at a time. You read the summary, check the updates, guide emphasis. Good for dense material or when you're still calibrating the schema.
 - **Batch.** Drop many sources, let the LLM process them unsupervised. Faster, less controlled. Good for clearly-bounded sources like a backlog of transcripts.
 
-Most practitioners start high-touch until the [[CLAUDE|schema]] is dialed in, then shift toward batch.
+Most practitioners start high-touch until the CLAUDE.md is dialed in, then shift toward batch.
 
 ## Failure modes
 

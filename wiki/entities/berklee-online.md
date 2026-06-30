@@ -6,7 +6,7 @@ created: 2026-04-24
 updated: 2026-04-24
 weight: low
 node_size: 2
-sources: [[session-4d1ab0f2]], [[session-6c1ef462]], [[session-1cfa988a]]
+sources: ,  
 ---
 
 # Berklee Online

@@ -51,7 +51,7 @@ Obsidian → Settings → Community plugins → Browse → "Dataview" → Instal
 
 ## Schema implications
 
-For Dataview to work, the schema in [[CLAUDE|CLAUDE.md]] must require consistent frontmatter. The schema in this vault does: every wiki page has `title`, `type`, `tags`, `created`, `updated`, `sources`.
+For Dataview to work, the schema in CLAUDE.md must require consistent frontmatter. The schema in this vault does: every wiki page has `title`, `type`, `tags`, `created`, `updated`, `sources`.
 
 ## See also
 

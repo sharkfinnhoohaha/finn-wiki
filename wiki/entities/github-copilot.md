@@ -6,7 +6,7 @@ created: 2026-04-24
 updated: 2026-04-24
 weight: low
 node_size: 2
-sources: [[session-dec9a139]], [[session-ac05b833]], [[session-1f40bcce]]
+sources: ,  
 ---
 
 # GitHub Copilot

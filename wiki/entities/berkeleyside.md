@@ -20,7 +20,7 @@ URL: <https://www.berkeleyside.org>
 ## Why it matters for Pier and Point
 
 - **The reference revenue mix for a sustainable mature-state hyperlocal**: 33/30/25/12 is the target the [[pier-and-point-monetization|monetization page]] points at.
-- **Nonprofit conversion path** via [[institute-for-nonprofit-news|INN fiscal sponsorship]] (7% of revenue + $65/hr accounting) was the right call for them. Year 2 decision for Pier and Point.
+- **Nonprofit conversion path** via INN fiscal sponsorship (7% of revenue + $65/hr accounting) was the right call for them. Year 2 decision for Pier and Point.
 - **Initial $3.1M from GNI + AJP** is the grant ceiling worth knowing about. The April 25 research already targets [[gni-growth-catalyst|GNI Growth Catalyst]] ($100K) and AJP grants.
 
 ## Related

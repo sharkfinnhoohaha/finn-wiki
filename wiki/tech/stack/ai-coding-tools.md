@@ -48,7 +48,7 @@ The category that's moving fastest. Re-verify quarterly. Finn's hybrid stack is 
 
 ## Token discipline (per CLAUDE.md)
 
-From [[CLAUDE]]:
+From CLAUDE.md:
 
 > Prefer cheaper models for grunt work (parsing, formatting, file moves). Reserve Sonnet/Opus for synthesis, judgment, and tricky debugging. Don't retry the same failed approach — pivot or ask. Offer a "prompt to give to Codex/Copilot/Claude Code" rather than burning credits on trial-and-error.
 

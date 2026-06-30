@@ -30,7 +30,7 @@ The 4-year clock counts re-verifications, not calendar time. If verification fai
 ## Notes
 
 - Apply at https://www.spotify.com/us/student/
-- Spotify MCP is connected for Claude sessions per [[CLAUDE]] — playback control and playlist creation work via the connector
+- Spotify MCP is connected for Claude sessions per CLAUDE.md — playback control and playlist creation work via the connector
 - $5.99 was the historical US price; current US rate is $6.99/mo (verified April 2026)
 
 ## Sources
