@@ -219,6 +219,7 @@ Cross-tier: [[Finn-OS/stack-decisions]] — Finn's curated current-picks slate.
 - [[cowork-sandbox-limits]]: Can't push to GitHub, terminal tier-restricted, path differences
 - [[openclaw-architecture]]: Three-layer decomposition (Connectors, Gateway Controller, Agent Runtime) with comparison to Finn's stack
 - [[living-config-files]]: Agent self-managed .md config (USER.md, SOUL.md, AGENTS.md, TOOLS.md, BOOTSTRAP.md)
+- [[hermes-webhook-setup]]: Event-driven agent triggers via Hermes webhook platform — Tailscale Funnel, GitHub/Stripe/Vercel subscriptions, zero-token delivery mode
 
 ### GCP $300-credit experiments (added 2026-04-25)
 
