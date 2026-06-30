@@ -220,6 +220,7 @@ Cross-tier: [[Finn-OS/stack-decisions]] — Finn's curated current-picks slate.
 - [[openclaw-architecture]]: Three-layer decomposition (Connectors, Gateway Controller, Agent Runtime) with comparison to Finn's stack
 - [[living-config-files]]: Agent self-managed .md config (USER.md, SOUL.md, AGENTS.md, TOOLS.md, BOOTSTRAP.md)
 - [[hermes-webhook-setup]]: Event-driven agent triggers via Hermes webhook platform — Tailscale Funnel, GitHub/Stripe/Vercel subscriptions, zero-token delivery mode
+- [[vault-audit-2026-06-29]]: Full vault audit — 385 broken wikilinks, empty files, index sync, frontmatter gaps, graphify MCP, unpushed commits. Root causes and prevention checklist.
 
 ### GCP $300-credit experiments (added 2026-04-25)
 
