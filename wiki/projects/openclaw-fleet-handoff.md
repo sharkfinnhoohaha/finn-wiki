@@ -3,6 +3,7 @@ title: "OpenClaw Fleet — Retrospective & Handoff to Hermes"
 created: 2026-05-24
 type: retrospective
 status: paused
+updated: 2026-07-01
 tags: [openclaw, hermes, fleet, retrospective, handoff, agents]
 ---
 
