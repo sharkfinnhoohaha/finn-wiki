@@ -8,14 +8,14 @@ tags:
 - supabase
 - nextjs
 created: 2026-04-24
-updated: '2026-06-18'
+updated: '2026-07-11'
 weight: high
 node_size: 10
 sources:
 - ventura-forward-app
 - cc-batch-a
-last_touched: '2026-06-18'
-next_action: Ventura Forward Jot Form
+last_touched: '2026-07-11'
+next_action: Create Ventura forward email
 blocker: ''
 --- life-os-daily contract ---
 revenue_type: retainer
