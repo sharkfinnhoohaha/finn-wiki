@@ -82,6 +82,11 @@ This vault has two parallel structures (see `CLAUDE.md` for the full model):
 - [[somlioya-nextjs-deprecated]]: Predecessor to current Sømliøya
 - [[spencers-dashboard]]: One-off client dashboard
 
+### Other project pages (2)
+
+- [[kelly-bennett-site]] (path: design/templates/kelly-bennett-site.md)
+- [[abandoned-archive]] (path: projects/abandoned-archive.md)
+
 ## Clients
 
 - [[all-in-one-music]]
