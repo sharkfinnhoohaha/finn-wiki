@@ -52,3 +52,6 @@ What's on your mind THIS WEEK. Update Monday morning. If something's been on thi
 > When Claude ingests a source, it can append open threads to this page automatically. Check the bottom of [[../log]] for the most recent ingest — anything career/business-relevant should have been threaded in.
 
 > **Auto-sync** (2026-07-23): 2 project(s) touched in Notion today.
+
+
+> **Auto-sync** (2026-07-24): 2 project(s) touched in Notion today.
