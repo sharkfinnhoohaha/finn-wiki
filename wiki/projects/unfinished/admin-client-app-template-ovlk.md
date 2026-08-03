@@ -7,15 +7,15 @@ tags:
 - template
 - superseded
 created: 2026-04-24
-updated: '2026-07-29'
+updated: '2026-08-03'
 weight: low
 node_size: 2
 sources:
 - overlook-strategy-admin-client-template-ovlk
 - cc-batch-a
-last_touched: '2026-07-29'
-next_action: OVLK.tech website build
-blocker: OVLK.tech Claude design system
+last_touched: '2026-08-03'
+next_action: Onboarding Flow Ovlk.works
+blocker: Onboarding Flow Ovlk.works
 --- life-os-daily contract ---
 revenue_type: non-revenue
 revenue_score: 1
