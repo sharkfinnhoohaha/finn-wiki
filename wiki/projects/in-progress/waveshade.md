@@ -1,15 +1,24 @@
 ---
-title: "Waveshade"
+title: Waveshade
 type: project
 status: active
-tags: [ecommerce, ventura, medusa, nextjs, stripe]
+tags:
+- ecommerce
+- ventura
+- medusa
+- nextjs
+- stripe
 created: 2026-04-24
-updated: 2026-04-28
+updated: '2026-08-10'
 weight: high
 node_size: 10
-sources: [waveshade-storefront, cc-batch-a]
-
-# --- life-os-daily contract ---
+sources:
+- waveshade-storefront
+- cc-batch-a
+last_touched: '2026-08-10'
+next_action: Order and test Wave Shade Audio sample glasses
+blocker: ''
+--- life-os-daily contract ---
 revenue_type: speculative
 revenue_score: 5
 effort_score: 5
