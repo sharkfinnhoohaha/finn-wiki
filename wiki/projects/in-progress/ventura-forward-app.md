@@ -8,13 +8,13 @@ tags:
 - supabase
 - nextjs
 created: 2026-04-24
-updated: '2026-08-10'
+updated: '2026-08-11'
 weight: high
 node_size: 10
 sources:
 - ventura-forward-app
 - cc-batch-a
-last_touched: '2026-08-10'
+last_touched: '2026-08-11'
 next_action: post ventura forward article
 blocker: ''
 --- life-os-daily contract ---
