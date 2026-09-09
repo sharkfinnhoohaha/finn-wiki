@@ -67,3 +67,6 @@ Not surfaced explicitly in source. Repo path TBD — historically Finn keeps web
 
 - `local_9ec480d0-d4ce-43c2-92ba-bc90476f280d` — Organize computer files and Logic Pro projects (batch-1 session 1) — "Sømliøya" listed as a Logic project
 - `local_1cfa988a-77d5-42b5-acb8-90109fcff213` — Build Life OS in Notion with Claude (batch-1 session 3) — listed as active client work, Next.js + TinaCMS
+
+> [!question] needs Finn
+> Flagged in WIKI-AUDIT-2026-09: status here contradicts git/session activity. Reconcile before pruning.

@@ -77,3 +77,6 @@ Vercel `waveshade-storefront` READY as of 2026-04-22. Admin dashboard built, Str
 - Vercel project `waveshade-storefront`
 - GitHub `sharkfinnhoohaha/waveshade` (private)
 - CC extract: `raw/_extracts/cc-batch-a.md`
+
+> [!question] needs Finn
+> Flagged in WIKI-AUDIT-2026-09: status here contradicts git/session activity. Reconcile before pruning.

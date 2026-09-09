@@ -28,7 +28,7 @@ Mover tip: if you're going to finish anything on the Unfinished list, do it this
 
 ---
 
-## In-progress (14)
+## In-progress (15)
 
 Projects with active work, recent sessions, and a clear next step.
 
