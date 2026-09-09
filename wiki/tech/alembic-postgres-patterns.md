@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Alembic + Postgres Patterns"
 type: tech
 tags: [alembic, postgres, sqlalchemy, fastapi, migrations, backend]

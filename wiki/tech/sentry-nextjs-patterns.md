@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Sentry — Next.js Patterns"
 type: tech
 tags: [sentry, nextjs, monitoring, error-tracking, observability, app-router]

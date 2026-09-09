@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Life OS Update"
 type: concept
 tags: [skill, workflow, life-os, notion]

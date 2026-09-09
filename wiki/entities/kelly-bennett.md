@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Kelly Bennett"
 type: entity
 tags: [person, family, lawyer, entertainment, client]

@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Music Production"
 type: personal
 tags: [music, logic-pro, producer, identity-producer, touring-band]

@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Apple Card"
 type: entity
 tags: [finance, credit-card, life-os]

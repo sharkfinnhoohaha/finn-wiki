@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "MuckRock"
 type: entity
 tags: [entity, tool, foia, public-records, journalism, pier-and-point]

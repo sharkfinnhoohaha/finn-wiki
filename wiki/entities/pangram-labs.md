@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Pangram Labs"
 type: entity
 tags: [entity, tool, ai-content-detection, monitoring]

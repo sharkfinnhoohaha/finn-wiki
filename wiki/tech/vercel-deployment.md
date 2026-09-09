@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Vercel Deployment"
 type: tech
 tags: [vercel, deployment, hosting, frontend, ci-cd]

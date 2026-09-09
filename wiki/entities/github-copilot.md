@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "GitHub Copilot"
 type: entity
 tags: [tool, ai-coding, github, hybrid-workflow]

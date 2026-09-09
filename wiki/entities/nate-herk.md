@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Nate Herk"
 type: entity
 tags: [person, creator, ai-automation]

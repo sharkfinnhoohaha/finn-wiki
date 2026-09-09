@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "AI Newsroom Pipeline (Sanity + Mastra + Kimi/Claude)"
 type: tech
 tags: [tech, ai, newsroom, sanity, mastra, inngest, claude, kimi, pipeline, reusable]

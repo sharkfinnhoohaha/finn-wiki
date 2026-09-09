@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "LLM Wiki vs. RAG"
 type: comparison
 tags: [comparison, rag]

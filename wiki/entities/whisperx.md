@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "WhisperX"
 type: entity
 tags: [tool, ai, transcription, audio, self-hosted]

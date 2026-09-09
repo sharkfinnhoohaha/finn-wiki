@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Three.js Patterns"
 type: tech
 tags: [threejs, react-three-fiber, glsl, three-altitudes, animation, frontend]

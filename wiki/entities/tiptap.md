@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "TipTap"
 type: entity
 tags: [tool, editor, prosemirror, typescript]

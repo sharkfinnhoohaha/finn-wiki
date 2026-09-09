@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Agentic engineering"
 type: concept
 tags: [concept, agentic-engineering, karpathy, positioning, discipline]

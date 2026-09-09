@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "NotebookLM — Simple UI and Viral AI App Strategies"
 type: source
 tags: [source, notebooklm, ai-agency, productized-services, viral-apps, claude-max]

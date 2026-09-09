@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Axios Local"
 type: entity
 tags: [entity, hyperlocal-news, newsletter, ai-newsroom, openai-partnership, pier-and-point-comp]

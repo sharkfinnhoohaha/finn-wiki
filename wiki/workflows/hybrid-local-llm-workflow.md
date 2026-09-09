@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Hybrid Local LLM Workflow"
 type: workflow
 tags: [workflow, llm, ollama, sonnet, token-conservation, vibe-coder]

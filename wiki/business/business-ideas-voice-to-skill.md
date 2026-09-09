@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Idea — Voice-to-Skill Generator App"
 type: business
 status: active

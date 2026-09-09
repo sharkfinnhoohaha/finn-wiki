@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Otto (agent)"
 type: entity
 aliases: [otto]

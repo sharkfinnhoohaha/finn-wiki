@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Software 3.0"
 type: concept
 tags: [concept, software-3-0, karpathy, ai-development, paradigm]

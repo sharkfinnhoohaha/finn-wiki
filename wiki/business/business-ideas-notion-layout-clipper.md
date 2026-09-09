@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Idea — Notion Layout-Preserving Web Clipper"
 type: business
 status: blocked

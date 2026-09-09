@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "NotebookLM — Mastering Agentic Workflows with Claude Code"
 type: source
 tags: [source, notebooklm, agentic-workflows, claude-code, marketing-automation]

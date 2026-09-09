@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Automated News Playbook for Civic Operators — Compass Artifact"
 type: source
 tags: [source, deep-research, civic-news, ai-newsroom, hyperlocal, monetization, legal, pier-and-point, overlook-strategy]

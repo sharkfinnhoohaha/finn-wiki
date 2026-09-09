@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Setup Obsidian vault"
 type: workflow
 tags: [workflow, setup]

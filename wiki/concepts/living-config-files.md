@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Living Config Files"
 type: concept
 tags: [concept, agents, configuration, markdown, openclaw]

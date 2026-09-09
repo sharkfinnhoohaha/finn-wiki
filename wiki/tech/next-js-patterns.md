@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Next.js Patterns"
 type: tech
 tags: [nextjs, react, tailwind, typescript, app-router, frontend]

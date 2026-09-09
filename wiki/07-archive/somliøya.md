@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Sømliøya"
 type: project
 status: active

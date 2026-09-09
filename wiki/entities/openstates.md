@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "OpenStates"
 type: entity
 tags: [entity, tool, civic-data, api, state-government, pier-and-point]

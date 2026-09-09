@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Orchestration as the new interface layer"
 type: concept
 tags: [concept, agents, orchestration, ux, belsky]

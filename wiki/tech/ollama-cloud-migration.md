@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Ollama Cloud Migration"
 type: tech
 tags: [ollama, infrastructure, models, migration, config]

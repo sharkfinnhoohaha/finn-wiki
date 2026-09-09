@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Three-layer architecture"
 type: concept
 tags: [architecture, pattern]

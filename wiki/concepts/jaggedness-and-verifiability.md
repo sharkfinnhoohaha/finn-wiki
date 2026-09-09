@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Jaggedness and verifiability"
 type: concept
 tags: [concept, karpathy, capability, rl, verifiability]

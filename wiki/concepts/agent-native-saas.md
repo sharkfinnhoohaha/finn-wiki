@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Agent-native SaaS"
 type: concept
 tags: [concept, saas, agents, business-model, niche, isenberg]

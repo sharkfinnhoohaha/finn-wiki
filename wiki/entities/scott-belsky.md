@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Scott Belsky"
 type: entity
 tags: [entity, person, investor, ex-adobe, behance]

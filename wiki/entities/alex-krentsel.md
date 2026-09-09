@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Alex Krentsel"
 type: entity
 tags: [person, researcher, berkeley, agents, openclaw]

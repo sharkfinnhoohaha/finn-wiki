@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Karpathy LLM Wiki gist"
 type: source
 tags: [source, canonical, pattern]

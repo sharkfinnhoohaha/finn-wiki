@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "90-day launch plan (productized AI service)"
 type: workflow
 tags: [workflow, launch, productized-services, ai-agency]

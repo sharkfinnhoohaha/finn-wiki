@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Spotify Premium Student"
 type: entity
 tags: [tools, music, education, lifestyle]

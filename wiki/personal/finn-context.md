@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Finn Context"
 type: personal
 tags: [hermes-captured, context, finn, draft]

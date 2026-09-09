@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Finance Log"
 type: personal
 tags: [finance, life-os, money, log]

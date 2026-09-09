@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Tailwind CSS"
 type: entity
 tags: [entity, tool, css, frontend]

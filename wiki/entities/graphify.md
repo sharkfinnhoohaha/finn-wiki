@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Graphify"
 type: entity
 tags: [tool, knowledge-graph, mcp, claude-code, obsidian]

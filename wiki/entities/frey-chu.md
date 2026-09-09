@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Frey Chu"
 type: entity
 tags: [entity, person, founder, directory-operator, indie-hacker, encoder]

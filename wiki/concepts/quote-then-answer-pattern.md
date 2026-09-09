@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Quote-Then-Answer Pattern"
 type: concept
 tags: [concept, ai, anti-hallucination, anthropic, prompt-engineering, rag, reusable]

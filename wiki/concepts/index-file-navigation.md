@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Index file navigation"
 type: concept
 tags: [pattern, scale]

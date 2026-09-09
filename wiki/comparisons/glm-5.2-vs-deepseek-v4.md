@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "GLM-5.2 vs DeepSeek V4"
 type: comparison
 tags: [llm, models, benchmarks, ollama, cost]

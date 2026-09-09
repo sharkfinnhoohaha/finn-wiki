@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "GROQ Patterns"
 type: tech
 tags: [groq, sanity, queries, three-altitudes]

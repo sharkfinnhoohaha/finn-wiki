@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Shopify"
 type: entity
 tags: [tool, service, ecommerce]

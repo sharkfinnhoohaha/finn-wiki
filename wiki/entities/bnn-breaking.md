@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "BNN Breaking"
 type: entity
 tags: [entity, ai-newsroom, ethics-failure, cautionary-case, nyt-investigation]

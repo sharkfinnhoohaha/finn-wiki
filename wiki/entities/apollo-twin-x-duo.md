@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Apollo Twin X Duo"
 type: entity
 tags: [hardware, audio-interface, gear, pro-audio]

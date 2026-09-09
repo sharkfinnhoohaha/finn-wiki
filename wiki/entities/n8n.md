@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "n8n"
 type: entity
 tags: [tool, workflow, automation, no-code]

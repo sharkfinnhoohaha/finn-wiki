@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Jack Finn"
 type: entity
 tags: [person, collaborator, music]

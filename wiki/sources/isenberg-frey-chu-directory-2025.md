@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Isenberg × Frey Chu — How to build a cash-flowing online directory (2025)"
 type: source
 tags: [source, youtube, directories, seo, ahrefs, wordpress, monetization, mailbox-money, isenberg]

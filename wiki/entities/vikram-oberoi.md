@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Vikram Oberoi"
 type: entity
 tags: [entity, person, civic-news, ai-newsroom, solo-operator]

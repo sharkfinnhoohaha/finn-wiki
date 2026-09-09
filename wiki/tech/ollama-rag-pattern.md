@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Ollama RAG Pattern"
 type: tech
 tags: [ollama, rag, pgvector, ai, embeddings, mistral, overlook]

@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Bridge (agent)"
 type: entity
 aliases: [bridge]

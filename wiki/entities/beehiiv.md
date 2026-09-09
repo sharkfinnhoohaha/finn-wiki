@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Beehiiv"
 type: entity
 tags: [tool, service, newsletter, email, infrastructure]

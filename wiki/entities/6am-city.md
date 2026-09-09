@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "6AM City"
 type: entity
 tags: [entity, hyperlocal-news, newsletter, ai-newsroom, pier-and-point-comp]

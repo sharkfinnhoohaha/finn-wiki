@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Wave Accounting"
 type: entity
 tags: [entity, tool, finance, invoicing]

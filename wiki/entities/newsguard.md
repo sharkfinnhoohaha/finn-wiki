@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "NewsGuard"
 type: entity
 tags: [entity, tool, news-credibility, ai-content-detection, monitoring]

@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Idea — Music Key + Tempo Detector with Logic Pro Export"
 type: business
 status: blocked

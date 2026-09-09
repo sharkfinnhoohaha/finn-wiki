@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Aider"
 type: entity
 tags: [tool, ai-coding, cli, hybrid-workflow]

@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Lint workflow"
 type: workflow
 tags: [workflow, maintenance]

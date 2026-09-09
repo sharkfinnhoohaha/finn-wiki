@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Idea — AI-Generated Music Detector Chrome Extension"
 type: business
 status: blocked

@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Build a niche agent-SaaS (Isenberg 30-step playbook)"
 type: workflow
 tags: [workflow, saas, agents, launch, niche, isenberg]

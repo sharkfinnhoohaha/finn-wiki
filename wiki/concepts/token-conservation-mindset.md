@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Token Conservation Mindset"
 type: concept
 tags: [concept, llm, cost, workflow, vibe-coder]

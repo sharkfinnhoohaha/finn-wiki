@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Anthropic"
 type: entity
 tags: [company, ai, llm, model-provider]

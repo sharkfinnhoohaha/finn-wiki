@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "VC Reporter"
 type: entity
 tags: [organization, news, weekly, partnership-target]

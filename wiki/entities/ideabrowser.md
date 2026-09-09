@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "IdeaBrowser"
 type: entity
 tags: [entity, tool, niche-discovery, ideas]

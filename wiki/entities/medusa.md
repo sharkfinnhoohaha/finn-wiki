@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Medusa"
 type: entity
 tags: [entity, tool, ecommerce, headless]

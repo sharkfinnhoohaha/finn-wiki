@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Notion"
 type: entity
 tags: [tool, service, notes, database, life-os]

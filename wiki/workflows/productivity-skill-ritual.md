@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Productivity Skill Ritual"
 type: workflow
 tags: [workflow, productivity, ritual, slash-command, life-os]

@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Finn-Wiki Vault Audit — 2026-06-29"
 type: tech
 tags: [hermes, wiki, obsidian, audit, maintenance, graphify, lessons-learned]

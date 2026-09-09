@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Gemini API"
 type: entity
 tags: [entity, tool, ai, google]

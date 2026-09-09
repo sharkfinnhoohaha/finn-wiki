@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Jack Roberts — OpenClaw to AntiGravity"
 type: source
 tags: [youtube, openclaw, antigravity, agents]

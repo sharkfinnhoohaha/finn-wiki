@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Block Club Chicago"
 type: entity
 tags: [entity, hyperlocal-news, nonprofit, neighborhood, pier-and-point-comp]

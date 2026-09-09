@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Stratechery (Ben Thompson)"
 type: entity
 tags: [entity, newsletter, paid-subscription, tech-strategy, founder-led-brand]

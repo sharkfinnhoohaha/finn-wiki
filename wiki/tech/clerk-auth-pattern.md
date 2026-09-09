@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Clerk Auth Pattern"
 type: tech
 tags: [clerk, auth, nextjs, supabase, gearflip, middleware]

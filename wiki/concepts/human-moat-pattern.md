@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Human Moat Pattern"
 type: concept
 tags: [concept, ai-newsroom, journalism, monetization, moats, pier-and-point, reusable]

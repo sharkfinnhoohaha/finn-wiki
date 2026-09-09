@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Finn Bennett"
 type: entity
 tags: [person, identity, anchor, founder]

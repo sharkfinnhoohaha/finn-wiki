@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Karpathy at Sequoia AI Ascent 2026 — From Vibe Coding to Agentic Engineering"
 type: source
 tags: [andrej-karpathy, sequoia, ai-ascent-2026, vibe-coding, agentic-engineering, software-3-0, video, transcript]

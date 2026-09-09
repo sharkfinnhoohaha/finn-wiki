@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "John DePaola Quartet"
 type: entity
 tags: [person, performer, jazz, music-supervision]

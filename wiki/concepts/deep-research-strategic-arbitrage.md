@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Deep Research Strategic Arbitrage"
 type: concept
 tags: [concept, ai, monetization, claude-max, agents]

@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Ojai Valley News + Ventura County Sun"
 type: entity
 tags: [organization, news, competitor, partnership-target, ojai]

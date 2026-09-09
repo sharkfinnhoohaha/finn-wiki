@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Karpathy's autoresearch"
 type: concept
 tags: [concept, karpathy, autonomous-agents, ml-research, vibe-coding]

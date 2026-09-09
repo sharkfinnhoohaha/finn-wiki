@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Weekly Prep Briefing"
 type: workflow
 tags: [workflow, weekly, briefing, life-os, candidate-template]

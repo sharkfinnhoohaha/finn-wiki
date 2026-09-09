@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "AI agency niches (2026)"
 type: concept
 tags: [concept, ai-agency, productized-services, business-model, overlook-strategy]

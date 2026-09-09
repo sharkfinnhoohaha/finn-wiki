@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Manus"
 type: entity
 tags: [entity, tool, agent, ai, alternative]

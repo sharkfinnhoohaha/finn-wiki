@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Nate Herk Claude Code video"
 type: source
 tags: [source, implementation, walkthrough, video]

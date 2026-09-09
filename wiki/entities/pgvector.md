@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "pgvector"
 type: entity
 tags: [tool, postgres, embeddings, rag]

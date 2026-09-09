@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Google Maps Platform — niche-discovery + outbound list-building"
 type: tech
 tags: [gcp, maps-platform, places-api, outbound, niche-discovery, boring-business-automation, article]

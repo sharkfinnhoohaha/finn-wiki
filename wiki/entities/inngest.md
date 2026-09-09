@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Inngest"
 type: entity
 tags: [tool, workflow, cron, durable-execution, ai-workflows]

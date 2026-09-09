@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Dataview"
 type: entity
 tags: [tool, plugin, query]

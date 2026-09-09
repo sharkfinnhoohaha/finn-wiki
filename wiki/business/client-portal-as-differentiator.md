@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Client Portal as Differentiator"
 type: business
 tags: [overlook-strategy, positioning, client-portal, vercel, free]

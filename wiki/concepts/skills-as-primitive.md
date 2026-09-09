@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Skills as primitive"
 type: concept
 tags: [concept, skills, howie-liu, hyperagent, anthropic, primitive]

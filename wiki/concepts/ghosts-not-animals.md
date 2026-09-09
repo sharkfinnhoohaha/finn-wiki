@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Ghosts not animals"
 type: concept
 tags: [concept, karpathy, mental-model, llm-ontology]

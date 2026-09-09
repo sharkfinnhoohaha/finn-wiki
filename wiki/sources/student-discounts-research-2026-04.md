@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Source — student discount research, April 2026"
 type: source
 tags: [education, discounts, github-pack, research, source]

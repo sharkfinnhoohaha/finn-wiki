@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Compiled knowledge"
 type: concept
 tags: [theory, insight]

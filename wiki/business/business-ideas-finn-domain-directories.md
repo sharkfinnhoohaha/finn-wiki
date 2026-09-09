@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Business ideas — Finn-domain directories"
 type: business
 tags: [business-ideas, directories, seo, mailbox-money, audio, aviation, ventura, music-supervision]

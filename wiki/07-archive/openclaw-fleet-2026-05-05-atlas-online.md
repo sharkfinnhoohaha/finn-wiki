@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "OpenClaw Fleet Progress — 2026-05-05 — Atlas Online"
 type: project
 status: active

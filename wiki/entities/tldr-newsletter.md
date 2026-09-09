@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "TLDR Newsletter (Dan Ni)"
 type: entity
 tags: [entity, newsletter, tech-newsletter, solo-operator-template]

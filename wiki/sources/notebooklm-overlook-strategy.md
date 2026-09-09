@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "NotebookLM — Overlook Strategy"
 type: source
 tags: [source, notebooklm, overlook-strategy, vibe-coding, karpathy-autoresearch, ai-agency]

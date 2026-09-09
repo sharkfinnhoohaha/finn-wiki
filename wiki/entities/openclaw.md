@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "OpenClaw"
 type: entity
 tags: [tool, agent, open-source, anthropic-alternative, phase-4]

@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Aviation Training"
 type: personal
 tags: [aviation, ppl, kcam, koxr, identity-pilot]

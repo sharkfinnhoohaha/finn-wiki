@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Workflow Audit — Overlook's lowest-friction AI service tier"
 type: business
 tags: [overlook-strategy, productized-services, agent-native-saas, pricing, idea, agentic-services-tier-1]

@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "School — Berklee Online"
 type: personal
 tags: [school, berklee, music-supervision, identity-producer]

@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "GNI Growth Catalyst"
 type: entity
 tags: [grant, google, journalism, funder]

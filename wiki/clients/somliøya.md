@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Sømliøya (client)"
 type: client
 status: active

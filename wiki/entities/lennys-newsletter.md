@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Lenny's Newsletter (Lenny Rachitsky)"
 type: entity
 tags: [entity, newsletter, paid-subscription, product-management, community-as-moat]

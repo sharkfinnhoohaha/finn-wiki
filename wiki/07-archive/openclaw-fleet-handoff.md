@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "OpenClaw Fleet — Retrospective & Handoff to Hermes"
 created: 2026-05-24
 type: retrospective

@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Riptide"
 type: project
 status: active

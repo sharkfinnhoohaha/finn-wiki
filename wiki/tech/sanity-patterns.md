@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Sanity Patterns"
 type: tech
 tags: [sanity, cms, nextjs, groq, three-altitudes]

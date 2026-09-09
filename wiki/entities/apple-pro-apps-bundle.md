@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Apple Pro Apps Bundle for Education (discontinued Jan 2026)"
 type: entity
 tags: [tools, audio, video, music, apple, education, discontinued]

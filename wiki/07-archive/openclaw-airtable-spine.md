@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "OpenClaw Airtable Spine"
 type: project
 status: active

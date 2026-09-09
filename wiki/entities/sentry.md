@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Sentry"
 type: entity
 tags: [monitoring, error-tracking, observability, nextjs, tooling, devops]

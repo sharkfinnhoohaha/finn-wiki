@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Understanding as bottleneck"
 type: concept
 tags: [concept, karpathy, eureka-labs, bottleneck, moat, learning]

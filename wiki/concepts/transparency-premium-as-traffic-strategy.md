@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Transparency Premium as Traffic Strategy"
 type: concept
 tags: [concept, ai-newsroom, journalism, seo, disclosure, pier-and-point, reusable]

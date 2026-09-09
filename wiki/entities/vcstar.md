@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "VCStar (Ventura County Star)"
 type: entity
 tags: [organization, news, competitor, gannett]

@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Git Worktree Pattern (Claude Code)"
 type: tech
 tags: [git, worktrees, claude-code, cowork, workflow]

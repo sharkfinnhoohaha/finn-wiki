@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Abandoned Projects Archive"
 type: project
 status: dormant

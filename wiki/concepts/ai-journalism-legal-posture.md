@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "AI Journalism — Legal & Editorial Posture"
 type: concept
 tags: [concept, legal, journalism, ai, defamation, section-230, anti-slapp, california, reusable]

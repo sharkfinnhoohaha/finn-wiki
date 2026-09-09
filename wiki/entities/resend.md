@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Resend"
 type: entity
 tags: [tool, service, email, transactional]

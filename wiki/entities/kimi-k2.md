@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Kimi K2 (Moonshot AI)"
 type: entity
 tags: [tool, llm, moonshot-ai, china]

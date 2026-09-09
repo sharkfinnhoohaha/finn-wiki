@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "OpenClaw Architecture"
 type: tech
 tags: [tech, architecture, agents, openclaw, pattern]

@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Lenis"
 type: entity
 tags: [entity, tool, scrolling, frontend]

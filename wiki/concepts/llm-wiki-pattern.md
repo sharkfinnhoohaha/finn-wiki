@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "LLM Wiki pattern"
 type: concept
 tags: [pattern, core, knowledge-management]

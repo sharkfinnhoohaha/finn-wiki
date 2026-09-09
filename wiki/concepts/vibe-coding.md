@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Vibe coding"
 type: concept
 tags: [concept, vibe-coding, ai-development, positioning]

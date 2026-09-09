@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Discord Hub Pattern"
 type: concept
 tags: [concept, agents, workflow, multi-project, openclaw]

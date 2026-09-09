@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Vertex AI Gemini Flash as the cheap mechanical tier"
 type: tech
 tags: [gcp, vertex-ai, gemini, hybrid-llm, token-conservation, agent-native-saas, article]

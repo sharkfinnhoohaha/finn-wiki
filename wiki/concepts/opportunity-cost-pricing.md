@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Opportunity-cost pricing"
 type: concept
 tags: [concept, pricing, howie-liu, business, agentic-services]

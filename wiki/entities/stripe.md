@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Stripe"
 type: entity
 tags: [entity, tool, payments, ecommerce]

@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Notion Life OS"
 type: project
 status: active

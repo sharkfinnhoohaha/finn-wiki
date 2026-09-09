@@ -1,4 +1,5 @@
 ---
+attention: 4.2
 title: "Pier and Point — Monetization & Roadmap"
 type: business
 status: active

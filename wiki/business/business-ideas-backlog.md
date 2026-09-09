@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Business Ideas — Backlog"
 type: business
 tags: [ideas, backlog, gearflip, overlook-strategy, three-altitudes, chrome-extensions, directories]

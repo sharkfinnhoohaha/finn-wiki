@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Per-task pilot — adding agent-execution line items to existing retainers"
 type: business
 tags: [overlook-strategy, pricing, per-task-pricing, retainers, ventura-forward, idea, agentic-services-tier-3]

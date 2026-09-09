@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Figma"
 type: entity
 tags: [tools, design, education, overlook-strategy]

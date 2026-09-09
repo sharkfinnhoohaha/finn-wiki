@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Living Config Files"
 type: tech
 tags: [tech, pattern, agents, configuration, openclaw]

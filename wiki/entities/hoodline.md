@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Hoodline"
 type: entity
 tags: [entity, hyperlocal-news, ai-newsroom, ethics-failure, cautionary-case]

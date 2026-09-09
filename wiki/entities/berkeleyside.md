@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Berkeleyside / Cityside"
 type: entity
 tags: [entity, hyperlocal-news, nonprofit, bay-area, pier-and-point-comp]

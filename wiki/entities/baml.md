@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "BAML"
 type: entity
 tags: [tool, ai, structured-outputs, typescript]

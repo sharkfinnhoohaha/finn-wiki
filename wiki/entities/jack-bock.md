@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Jack Bock"
 type: entity
 tags: [person, collaborator, music]

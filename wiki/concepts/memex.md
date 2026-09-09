@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Memex"
 type: concept
 tags: [history, precursor]

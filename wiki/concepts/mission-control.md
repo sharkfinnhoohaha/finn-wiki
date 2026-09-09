@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Mission Control"
 type: concept
 tags: [agents, dashboard, openclaw]

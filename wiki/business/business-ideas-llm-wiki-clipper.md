@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Idea — llm-wiki-ingest Chrome Extension"
 type: business
 status: blocked

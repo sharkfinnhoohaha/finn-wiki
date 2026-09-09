@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Wiki graph querying"
 type: workflow
 tags: [workflow, graphify, knowledge-graph, query]

@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Dad and Kelly"
 type: entity
 tags: [person, family, finance, income-source]

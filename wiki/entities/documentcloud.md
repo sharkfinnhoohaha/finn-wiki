@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "DocumentCloud"
 type: entity
 tags: [entity, tool, ocr, document-annotation, journalism, pier-and-point]

@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Hardware Setup"
 type: personal
 tags: [hardware, dev-environment, m1-max, vibe-coder]

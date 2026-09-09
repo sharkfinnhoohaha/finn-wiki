@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "OpenClaw Deep Dive — Alex Krentsel (UC Berkeley)"
 type: source
 tags: [source, youtube, agents, openclaw, architecture, autonomous-agents]

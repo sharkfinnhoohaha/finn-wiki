@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Services-first SaaS"
 type: concept
 tags: [concept, saas, sequencing, agency, productization]

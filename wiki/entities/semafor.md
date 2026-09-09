@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Semafor"
 type: entity
 tags: [entity, news, newsletter, events, ai-newsroom, pier-and-point-comp]

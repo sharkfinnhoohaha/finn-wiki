@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "shadcn/ui"
 type: entity
 tags: [entity, tool, ui, components, frontend]

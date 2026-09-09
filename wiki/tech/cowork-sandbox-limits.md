@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Cowork Sandbox Limits"
 type: tech
 tags: [cowork, sandbox, claude-code, workflow, limitations]

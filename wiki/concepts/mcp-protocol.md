@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Model Context Protocol (MCP)"
 type: concept
 tags: [concept, mcp, protocol, claude-code, anthropic]

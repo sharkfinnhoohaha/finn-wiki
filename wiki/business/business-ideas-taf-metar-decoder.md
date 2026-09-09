@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Idea — TAF / METAR Decoder Chrome Extension"
 type: business
 status: blocked

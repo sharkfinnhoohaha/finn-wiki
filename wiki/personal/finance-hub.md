@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Finance Hub"
 type: personal
 tags: [finance, notion, life-os]

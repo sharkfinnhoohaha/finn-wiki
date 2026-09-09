@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Big Mike"
 type: entity
 tags: [person, collaborator, music]

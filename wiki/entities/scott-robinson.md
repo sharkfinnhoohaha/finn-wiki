@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Scott Robinson"
 type: entity
 tags: [person, composer, performer, bmi, music-supervision]

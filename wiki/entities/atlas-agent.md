@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Atlas (agent)"
 type: entity
 aliases: [atlas, atlas4kevinbot]

@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Student discounts — what to activate while .edu is valid"
 type: personal
 tags: [education, discounts, credits, github-pack, infrastructure, finance, tooling]

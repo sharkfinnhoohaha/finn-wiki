@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Vercel"
 type: entity
 tags: [tool, service, hosting, frontend, ci-cd]

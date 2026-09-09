@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Theo (t3.gg) — Claude Code's favorite tech stack"
 type: source
 tags: [video, t3, theo, stack, claude-code, amplifying-ai, narrowness]

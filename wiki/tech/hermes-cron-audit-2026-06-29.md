@@ -1,4 +1,5 @@
 ---
+attention: 2.0
 title: "Hermes Cron Audit — 2026-06-29"
 type: tech
 tags: [hermes, cron, infrastructure, audit]

@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Obsidian Web Clipper"
 type: entity
 tags: [tool, browser-extension, capture]

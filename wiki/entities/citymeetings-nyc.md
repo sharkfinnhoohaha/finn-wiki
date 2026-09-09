@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Citymeetings.nyc"
 type: entity
 tags: [entity, civic-news, ai-newsroom, solo-operator, nyc, pier-and-point-template]

@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Productized services"
 type: concept
 tags: [concept, business-model, productized, agency, overlook-strategy]

@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Greg Isenberg"
 type: entity
 tags: [entity, person, founder, podcaster, advisor, saas]

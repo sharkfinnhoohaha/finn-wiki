@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Agentic inflection late 2025"
 type: concept
 tags: [concept, inflection, karpathy, howie-liu, timing, positioning]

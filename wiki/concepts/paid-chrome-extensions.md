@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Paid Chrome Extensions as a Category"
 type: concept
 tags: [concept, business-idea, distribution, browser-extensions, ai-buildable]

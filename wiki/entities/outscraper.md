@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Outscraper"
 type: entity
 tags: [entity, tool, scraping, google-maps, data-acquisition, directories]

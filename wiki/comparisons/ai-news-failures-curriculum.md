@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "AI News Failures Curriculum"
 type: comparison
 tags: [comparison, ai-newsroom, failure-cases, ethics, journalism, pier-and-point]

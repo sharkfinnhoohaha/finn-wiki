@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "NotebookLM"
 type: entity
 tags: [tool, google, knowledge-management, llm]

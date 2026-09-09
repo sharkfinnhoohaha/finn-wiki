@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "WAT framework — marketing automation playbook"
 type: concept
 tags: [concept, agentic-workflow, marketing-automation, claude-code, mcp]

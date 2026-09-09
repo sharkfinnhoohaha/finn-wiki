@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "HeyIsmail Life OS"
 type: entity
 tags: [entity, person, notion, life-os, inspiration]

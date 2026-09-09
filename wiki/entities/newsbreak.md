@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "NewsBreak"
 type: entity
 tags: [entity, news-aggregator, ai-newsroom, ethics-failure, cautionary-case]

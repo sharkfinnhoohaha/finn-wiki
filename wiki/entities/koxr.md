@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "KOXR (Oxnard Airport)"
 type: entity
 tags: [aviation, airport, location]

@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Environmental Behaviors"
 type: concept
 tags: [concept, design, portfolio, three-altitudes, brand]

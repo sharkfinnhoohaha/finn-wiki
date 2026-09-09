@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "LION Publishers"
 type: entity
 tags: [organization, journalism, trade-association, grants]

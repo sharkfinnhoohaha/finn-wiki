@@ -1,0 +1,103 @@
+{
+ "cbs": {
+  "score": 0.0,
+  "commits": 0,
+  "prs": 0,
+  "mentions": 0,
+  "repos": [],
+  "last_git": "never"
+ },
+ "ventura-forward": {
+  "score": 757.0,
+  "commits": 312,
+  "prs": 20,
+  "mentions": 0,
+  "repos": [
+   "ventura-forward-shop",
+   "Ventura-Forward-Dashboard"
+  ],
+  "last_git": "2026-08-28"
+ },
+ "pier-and-point": {
+  "score": 4.2,
+  "commits": 5,
+  "prs": 1,
+  "mentions": 0,
+  "repos": [
+   "pier-and-point"
+  ],
+  "last_git": "2026-07-10"
+ },
+ "metacheck": {
+  "score": 52.8,
+  "commits": 65,
+  "prs": 13,
+  "mentions": 0,
+  "repos": [
+   "metacheck"
+  ],
+  "last_git": "2026-07-08"
+ },
+ "starcommand": {
+  "score": 16.3,
+  "commits": 9,
+  "prs": 1,
+  "mentions": 0,
+  "repos": [
+   "starcommand"
+  ],
+  "last_git": "2026-08-14"
+ },
+ "finn-wiki-ingest": {
+  "score": 495.0,
+  "commits": 165,
+  "prs": 0,
+  "mentions": 0,
+  "repos": [
+   "Finn-Wiki"
+  ],
+  "last_git": "2026-09-09"
+ },
+ "hermes-webhook-setup": {
+  "score": 2.0,
+  "commits": 1,
+  "prs": 0,
+  "mentions": 0,
+  "repos": [
+   "hermes-workspace"
+  ],
+  "last_git": "2026-08-22"
+ },
+ "overlook-audio": {
+  "score": 334.4,
+  "commits": 146,
+  "prs": 23,
+  "mentions": 0,
+  "repos": [
+   "overlook-web",
+   "mc-overlook-studio",
+   "claude_Overlook-webapp"
+  ],
+  "last_git": "2026-08-23"
+ },
+ "claude-code": {
+  "score": 334.4,
+  "commits": 146,
+  "prs": 23,
+  "mentions": 0,
+  "repos": [
+   "claude_Overlook-webapp"
+  ],
+  "last_git": "2026-08-23"
+ },
+ "tinacms": {
+  "score": 10.0,
+  "commits": 14,
+  "prs": 0,
+  "mentions": 0,
+  "repos": [
+   "somlioya-tinacms"
+  ],
+  "last_git": "2026-07-08"
+ }
+}

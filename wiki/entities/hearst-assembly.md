@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Hearst Assembly"
 type: entity
 tags: [entity, tool, ai-newsroom, transcription, journalism, internal-tooling]

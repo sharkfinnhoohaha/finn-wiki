@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Greg Isenberg — SaaS is minting millionaires again (30-step playbook)"
 type: source
 tags: [source, youtube, video, saas, agents, niche, productized-services, pricing, content-strategy]

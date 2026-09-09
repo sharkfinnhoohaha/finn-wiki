@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Autonomous Agent Design Principles"
 type: concept
 tags: [concept, agents, architecture, design-principles, openclaw]

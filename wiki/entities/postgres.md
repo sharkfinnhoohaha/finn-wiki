@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "PostgreSQL"
 type: entity
 tags: [entity, tool, database, sql]

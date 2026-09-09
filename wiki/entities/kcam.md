@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "KCAM (Camarillo Airport)"
 type: entity
 tags: [aviation, airport, training, location]

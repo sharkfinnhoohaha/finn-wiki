@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Brad Hatfield"
 type: entity
 tags: [person, composer, bmi, music-supervision]

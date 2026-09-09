@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Rubrics and LLM-as-judge"
 type: concept
 tags: [concept, rubrics, eval, observability, hyperagent, karpathy]

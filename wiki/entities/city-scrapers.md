@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "City Scrapers (City Bureau)"
 type: entity
 tags: [entity, tool, civic-data, scraping, python, documenters, pier-and-point]

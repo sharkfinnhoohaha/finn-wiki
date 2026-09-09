@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Cloud Scheduler + Cloud Tasks as the agent heartbeat"
 type: tech
 tags: [gcp, cloud-scheduler, cloud-tasks, heartbeat, agent-native-saas, orchestration, article]

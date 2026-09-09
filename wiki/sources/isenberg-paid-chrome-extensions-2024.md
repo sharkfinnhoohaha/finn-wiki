@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Isenberg / Schneider — Paid Chrome Extension thesis (YT short, 2024)"
 type: source
 tags: [source, youtube, short, chrome-extensions, business-ideas, isenberg]

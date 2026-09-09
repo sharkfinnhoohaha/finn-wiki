@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Cody Schneider"
 type: entity
 tags: [entity, person, founder, shopify, chrome-extensions]

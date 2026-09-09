@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "OpenClaw Autonomous Ops — Kevin runs OS for me"
 type: project
 status: active

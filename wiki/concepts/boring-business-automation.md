@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Boring business automation"
 type: concept
 tags: [concept, automation, ai-agency, scraping, local-business]

@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Punchbowl News"
 type: entity
 tags: [entity, news, newsletter, paid-subscription, capitol-hill, pier-and-point-comp]

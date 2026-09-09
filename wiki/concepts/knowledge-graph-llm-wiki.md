@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Knowledge graph LLM wiki (InfraNodus pattern)"
 type: concept
 tags: [concept, llm-wiki, knowledge-graph, infranodus, obsidian]

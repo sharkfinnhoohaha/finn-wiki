@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Graph View Setup"
 type: workflow
 tags: [workflow, obsidian, graph, visualization]

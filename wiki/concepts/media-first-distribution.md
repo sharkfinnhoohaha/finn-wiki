@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Media-first distribution"
 type: concept
 tags: [concept, distribution, content, marketing, saas, founder-led]

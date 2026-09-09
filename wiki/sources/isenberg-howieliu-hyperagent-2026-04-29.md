@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Howie Liu (Airtable / HyperAgent) on Greg Isenberg — Making $$ with AI Agents"
 type: source
 tags: [howie-liu, airtable, hyperagent, greg-isenberg, agent-economy, video, transcript]

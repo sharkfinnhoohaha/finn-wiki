@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Ollama"
 type: entity
 tags: [tool, llm, local-ai, hybrid-workflow]

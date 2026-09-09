@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Obsidian"
 type: entity
 tags: [tool, software, markdown]

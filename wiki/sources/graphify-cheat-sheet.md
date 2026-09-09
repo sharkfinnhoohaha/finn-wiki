@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Graphify cheat sheet"
 type: source
 tags: [source, graphify, knowledge-graph, mcp, obsidian, claude-code]

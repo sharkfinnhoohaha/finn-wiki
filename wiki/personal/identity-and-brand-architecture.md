@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Identity and Brand Architecture"
 type: personal
 tags: [identity, brand, portfolio, positioning, finn-bennett]

@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Trigger.dev"
 type: entity
 tags: [tool, scheduling, deployment, jobs]

@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Lindy AI"
 type: entity
 tags: [tool, agent, productivity, executive-assistant]

@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Per-task pricing (and the per-seat decline)"
 type: concept
 tags: [concept, pricing, business-model, saas, agents]

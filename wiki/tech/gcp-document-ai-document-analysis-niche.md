@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Document AI as the OCR layer for the document-analysis niche"
 type: tech
 tags: [gcp, document-ai, ocr, pgvector, ollama, document-analysis, agent-native-saas, article]

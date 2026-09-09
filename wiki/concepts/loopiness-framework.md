@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Loopiness Framework"
 type: concept
 tags: [concept, agents, ai-history, framework, openclaw]

@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Static pillar-page directory"
 type: concept
 tags: [concept, seo, directories, content-strategy, pillar-page, internal-linking]

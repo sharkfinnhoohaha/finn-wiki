@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Notion Active Work Audit — June 2, 2026"
 type: source
 status: active

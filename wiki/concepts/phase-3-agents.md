@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Phase 3 agents"
 type: concept
 tags: [concept, agents, ai-history, claude-code, openclaw]

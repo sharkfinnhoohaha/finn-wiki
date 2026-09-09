@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Finance Tracking"
 type: personal
 tags: [finance, notion, life-os, money]

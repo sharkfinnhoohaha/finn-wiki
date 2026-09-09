@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Pricing and Rates"
 type: business
 tags: [pricing, rates, retainers, ventura-forward]

@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Idea — Audio Sampler / Browser-Tab Clipper (Tape Notes-style)"
 type: business
 status: blocked

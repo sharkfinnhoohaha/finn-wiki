@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Sentry ingest — April 28, 2026"
 type: source
 tags: [sentry, monitoring, nextjs, cowork-session]

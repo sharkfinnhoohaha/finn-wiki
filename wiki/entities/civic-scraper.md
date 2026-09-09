@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "civic-scraper"
 type: entity
 tags: [entity, tool, civic-data, scraping, python, big-local-news, pier-and-point]

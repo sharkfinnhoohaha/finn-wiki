@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Google Cloud — $300 free-tier credits"
 type: personal
 tags: [gcp, credits, infrastructure, finance, agent-native-saas]

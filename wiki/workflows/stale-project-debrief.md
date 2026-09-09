@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Stale Project Debrief"
 type: workflow
 tags: [maintenance, debrief, scheduled-task, projects]

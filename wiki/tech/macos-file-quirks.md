@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "macOS File Quirks"
 type: tech
 tags: [macos, filesystem, sandbox, icloud, file-org]

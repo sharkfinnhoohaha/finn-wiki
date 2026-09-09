@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Zach"
 type: entity
 tags: [person, collaborator, music]

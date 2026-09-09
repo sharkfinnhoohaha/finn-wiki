@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Profitable directory pattern"
 type: concept
 tags: [concept, directories, seo, monetization, mailbox-money, niche-selection]

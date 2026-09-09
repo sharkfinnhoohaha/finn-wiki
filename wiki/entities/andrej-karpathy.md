@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Andrej Karpathy"
 type: entity
 tags: [person, ai, researcher]

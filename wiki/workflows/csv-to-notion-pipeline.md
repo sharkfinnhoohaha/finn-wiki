@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "CSV-to-Notion Pipeline"
 type: workflow
 tags: [workflow, notion, csv, gemini, life-os, finance]

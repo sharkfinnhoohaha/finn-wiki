@@ -1,4 +1,5 @@
 ---
+attention: 0
 title: "Vannevar Bush"
 type: entity
 tags: [person, history]
