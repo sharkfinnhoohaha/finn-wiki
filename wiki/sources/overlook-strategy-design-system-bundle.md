@@ -1,4 +1,5 @@
 ---
+entity_role: parent-company
 attention: 334.4
 title: "Overlook Strategy Design System Bundle"
 type: source
