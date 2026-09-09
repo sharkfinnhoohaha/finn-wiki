@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>New Wiki Graph — Before/After</title>
+<style>
+body{font-family:-apple-system,sans-serif;background:#161616;color:#dcddde;margin:0;padding:28px}
+h1{font-size:22px;margin:0 0 4px} h2{font-size:16px;margin:0 0 14px;color:#8a8e93;font-weight:400}
+.panel{display:flex;gap:18px;flex-wrap:wrap}
+.graph{flex:1;min-width:420px;background:#1e1e1e;border:1px solid #333;border-radius:12px;padding:20px}
+.graph h3{margin:0 0 4px;font-size:15px}
+.graph .sub{color:#8a8e93;font-size:12px;margin:0 0 16px}
+canvas{width:100%;height:520px;border-radius:8px;background:#191919}
+.legend{display:flex;gap:16px;font-size:12px;margin-top:12px;color:#8a8e93}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px;vertical-align:-1px}
+.note{margin-top:20px;font-size:13px;color:#8a8e93;border-left:3px solid #7c5cff;padding-left:12px;line-height:1.5}
+.stat{font-size:12px;color:#8a8e93;margin-top:8px}
+</style></head><body>
+<h1>Your Wiki as an Obsidian Graph</h1>
+<h2>Before (today) vs After (approved restructure) — node size = page/link count, color = activity</h2>
+<div class="panel">
+<div class="graph"><h3>Before</h3><div class="sub">2,811 nodes · shelf projects dominate</div><canvas id="c1"></canvas><div class="stat">Biggest clusters: overlook 193 · openclaw-fleet 121 · notion-life-os 95 · riptide 43 · gearflip 40 — most dormant since April</div></div>
+<div class="graph"><h3>After</h3><div class="sub">Active work front and center, archive collapsed</div><canvas id="c2"></canvas><div class="stat">01-active (Overlook, P&P, Ventura Forward, Hermes) becomes the dense core; 07-archive shrinks to a faint detached cloud</div></div>
+</div>
+<div class="legend"><span><span class="dot" style="background:#7c5cff"></span>active</span><span><span class="dot" style="background:#4fb2ff"></span>clients</span><span><span class="dot" style="background:#3fbf7f"></span>newsroom</span><span><span class="dot" style="background:#f2b53d"></span>biz-ops</span><span><span class="dot" style="background:#5c6370"></span>archive (dormant)</span></div>
+<div class="note">What changed: dormant projects (riptide, gearflip, openclaw-fleet, notion, metacheck, starcommand, etc.) moved to 07-archive — their pages still exist so links don't break, but they cluster together on the edge instead of masquerading as active work. Somliøya and Waveshade keep their client cluster. The four projects with real git + session activity become the graph core, exactly like the active panes in Obsidian. Nothing deleted — git-committed before the move, fully reversible.</div>
+<script>
+const clusters1=[ // before: x,y,r,color,count,label
+ {x:.30,y:.42,r:52,c:'#7c5cff',l:'Overlook 193'},
+ {x:.18,y:.20,r:34,c:'#5c6370',l:'openclaw 121'},
+ {x:.12,y:.62,r:30,c:'#5c6370',l:'notion 95'},
+ {x:.44,y:.75,r:22,c:'#5c6370',l:'riptide 43'},
+ {x:.55,y:.16,r:21,c:'#5c6370',l:'gearflip 40'},
+ {x:.72,y:.55,r:25,c:'#3fbf7f',l:'P&P 51'},
+ {x:.84,y:.30,r:21,c:'#4fb2ff',l:'Ventura Fwd 28'},
+ {x:.62,y:.34,r:20,c:'#7c5cff',l:'Hermes 49'},
+ {x:.36,y:.55,r:14,c:'#f2b53d',l:'others ~560'}];
+const clusters2=[
+ {x:.50,y:.50,r:50,c:'#7c5cff',l:'01-active: Overlook'},
+ {x:.68,y:.62,r:32,c:'#3fbf7f',l:'03-newsroom: P&P + Ventura Fwd'},
+ {x:.35,y:.68,r:24,c:'#4fb2ff',l:'02-clients: Somliøya · Waveshade'},
+ {x:.30,y:.30,r:22,c:'#f2b53d',l:'04-biz-ops: ovlk'},
+ {x:.66,y:.24,r:20,c:'#7c5cff',l:'05-hermes-ops'},
+ {x:.88,y:.82,r:16,c:'#5c6370',l:'07-archive (collapsed)'},
+ {x:.12,y:.88,r:10,c:'#8a8e93',l:'06-reference'}];
+function draw(id,cs,sat){
+ const c=document.getElementById(id),x=c.getContext('2d');
+ c.width=c.offsetWidth*2;c.height=c.offsetHeight*2;x.scale(2,2);
+ const W=c.offsetWidth,H=c.offsetHeight;
+ // faint background dots
+ x.fillStyle='rgba(255,255,255,0.05)';
+ for(let i=0;i<160;i++){x.beginPath();x.arc(Math.random()*W,Math.random()*H,1.2,0,7);x.fill();}
+ cs.forEach(cl=>{
+  const px=cl.x*W,py=cl.y*H;
+  x.beginPath();x.arc(px,py,cl.r,0,7);x.fillStyle=cl.c+(cl.c==='#5c6370'?'44':'33');x.fill();
+  x.beginPath();x.arc(px,py,cl.r*0.92,0,7);x.fillStyle=cl.c+'55';x.fill();
+  for(let i=0;i<Math.round(cl.r/2);i++){const a=Math.random()*6.3,d=Math.random()*cl.r*0.85;
+   x.beginPath();x.arc(px+Math.cos(a)*d,py+Math.sin(a)*d,1.8,0,7);x.fillStyle=cl.c+'aa';x.fill();}
+  x.fillStyle='#dcddde';x.font='11px -apple-system';x.textAlign='center';
+  x.fillText(cl.l,px,py+cl.r+14);});
+}
+draw('c1',clusters1);draw('c2',clusters2);
+</script></body></html>
