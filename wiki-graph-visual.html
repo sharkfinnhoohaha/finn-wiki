@@ -1,60 +1,215 @@
-<!DOCTYPE html>
-<html><head><meta charset="utf-8"><title>New Wiki Graph — Before/After</title>
-<style>
-body{font-family:-apple-system,sans-serif;background:#161616;color:#dcddde;margin:0;padding:28px}
-h1{font-size:22px;margin:0 0 4px} h2{font-size:16px;margin:0 0 14px;color:#8a8e93;font-weight:400}
-.panel{display:flex;gap:18px;flex-wrap:wrap}
-.graph{flex:1;min-width:420px;background:#1e1e1e;border:1px solid #333;border-radius:12px;padding:20px}
-.graph h3{margin:0 0 4px;font-size:15px}
-.graph .sub{color:#8a8e93;font-size:12px;margin:0 0 16px}
-canvas{width:100%;height:520px;border-radius:8px;background:#191919}
-.legend{display:flex;gap:16px;font-size:12px;margin-top:12px;color:#8a8e93}
-.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px;vertical-align:-1px}
-.note{margin-top:20px;font-size:13px;color:#8a8e93;border-left:3px solid #7c5cff;padding-left:12px;line-height:1.5}
-.stat{font-size:12px;color:#8a8e93;margin-top:8px}
-</style></head><body>
-<h1>Your Wiki as an Obsidian Graph</h1>
-<h2>Before (today) vs After (approved restructure) — node size = page/link count, color = activity</h2>
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>Wiki Graph — Before/After</title>
+<style>body{background:#161616;color:#dcddde;font-family:-apple-system,sans-serif;margin:0;padding:24px}
+h1{font-size:20px;margin:0 0 2px} h2{font-size:14px;color:#8a8e93;font-weight:400;margin:0 0 18px}
+.panel{display:flex;gap:20px;flex-wrap:wrap} .card{flex:1;min-width:430px;background:#1e1e1e;border:1px solid #333;border-radius:12px;padding:16px}
+.card h3{margin:0 0 12px;font-size:14px} .legend{margin-top:14px;font-size:12px;color:#8a8e93}
+span.d{display:inline-block;width:10px;height:10px;border-radius:50%;margin:0 5px 0 14px;vertical-align:-1px}</style></head>
+<body><h1>Your Wiki as an Obsidian Graph</h1><h2>Before (stale, dormant projects dominate) vs After (restructured + attention-weighted)</h2>
 <div class="panel">
-<div class="graph"><h3>Before</h3><div class="sub">2,811 nodes · shelf projects dominate</div><canvas id="c1"></canvas><div class="stat">Biggest clusters: overlook 193 · openclaw-fleet 121 · notion-life-os 95 · riptide 43 · gearflip 40 — most dormant since April</div></div>
-<div class="graph"><h3>After</h3><div class="sub">Active work front and center, archive collapsed</div><canvas id="c2"></canvas><div class="stat">01-active (Overlook, P&P, Ventura Forward, Hermes) becomes the dense core; 07-archive shrinks to a faint detached cloud</div></div>
-</div>
-<div class="legend"><span><span class="dot" style="background:#7c5cff"></span>active</span><span><span class="dot" style="background:#4fb2ff"></span>clients</span><span><span class="dot" style="background:#3fbf7f"></span>newsroom</span><span><span class="dot" style="background:#f2b53d"></span>biz-ops</span><span><span class="dot" style="background:#5c6370"></span>archive (dormant)</span></div>
-<div class="note">What changed: dormant projects (riptide, gearflip, openclaw-fleet, notion, metacheck, starcommand, etc.) moved to 07-archive — their pages still exist so links don't break, but they cluster together on the edge instead of masquerading as active work. Somliøya and Waveshade keep their client cluster. The four projects with real git + session activity become the graph core, exactly like the active panes in Obsidian. Nothing deleted — git-committed before the move, fully reversible.</div>
-<script>
-const clusters1=[ // before: x,y,r,color,count,label
- {x:.30,y:.42,r:52,c:'#7c5cff',l:'Overlook 193'},
- {x:.18,y:.20,r:34,c:'#5c6370',l:'openclaw 121'},
- {x:.12,y:.62,r:30,c:'#5c6370',l:'notion 95'},
- {x:.44,y:.75,r:22,c:'#5c6370',l:'riptide 43'},
- {x:.55,y:.16,r:21,c:'#5c6370',l:'gearflip 40'},
- {x:.72,y:.55,r:25,c:'#3fbf7f',l:'P&P 51'},
- {x:.84,y:.30,r:21,c:'#4fb2ff',l:'Ventura Fwd 28'},
- {x:.62,y:.34,r:20,c:'#7c5cff',l:'Hermes 49'},
- {x:.36,y:.55,r:14,c:'#f2b53d',l:'others ~560'}];
-const clusters2=[
- {x:.50,y:.50,r:50,c:'#7c5cff',l:'01-active: Overlook'},
- {x:.68,y:.62,r:32,c:'#3fbf7f',l:'03-newsroom: P&P + Ventura Fwd'},
- {x:.35,y:.68,r:24,c:'#4fb2ff',l:'02-clients: Somliøya · Waveshade'},
- {x:.30,y:.30,r:22,c:'#f2b53d',l:'04-biz-ops: ovlk'},
- {x:.66,y:.24,r:20,c:'#7c5cff',l:'05-hermes-ops'},
- {x:.88,y:.82,r:16,c:'#5c6370',l:'07-archive (collapsed)'},
- {x:.12,y:.88,r:10,c:'#8a8e93',l:'06-reference'}];
-function draw(id,cs,sat){
- const c=document.getElementById(id),x=c.getContext('2d');
- c.width=c.offsetWidth*2;c.height=c.offsetHeight*2;x.scale(2,2);
- const W=c.offsetWidth,H=c.offsetHeight;
- // faint background dots
- x.fillStyle='rgba(255,255,255,0.05)';
- for(let i=0;i<160;i++){x.beginPath();x.arc(Math.random()*W,Math.random()*H,1.2,0,7);x.fill();}
- cs.forEach(cl=>{
-  const px=cl.x*W,py=cl.y*H;
-  x.beginPath();x.arc(px,py,cl.r,0,7);x.fillStyle=cl.c+(cl.c==='#5c6370'?'44':'33');x.fill();
-  x.beginPath();x.arc(px,py,cl.r*0.92,0,7);x.fillStyle=cl.c+'55';x.fill();
-  for(let i=0;i<Math.round(cl.r/2);i++){const a=Math.random()*6.3,d=Math.random()*cl.r*0.85;
-   x.beginPath();x.arc(px+Math.cos(a)*d,py+Math.sin(a)*d,1.8,0,7);x.fillStyle=cl.c+'aa';x.fill();}
-  x.fillStyle='#dcddde';x.font='11px -apple-system';x.textAlign='center';
-  x.fillText(cl.l,px,py+cl.r+14);});
-}
-draw('c1',clusters1);draw('c2',clusters2);
-</script></body></html>
+<div class="card"><h3>Before — 2,811 nodes</h3>
+<svg width="100%" viewBox="0 0 740 470" style="background:#191919;border-radius:8px"><circle cx="230" cy="150" r="58" fill="#7c5cff" fill-opacity="0.12"/>
+<circle cx="230" cy="150" r="52.2" fill="none" stroke="#7c5cff" stroke-opacity="0.35"/>
+<circle cx="253" cy="162" r="3" fill="#7c5cff" fill-opacity="0.90"/>
+<circle cx="231" cy="117" r="3" fill="#7c5cff" fill-opacity="0.59"/>
+<circle cx="261" cy="116" r="3" fill="#7c5cff" fill-opacity="0.86"/>
+<circle cx="214" cy="122" r="3" fill="#7c5cff" fill-opacity="0.54"/>
+<circle cx="234" cy="183" r="3" fill="#7c5cff" fill-opacity="0.67"/>
+<circle cx="238" cy="164" r="3" fill="#7c5cff" fill-opacity="0.52"/>
+<circle cx="191" cy="135" r="3" fill="#7c5cff" fill-opacity="0.79"/>
+<circle cx="273" cy="160" r="3" fill="#7c5cff" fill-opacity="0.77"/>
+<circle cx="278" cy="160" r="3" fill="#7c5cff" fill-opacity="0.75"/>
+<circle cx="184" cy="137" r="3" fill="#7c5cff" fill-opacity="0.62"/>
+<circle cx="245" cy="143" r="3" fill="#7c5cff" fill-opacity="0.91"/>
+<circle cx="207" cy="156" r="3" fill="#7c5cff" fill-opacity="0.90"/>
+<circle cx="190" cy="118" r="3" fill="#7c5cff" fill-opacity="0.55"/>
+<circle cx="218" cy="185" r="3" fill="#7c5cff" fill-opacity="0.74"/>
+<circle cx="248" cy="153" r="3" fill="#7c5cff" fill-opacity="0.62"/>
+<circle cx="275" cy="176" r="3" fill="#7c5cff" fill-opacity="0.62"/>
+<circle cx="210" cy="160" r="3" fill="#7c5cff" fill-opacity="0.77"/>
+<circle cx="233" cy="115" r="3" fill="#7c5cff" fill-opacity="0.65"/>
+<circle cx="211" cy="119" r="3" fill="#7c5cff" fill-opacity="0.90"/>
+<circle cx="256" cy="169" r="3" fill="#7c5cff" fill-opacity="0.56"/>
+<circle cx="222" cy="130" r="3" fill="#7c5cff" fill-opacity="0.74"/>
+<circle cx="245" cy="146" r="3" fill="#7c5cff" fill-opacity="0.73"/>
+<text x="230" y="228" text-anchor="middle" fill="#e6edf3" font-size="12" font-family="-apple-system">Overlook 193 (active)</text>
+<circle cx="120" cy="90" r="34" fill="#5c6370" fill-opacity="0.12"/>
+<circle cx="120" cy="90" r="30.6" fill="none" stroke="#5c6370" stroke-opacity="0.35"/>
+<circle cx="104" cy="79" r="3" fill="#5c6370" fill-opacity="0.53"/>
+<circle cx="95" cy="79" r="3" fill="#5c6370" fill-opacity="0.80"/>
+<circle cx="118" cy="102" r="3" fill="#5c6370" fill-opacity="0.86"/>
+<circle cx="118" cy="99" r="3" fill="#5c6370" fill-opacity="0.80"/>
+<circle cx="141" cy="80" r="3" fill="#5c6370" fill-opacity="0.59"/>
+<circle cx="144" cy="88" r="3" fill="#5c6370" fill-opacity="0.89"/>
+<circle cx="147" cy="107" r="3" fill="#5c6370" fill-opacity="0.88"/>
+<circle cx="94" cy="85" r="3" fill="#5c6370" fill-opacity="0.94"/>
+<circle cx="146" cy="110" r="3" fill="#5c6370" fill-opacity="0.75"/>
+<circle cx="125" cy="92" r="3" fill="#5c6370" fill-opacity="0.84"/>
+<circle cx="100" cy="109" r="3" fill="#5c6370" fill-opacity="0.54"/>
+<circle cx="98" cy="106" r="3" fill="#5c6370" fill-opacity="0.61"/>
+<circle cx="121" cy="108" r="3" fill="#5c6370" fill-opacity="0.59"/>
+<circle cx="108" cy="83" r="3" fill="#5c6370" fill-opacity="0.84"/>
+<text x="120" y="144" text-anchor="middle" fill="#e6edf3" font-size="12" font-family="-apple-system">openclaw 121 (dormant)</text>
+<circle cx="95" cy="330" r="30" fill="#5c6370" fill-opacity="0.12"/>
+<circle cx="95" cy="330" r="27.0" fill="none" stroke="#5c6370" stroke-opacity="0.35"/>
+<circle cx="73" cy="320" r="3" fill="#5c6370" fill-opacity="0.62"/>
+<circle cx="78" cy="342" r="3" fill="#5c6370" fill-opacity="0.82"/>
+<circle cx="111" cy="323" r="3" fill="#5c6370" fill-opacity="0.80"/>
+<circle cx="98" cy="322" r="3" fill="#5c6370" fill-opacity="0.77"/>
+<circle cx="94" cy="345" r="3" fill="#5c6370" fill-opacity="0.88"/>
+<circle cx="109" cy="335" r="3" fill="#5c6370" fill-opacity="0.62"/>
+<circle cx="73" cy="344" r="3" fill="#5c6370" fill-opacity="0.91"/>
+<circle cx="76" cy="323" r="3" fill="#5c6370" fill-opacity="0.90"/>
+<circle cx="82" cy="316" r="3" fill="#5c6370" fill-opacity="0.85"/>
+<circle cx="117" cy="343" r="3" fill="#5c6370" fill-opacity="0.94"/>
+<circle cx="86" cy="346" r="3" fill="#5c6370" fill-opacity="0.86"/>
+<circle cx="75" cy="343" r="3" fill="#5c6370" fill-opacity="0.89"/>
+<text x="95" y="380" text-anchor="middle" fill="#e6edf3" font-size="12" font-family="-apple-system">notion 95 (dormant)</text>
+<circle cx="330" cy="400" r="22" fill="#5c6370" fill-opacity="0.12"/>
+<circle cx="330" cy="400" r="19.8" fill="none" stroke="#5c6370" stroke-opacity="0.35"/>
+<circle cx="341" cy="393" r="3" fill="#5c6370" fill-opacity="0.51"/>
+<circle cx="322" cy="404" r="3" fill="#5c6370" fill-opacity="0.68"/>
+<circle cx="348" cy="392" r="3" fill="#5c6370" fill-opacity="0.93"/>
+<circle cx="323" cy="403" r="3" fill="#5c6370" fill-opacity="0.73"/>
+<circle cx="311" cy="411" r="3" fill="#5c6370" fill-opacity="0.74"/>
+<circle cx="314" cy="404" r="3" fill="#5c6370" fill-opacity="0.65"/>
+<circle cx="323" cy="398" r="3" fill="#5c6370" fill-opacity="0.68"/>
+<circle cx="337" cy="411" r="3" fill="#5c6370" fill-opacity="0.78"/>
+<text x="330" y="442" text-anchor="middle" fill="#e6edf3" font-size="12" font-family="-apple-system">riptide 43 (dormant)</text>
+<circle cx="420" cy="80" r="21" fill="#5c6370" fill-opacity="0.12"/>
+<circle cx="420" cy="80" r="18.900000000000002" fill="none" stroke="#5c6370" stroke-opacity="0.35"/>
+<circle cx="417" cy="82" r="3" fill="#5c6370" fill-opacity="0.79"/>
+<circle cx="434" cy="87" r="3" fill="#5c6370" fill-opacity="0.58"/>
+<circle cx="431" cy="86" r="3" fill="#5c6370" fill-opacity="0.80"/>
+<circle cx="419" cy="89" r="3" fill="#5c6370" fill-opacity="0.53"/>
+<circle cx="420" cy="74" r="3" fill="#5c6370" fill-opacity="0.80"/>
+<circle cx="417" cy="72" r="3" fill="#5c6370" fill-opacity="0.93"/>
+<circle cx="418" cy="88" r="3" fill="#5c6370" fill-opacity="0.80"/>
+<circle cx="424" cy="86" r="3" fill="#5c6370" fill-opacity="0.73"/>
+<text x="420" y="121" text-anchor="middle" fill="#e6edf3" font-size="12" font-family="-apple-system">gearflip 40 (dormant)</text>
+<circle cx="580" cy="300" r="25" fill="#3fbf7f" fill-opacity="0.12"/>
+<circle cx="580" cy="300" r="22.5" fill="none" stroke="#3fbf7f" stroke-opacity="0.35"/>
+<circle cx="579" cy="293" r="3" fill="#3fbf7f" fill-opacity="0.61"/>
+<circle cx="570" cy="287" r="3" fill="#3fbf7f" fill-opacity="0.63"/>
+<circle cx="569" cy="306" r="3" fill="#3fbf7f" fill-opacity="0.82"/>
+<circle cx="568" cy="298" r="3" fill="#3fbf7f" fill-opacity="0.91"/>
+<circle cx="575" cy="285" r="3" fill="#3fbf7f" fill-opacity="0.66"/>
+<circle cx="591" cy="301" r="3" fill="#3fbf7f" fill-opacity="0.77"/>
+<circle cx="573" cy="305" r="3" fill="#3fbf7f" fill-opacity="0.68"/>
+<circle cx="560" cy="297" r="3" fill="#3fbf7f" fill-opacity="0.75"/>
+<circle cx="561" cy="296" r="3" fill="#3fbf7f" fill-opacity="0.60"/>
+<circle cx="594" cy="293" r="3" fill="#3fbf7f" fill-opacity="0.54"/>
+<text x="580" y="345" text-anchor="middle" fill="#e6edf3" font-size="12" font-family="-apple-system">P&P 51 (active)</text>
+<circle cx="680" cy="140" r="21" fill="#4fb2ff" fill-opacity="0.12"/>
+<circle cx="680" cy="140" r="18.900000000000002" fill="none" stroke="#4fb2ff" stroke-opacity="0.35"/>
+<circle cx="685" cy="147" r="3" fill="#4fb2ff" fill-opacity="0.79"/>
+<circle cx="668" cy="131" r="3" fill="#4fb2ff" fill-opacity="0.80"/>
+<circle cx="668" cy="143" r="3" fill="#4fb2ff" fill-opacity="0.84"/>
+<circle cx="663" cy="135" r="3" fill="#4fb2ff" fill-opacity="0.80"/>
+<circle cx="687" cy="143" r="3" fill="#4fb2ff" fill-opacity="0.55"/>
+<circle cx="697" cy="147" r="3" fill="#4fb2ff" fill-opacity="0.66"/>
+<circle cx="692" cy="148" r="3" fill="#4fb2ff" fill-opacity="0.55"/>
+<circle cx="678" cy="146" r="3" fill="#4fb2ff" fill-opacity="0.93"/>
+<circle cx="678" cy="146" r="3" fill="#4fb2ff" fill-opacity="0.62"/>
+<text x="680" y="181" text-anchor="middle" fill="#e6edf3" font-size="12" font-family="-apple-system">Ventura Fwd 28</text>
+<circle cx="500" cy="200" r="20" fill="#7c5cff" fill-opacity="0.12"/>
+<circle cx="500" cy="200" r="18.0" fill="none" stroke="#7c5cff" stroke-opacity="0.35"/>
+<circle cx="491" cy="199" r="3" fill="#7c5cff" fill-opacity="0.77"/>
+<circle cx="490" cy="207" r="3" fill="#7c5cff" fill-opacity="0.65"/>
+<circle cx="515" cy="190" r="3" fill="#7c5cff" fill-opacity="0.82"/>
+<circle cx="500" cy="207" r="3" fill="#7c5cff" fill-opacity="0.54"/>
+<circle cx="499" cy="201" r="3" fill="#7c5cff" fill-opacity="0.69"/>
+<circle cx="492" cy="191" r="3" fill="#7c5cff" fill-opacity="0.59"/>
+<circle cx="490" cy="200" r="3" fill="#7c5cff" fill-opacity="0.83"/>
+<circle cx="490" cy="193" r="3" fill="#7c5cff" fill-opacity="0.58"/>
+<circle cx="502" cy="205" r="3" fill="#7c5cff" fill-opacity="0.56"/>
+<text x="500" y="240" text-anchor="middle" fill="#e6edf3" font-size="12" font-family="-apple-system">Hermes 49</text>
+</svg></div>
+<div class="card"><h3>After — active work is the core</h3>
+<svg width="100%" viewBox="0 0 740 470" style="background:#191919;border-radius:8px"><circle cx="380" cy="210" r="55" fill="#7c5cff" fill-opacity="0.12"/>
+<circle cx="380" cy="210" r="49.5" fill="none" stroke="#7c5cff" stroke-opacity="0.35"/>
+<circle cx="377" cy="206" r="3" fill="#7c5cff" fill-opacity="0.58"/>
+<circle cx="371" cy="182" r="3" fill="#7c5cff" fill-opacity="0.78"/>
+<circle cx="426" cy="185" r="3" fill="#7c5cff" fill-opacity="0.84"/>
+<circle cx="375" cy="206" r="3" fill="#7c5cff" fill-opacity="0.89"/>
+<circle cx="402" cy="240" r="3" fill="#7c5cff" fill-opacity="0.59"/>
+<circle cx="340" cy="177" r="3" fill="#7c5cff" fill-opacity="0.70"/>
+<circle cx="399" cy="207" r="3" fill="#7c5cff" fill-opacity="0.81"/>
+<circle cx="421" cy="205" r="3" fill="#7c5cff" fill-opacity="0.75"/>
+<circle cx="349" cy="197" r="3" fill="#7c5cff" fill-opacity="0.84"/>
+<circle cx="399" cy="239" r="3" fill="#7c5cff" fill-opacity="0.73"/>
+<circle cx="363" cy="194" r="3" fill="#7c5cff" fill-opacity="0.54"/>
+<circle cx="427" cy="221" r="3" fill="#7c5cff" fill-opacity="0.62"/>
+<circle cx="419" cy="189" r="3" fill="#7c5cff" fill-opacity="0.76"/>
+<circle cx="364" cy="221" r="3" fill="#7c5cff" fill-opacity="0.89"/>
+<circle cx="409" cy="213" r="3" fill="#7c5cff" fill-opacity="0.70"/>
+<circle cx="381" cy="242" r="3" fill="#7c5cff" fill-opacity="0.80"/>
+<circle cx="404" cy="218" r="3" fill="#7c5cff" fill-opacity="0.84"/>
+<circle cx="399" cy="185" r="3" fill="#7c5cff" fill-opacity="0.94"/>
+<circle cx="385" cy="183" r="3" fill="#7c5cff" fill-opacity="0.95"/>
+<circle cx="380" cy="224" r="3" fill="#7c5cff" fill-opacity="0.73"/>
+<circle cx="385" cy="202" r="3" fill="#7c5cff" fill-opacity="0.91"/>
+<circle cx="407" cy="204" r="3" fill="#7c5cff" fill-opacity="0.92"/>
+<circle cx="388" cy="243" r="3" fill="#7c5cff" fill-opacity="0.72"/>
+<circle cx="384" cy="207" r="3" fill="#7c5cff" fill-opacity="0.64"/>
+<text x="380" y="285" text-anchor="middle" fill="#e6edf3" font-size="12" font-family="-apple-system">01-active: Overlook + Hermes</text>
+<circle cx="540" cy="300" r="34" fill="#3fbf7f" fill-opacity="0.12"/>
+<circle cx="540" cy="300" r="30.6" fill="none" stroke="#3fbf7f" stroke-opacity="0.35"/>
+<circle cx="556" cy="281" r="3" fill="#3fbf7f" fill-opacity="0.84"/>
+<circle cx="559" cy="320" r="3" fill="#3fbf7f" fill-opacity="0.72"/>
+<circle cx="562" cy="298" r="3" fill="#3fbf7f" fill-opacity="0.74"/>
+<circle cx="520" cy="299" r="3" fill="#3fbf7f" fill-opacity="0.94"/>
+<circle cx="560" cy="315" r="3" fill="#3fbf7f" fill-opacity="0.67"/>
+<circle cx="513" cy="282" r="3" fill="#3fbf7f" fill-opacity="0.78"/>
+<circle cx="517" cy="305" r="3" fill="#3fbf7f" fill-opacity="0.89"/>
+<circle cx="557" cy="292" r="3" fill="#3fbf7f" fill-opacity="0.67"/>
+<circle cx="521" cy="283" r="3" fill="#3fbf7f" fill-opacity="0.89"/>
+<circle cx="538" cy="290" r="3" fill="#3fbf7f" fill-opacity="0.61"/>
+<circle cx="520" cy="298" r="3" fill="#3fbf7f" fill-opacity="0.66"/>
+<circle cx="560" cy="288" r="3" fill="#3fbf7f" fill-opacity="0.67"/>
+<circle cx="568" cy="292" r="3" fill="#3fbf7f" fill-opacity="0.94"/>
+<circle cx="554" cy="282" r="3" fill="#3fbf7f" fill-opacity="0.77"/>
+<circle cx="546" cy="294" r="3" fill="#3fbf7f" fill-opacity="0.79"/>
+<text x="540" y="354" text-anchor="middle" fill="#e6edf3" font-size="12" font-family="-apple-system">03-newsroom: P&P + Ventura Fwd</text>
+<circle cx="190" cy="320" r="24" fill="#4fb2ff" fill-opacity="0.12"/>
+<circle cx="190" cy="320" r="21.6" fill="none" stroke="#4fb2ff" stroke-opacity="0.35"/>
+<circle cx="204" cy="324" r="3" fill="#4fb2ff" fill-opacity="0.91"/>
+<circle cx="199" cy="308" r="3" fill="#4fb2ff" fill-opacity="0.63"/>
+<circle cx="209" cy="321" r="3" fill="#4fb2ff" fill-opacity="0.91"/>
+<circle cx="203" cy="327" r="3" fill="#4fb2ff" fill-opacity="0.65"/>
+<circle cx="205" cy="326" r="3" fill="#4fb2ff" fill-opacity="0.94"/>
+<circle cx="170" cy="321" r="3" fill="#4fb2ff" fill-opacity="0.70"/>
+<circle cx="208" cy="309" r="3" fill="#4fb2ff" fill-opacity="0.61"/>
+<circle cx="179" cy="307" r="3" fill="#4fb2ff" fill-opacity="0.87"/>
+<circle cx="208" cy="314" r="3" fill="#4fb2ff" fill-opacity="0.72"/>
+<text x="190" y="364" text-anchor="middle" fill="#e6edf3" font-size="12" font-family="-apple-system">02-clients: Waveshade</text>
+<circle cx="220" cy="120" r="20" fill="#f2b53d" fill-opacity="0.12"/>
+<circle cx="220" cy="120" r="18.0" fill="none" stroke="#f2b53d" stroke-opacity="0.35"/>
+<circle cx="226" cy="126" r="3" fill="#f2b53d" fill-opacity="0.93"/>
+<circle cx="206" cy="120" r="3" fill="#f2b53d" fill-opacity="0.68"/>
+<circle cx="235" cy="129" r="3" fill="#f2b53d" fill-opacity="0.54"/>
+<circle cx="217" cy="113" r="3" fill="#f2b53d" fill-opacity="0.55"/>
+<circle cx="223" cy="109" r="3" fill="#f2b53d" fill-opacity="0.85"/>
+<circle cx="229" cy="113" r="3" fill="#f2b53d" fill-opacity="0.60"/>
+<circle cx="203" cy="129" r="3" fill="#f2b53d" fill-opacity="0.57"/>
+<text x="220" y="160" text-anchor="middle" fill="#e6edf3" font-size="12" font-family="-apple-system">04-biz-ops: ovlk</text>
+<circle cx="620" cy="100" r="18" fill="#8a8e93" fill-opacity="0.12"/>
+<circle cx="620" cy="100" r="16.2" fill="none" stroke="#8a8e93" stroke-opacity="0.35"/>
+<circle cx="605" cy="90" r="3" fill="#8a8e93" fill-opacity="0.86"/>
+<circle cx="627" cy="101" r="3" fill="#8a8e93" fill-opacity="0.84"/>
+<circle cx="620" cy="110" r="3" fill="#8a8e93" fill-opacity="0.52"/>
+<circle cx="634" cy="91" r="3" fill="#8a8e93" fill-opacity="0.72"/>
+<circle cx="607" cy="91" r="3" fill="#8a8e93" fill-opacity="0.77"/>
+<circle cx="615" cy="111" r="3" fill="#8a8e93" fill-opacity="0.74"/>
+<text x="620" y="138" text-anchor="middle" fill="#e6edf3" font-size="12" font-family="-apple-system">06-reference</text>
+<circle cx="105" cy="410" r="14" fill="#5c6370" fill-opacity="0.12"/>
+<circle cx="105" cy="410" r="12.6" fill="none" stroke="#5c6370" stroke-opacity="0.35"/>
+<circle cx="113" cy="413" r="3" fill="#5c6370" fill-opacity="0.85"/>
+<circle cx="101" cy="409" r="3" fill="#5c6370" fill-opacity="0.69"/>
+<circle cx="97" cy="417" r="3" fill="#5c6370" fill-opacity="0.53"/>
+<circle cx="112" cy="411" r="3" fill="#5c6370" fill-opacity="0.76"/>
+<circle cx="109" cy="414" r="3" fill="#5c6370" fill-opacity="0.89"/>
+<circle cx="107" cy="405" r="3" fill="#5c6370" fill-opacity="0.80"/>
+<text x="105" y="444" text-anchor="middle" fill="#e6edf3" font-size="12" font-family="-apple-system">07-archive (collapsed)</text>
+</svg></div></div>
+<div class="legend">Activity: <span class="d" style="background:#7c5cff"></span>active <span class="d" style="background:#3fbf7f"></span>newsroom <span class="d" style="background:#4fb2ff"></span>clients <span class="d" style="background:#f2b53d"></span>biz-ops <span class="d" style="background:#5c6370"></span>archive — node size = attention score, position = hierarchy</div>
+</body></html>
