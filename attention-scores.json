@@ -8,8 +8,8 @@
   "last_git": "never"
  },
  "ventura-forward": {
-  "score": 737.4,
-  "commits": 311,
+  "score": 718.3,
+  "commits": 310,
   "prs": 20,
   "mentions": 0,
   "repos": [
@@ -19,7 +19,7 @@
   "last_git": "2026-08-28"
  },
  "pier-and-point": {
-  "score": 4.2,
+  "score": 4.1,
   "commits": 5,
   "prs": 1,
   "mentions": 0,
@@ -29,7 +29,7 @@
   "last_git": "2026-07-10"
  },
  "metacheck": {
-  "score": 51.6,
+  "score": 50.4,
   "commits": 65,
   "prs": 13,
   "mentions": 0,
@@ -39,7 +39,7 @@
   "last_git": "2026-07-08"
  },
  "starcommand": {
-  "score": 15.9,
+  "score": 15.5,
   "commits": 9,
   "prs": 1,
   "mentions": 0,
@@ -59,7 +59,7 @@
   "last_git": "2026-09-09"
  },
  "hermes-webhook-setup": {
-  "score": 2.0,
+  "score": 1.9,
   "commits": 1,
   "prs": 0,
   "mentions": 0,
@@ -69,8 +69,8 @@
   "last_git": "2026-08-22"
  },
  "overlook-audio": {
-  "score": 324.8,
-  "commits": 145,
+  "score": 309.4,
+  "commits": 141,
   "prs": 23,
   "mentions": 0,
   "repos": [
@@ -81,8 +81,8 @@
   "last_git": "2026-08-23"
  },
  "claude-code": {
-  "score": 324.8,
-  "commits": 145,
+  "score": 309.4,
+  "commits": 141,
   "prs": 23,
   "mentions": 0,
   "repos": [
@@ -91,7 +91,7 @@
   "last_git": "2026-08-23"
  },
  "tinacms": {
-  "score": 9.8,
+  "score": 9.6,
   "commits": 14,
   "prs": 0,
   "mentions": 0,

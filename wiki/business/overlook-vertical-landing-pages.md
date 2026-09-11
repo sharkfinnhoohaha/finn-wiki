@@ -1,5 +1,5 @@
 ---
-attention: 324.8
+attention: 309.4
 title: "Overlook Vertical Landing Pages — strategy"
 type: business
 tags: [overlook-strategy, landing-pages, seo, vertical-positioning, productized-services]
