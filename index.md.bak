@@ -17,27 +17,14 @@ This vault has two parallel structures (see `CLAUDE.md` for the full model):
 
 **Start here:** [[status-dashboard]] — at-a-glance view of every coding project by status.
 
-### In-progress (19) — `wiki/projects/in-progress/`
+### In-progress (6) — `wiki/projects/in-progress/`
 
 - [[berklee-music-supervision-1]]: Lessons 10/11/12 coursework for Alchemy (CBS)
 - [[copper-and-cast]]: Outdoor catalog rebrand + 3D Subaru Outback Wilderness model
-- [[gearflip]]: Music gear arbitrage app, paused after Clerk integration
 - [[gemini-usage-tracker]]: iOS/macOS Swift app, PR #1 open
 - [[hybrid-llm-workflow]]: Local LLM + Sonnet hybrid setup
 - [[johnson-aviation]]: Client marketing site (jacair.com) from shared template
-- [[notion-life-os]]: Personal Life OS in Notion (6-area buckets)
-- [[openclaw-airtable-spine]]: Schema spec for the three-table Airtable state spine (fleet_state, events, lessons). HyperAgent record-change trigger surface. Spec only; lands after Telegram supergroup migration and webhook backup.
-- [[openclaw-autonomous-ops]]: Kevin runs OS for me — multi-agent autonomous ops for Overlook Strategy via Sourcer/Mailer/Bridge/Atlas
-- [[openclaw-fleet-2026-05-05-atlas-online]]: Progress note — Atlas online, Day 2 of Phase 1 silent ingest; Kevin filed first wiki contribution; Bridge blocked on secrets.
-- [[openclaw-fleet-timeline-atlas-rollout]]: Atlas rollout schedule — Phase 1 (5/5–5/12 silent ingest), starter-five at 5/12 close, Phase 2 (5/13–5/26 observer-coach), Day 22 gate (5/27 autonomous).
-- [[openclaw-fleet]]: Project index for Finn's local OpenClaw-shaped agent fleet (Atlas / Kevin / Otto / Bridge). HyperAgent-hosted runtime, Telegram surface, GitHub-backed living config files. Sits below [[mission-control]].
-- [[overlook-boilerplates]]: 5 Overlook Strategy boilerplate repos on GitHub
-- [[overlook-portal-webapp]]: Client portal for overlookstrategy.com, Next.js + FastAPI/Railway
-- [[riptide]]: Overlook Audio hardware product (PCB, firmware, CAD)
-- [[somliøya]]: Next.js + TinaCMS client site
 - [[three-altitudes]]: Cinematic four-stage scrolling portfolio site, Next.js + Three.js + Sanity
-- [[ventura-forward-app]]: Civic "Report It" feature with Supabase
-- [[waveshade]]: Ventura sunglasses e-commerce (Medusa + Next.js storefront)
 
 ### Unfinished — the "80% pile" (5) — `wiki/projects/unfinished/`
 
@@ -47,7 +34,7 @@ This vault has two parallel structures (see `CLAUDE.md` for the full model):
 - [[kb]]: Knowledge-base project, session interrupted mid-audit
 - [[latency-optimizer]]: Audio latency tool, blocked on API key
 
-### Abandoned (16) — `wiki/projects/abandoned/`
+### Abandoned (13) — `wiki/projects/abandoned/`
 
 - [[aviation-theme-cp-aviation]]
 - [[due-date]]
@@ -60,30 +47,43 @@ This vault has two parallel structures (see `CLAUDE.md` for the full model):
 - [[index-playground]]
 - [[mixnote-landing]]
 - [[notion-cms-app]]
-- [[overlook-strategy-final-v1-variants]]
 - [[ovlkstratredo]]
-- [[starcommand]]
 - [[subawoo]]
-- [[ventura-forward-admin-duplicate]]
 
-### Deployed (13) — `wiki/projects/deployed/`
+### Deployed (8) — `wiki/projects/deployed/`
 
 - [[cms-kit-sanity-deployed]]: Sanity starter kit reference
 - [[fbdotcom-underdev]]: Interim finnbennett.com
 - [[file-organization-pass]]: 15-year file org pass on Mac (shipped)
 - [[finn-v2-portfolio]]: Current live portfolio (until three-altitudes takes over)
 - [[grannen-lodge-main]]: Canonical client deploy
-- [[metacheck]]: metacheck-ten.vercel.app, shipped clean
-- [[overlook-audio-site]]: Older Overlook Audio brand phase
-- [[overlook-invoice-pay]]: Client invoice flow, live
-- [[overlook-strategy-final-v1-main]]: Earlier brand/site version, stable
 - [[portal-landing-page]]: Landing for Overlook portal (ERROR state — flag)
 - [[rustler-yachts-redesign]]: Rustler 42 client website, shipped
-- [[somlioya-nextjs-deprecated]]: Predecessor to current Sømliøya
 - [[spencers-dashboard]]: One-off client dashboard
 
-### Other project pages (2)
+### Other project pages (23)
 
+- [[overlook-audio-site]]: Older Overlook Audio brand phase
+- [[overlook-boilerplates]]: 5 Overlook Strategy boilerplate repos on GitHub
+- [[overlook-invoice-pay]]: Client invoice flow, live
+- [[overlook-portal-webapp]]: Client portal for overlookstrategy.com, Next.js + FastAPI/Railway
+- [[overlook-strategy-final-v1-main]]: Earlier brand/site version, stable
+- [[overlook-strategy-final-v1-variants]] (path: 01-active/overlook-strategy-final-v1-variants.md)
+- [[ventura-forward-admin-duplicate]] (path: 01-active/ventura-forward-admin-duplicate.md)
+- [[ventura-forward-app]]: Civic "Report It" feature with Supabase
+- [[waveshade]]: Ventura sunglasses e-commerce (Medusa + Next.js storefront)
+- [[gearflip]]: Music gear arbitrage app, paused after Clerk integration
+- [[metacheck]]: metacheck-ten.vercel.app, shipped clean
+- [[notion-life-os]]: Personal Life OS in Notion (6-area buckets)
+- [[openclaw-airtable-spine]]: Schema spec for the three-table Airtable state spine (fleet_state, events, lessons). HyperAgent record-change trigger surface. Spec only; lands after Telegram supergroup migration and webhook backup.
+- [[openclaw-autonomous-ops]]: Kevin runs OS for me — multi-agent autonomous ops for Overlook Strategy via Sourcer/Mailer/Bridge/Atlas
+- [[openclaw-fleet]]: Project index for Finn's local OpenClaw-shaped agent fleet (Atlas / Kevin / Otto / Bridge). HyperAgent-hosted runtime, Telegram surface, GitHub-backed living config files. Sits below [[mission-control]].
+- [[openclaw-fleet-2026-05-05-atlas-online]]: Progress note — Atlas online, Day 2 of Phase 1 silent ingest; Kevin filed first wiki contribution; Bridge blocked on secrets.
+- [[openclaw-fleet-timeline-atlas-rollout]]: Atlas rollout schedule — Phase 1 (5/5–5/12 silent ingest), starter-five at 5/12 close, Phase 2 (5/13–5/26 observer-coach), Day 22 gate (5/27 autonomous).
+- [[riptide]]: Overlook Audio hardware product (PCB, firmware, CAD)
+- [[somlioya-nextjs-deprecated]]: Predecessor to current Sømliøya
+- [[somliøya]]: Next.js + TinaCMS client site
+- [[starcommand]] (path: 07-archive/starcommand.md)
 - [[kelly-bennett-site]] (path: design/templates/kelly-bennett-site.md)
 - [[abandoned-archive]] (path: projects/abandoned-archive.md)
 
@@ -883,6 +883,11 @@ This vault has two parallel structures (see `CLAUDE.md` for the full model):
 
 ## Other / Uncategorized
 
+- [[ventura-forward-hierarchy]] (type: none)
+- [[ovlk-tech]] (type: none)
+- [[kevin-ops-how-hermes-works]] (type: none)
+- [[team-delegation-checklist]] (type: none)
 - [[openclaw-fleet-handoff]] (type: retrospective)
+- [[ATTENTION-REPORT]] (type: none)
 
-<!-- Generated by regenerate-index.py on 2026-09-08 — 360 pages -->
+<!-- Generated by regenerate-index.py on 2026-09-09 — 365 pages -->

@@ -1,5 +1,5 @@
 ---
-attention: 718.3
+attention: 701.9
 entity_role: active-focus
 parent: ventura-forward
 updated: 2026-09-09

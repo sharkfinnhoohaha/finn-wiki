@@ -1,5 +1,5 @@
 ---
-attention: 4.1
+attention: 4.0
 title: "Pier and Point"
 type: business
 status: active
