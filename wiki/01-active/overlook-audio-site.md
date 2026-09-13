@@ -1,6 +1,6 @@
 ---
 entity_role: subsidiary-of: overlook-strategy
-attention: 302.4
+attention: 293.6
 title: "Overlook Audio Site"
 type: project
 status: shipped

@@ -1,5 +1,5 @@
 ---
-attention: 4.0
+attention: 1.4
 title: "Pier and Point — Research Report"
 type: source
 tags: [source, deep-research, ventura, hyperlocal-news, ai-newsroom, overlook-strategy]
