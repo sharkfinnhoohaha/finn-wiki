@@ -1,5 +1,5 @@
 ---
-attention: 8.7
+attention: 8.5
 title: "TinaCMS"
 type: entity
 tags: [tool, service, cms, git-based, headless]
