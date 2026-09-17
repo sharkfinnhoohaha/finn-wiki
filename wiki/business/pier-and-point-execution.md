@@ -1,5 +1,5 @@
 ---
-attention: 1.3
+attention: 1.2
 title: "Pier and Point — Execution Map"
 type: business
 status: active

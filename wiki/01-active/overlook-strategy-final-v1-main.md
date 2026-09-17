@@ -1,6 +1,6 @@
 ---
 entity_role: parent-company
-attention: 273.9
+attention: 265.9
 title: "Overlook Strategy Final V1 (main)"
 type: project
 status: shipped

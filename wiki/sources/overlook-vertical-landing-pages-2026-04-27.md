@@ -1,5 +1,5 @@
 ---
-attention: 273.9
+attention: 265.9
 title: "Overlook Vertical Landing Pages (Apr 27, 2026 second pass)"
 type: source
 tags: [overlook-strategy, landing-pages, seo, vertical-positioning, sanity, finn-v2, sportfishing]
