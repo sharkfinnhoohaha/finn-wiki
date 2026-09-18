@@ -1,5 +1,5 @@
 ---
-attention: 8.3
+attention: 8.1
 title: "Sømliøya (Next.js, deprecated deploy)"
 type: project
 status: shipped
