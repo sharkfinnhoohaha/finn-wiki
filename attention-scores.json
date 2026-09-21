@@ -8,8 +8,8 @@
   "last_git": "never"
  },
  "ventura-forward": {
-  "score": 981.1,
-  "commits": 322,
+  "score": 907.1,
+  "commits": 304,
   "prs": 19,
   "mentions": 0,
   "repos": [
@@ -19,17 +19,17 @@
   "last_git": "2026-09-18"
  },
  "pier-and-point": {
-  "score": 1.2,
-  "commits": 2,
+  "score": 9.0,
+  "commits": 3,
   "prs": 0,
   "mentions": 0,
   "repos": [
    "pier-and-point"
   ],
-  "last_git": "2026-07-10"
+  "last_git": "2026-09-20"
  },
  "metacheck": {
-  "score": 0.6,
+  "score": 0.5,
   "commits": 1,
   "prs": 0,
   "mentions": 0,
@@ -39,7 +39,7 @@
   "last_git": "2026-07-08"
  },
  "starcommand": {
-  "score": 12.6,
+  "score": 12.3,
   "commits": 9,
   "prs": 1,
   "mentions": 0,
@@ -49,17 +49,17 @@
   "last_git": "2026-08-14"
  },
  "finn-wiki-ingest": {
-  "score": 510.0,
-  "commits": 170,
+  "score": 501.3,
+  "commits": 171,
   "prs": 0,
   "mentions": 0,
   "repos": [
    "Finn-Wiki"
   ],
-  "last_git": "2026-09-18"
+  "last_git": "2026-09-19"
  },
  "hermes-webhook-setup": {
-  "score": 1.6,
+  "score": 1.5,
   "commits": 1,
   "prs": 0,
   "mentions": 0,
@@ -69,7 +69,7 @@
   "last_git": "2026-08-22"
  },
  "overlook-audio": {
-  "score": 236.9,
+  "score": 231.5,
   "commits": 132,
   "prs": 23,
   "mentions": 0,
@@ -81,7 +81,7 @@
   "last_git": "2026-08-23"
  },
  "claude-code": {
-  "score": 236.9,
+  "score": 231.5,
   "commits": 132,
   "prs": 23,
   "mentions": 0,
@@ -91,7 +91,7 @@
   "last_git": "2026-08-23"
  },
  "tinacms": {
-  "score": 7.8,
+  "score": 7.6,
   "commits": 14,
   "prs": 0,
   "mentions": 0,
