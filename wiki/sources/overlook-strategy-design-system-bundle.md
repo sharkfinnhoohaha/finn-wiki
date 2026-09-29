@@ -1,6 +1,6 @@
 ---
 entity_role: parent-company
-attention: 196.9
+attention: 192.4
 title: "Overlook Strategy Design System Bundle"
 type: source
 tags: [design, overlook-strategy, design-system, source]
