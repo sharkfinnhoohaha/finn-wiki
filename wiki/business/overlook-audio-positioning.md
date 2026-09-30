@@ -1,6 +1,6 @@
 ---
 entity_role: subsidiary-of: overlook-strategy
-attention: 192.4
+attention: 181.2
 title: "Overlook Audio — Positioning"
 type: business
 tags: [overlook-audio, positioning, hardware, firmware, module-02, riptide]
