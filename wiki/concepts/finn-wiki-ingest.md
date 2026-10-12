@@ -1,5 +1,5 @@
 ---
-attention: 507.1
+attention: 367.6
 title: "Finn Wiki Ingest"
 type: concept
 tags: [skill, workflow, ingest, llm-wiki]

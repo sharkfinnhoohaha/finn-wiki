@@ -1,5 +1,5 @@
 ---
-attention: 0.4
+attention: 0.0
 title: "Metacheck"
 type: project
 status: shipped
