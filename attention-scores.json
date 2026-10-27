@@ -49,14 +49,14 @@
   "last_git": "2026-08-14"
  },
  "finn-wiki-ingest": {
-  "score": 275.7,
-  "commits": 127,
+  "score": 387.0,
+  "commits": 129,
   "prs": 0,
   "mentions": 0,
   "repos": [
    "Finn-Wiki"
   ],
-  "last_git": "2026-10-12"
+  "last_git": "2026-10-27"
  },
  "hermes-webhook-setup": {
   "score": 0.7,

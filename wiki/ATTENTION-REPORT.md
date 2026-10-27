@@ -1,8 +1,8 @@
 # Attention Report — auto-generated
 
-_Generated 2026-10-26 22:30 by attention-score.py (90d window, git x3, PR x2, mentions x1, 30d half-life decay)_
+_Generated 2026-10-27 06:12 by attention-score.py (90d window, git x3, PR x2, mentions x1, 30d half-life decay)_
 
-- **finn-wiki-ingest**: 275.7  (commits 127, PRs 0, mentions 0, last git 2026-10-12)
+- **finn-wiki-ingest**: 387.0  (commits 129, PRs 0, mentions 0, last git 2026-10-27)
 - **ventura-forward**: 162.5  (commits 199, PRs 19, mentions 0, last git 2026-08-28)
 - **overlook-audio**: 83.2  (commits 109, PRs 19, mentions 0, last git 2026-08-23)
 - **claude-code**: 83.2  (commits 109, PRs 19, mentions 0, last git 2026-08-23)
