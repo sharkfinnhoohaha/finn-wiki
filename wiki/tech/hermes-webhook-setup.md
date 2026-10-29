@@ -1,5 +1,5 @@
 ---
-attention: 0.7
+attention: 0.6
 title: "Hermes Webhook Setup — Event-Driven Agent Triggers"
 type: tech
 tags: [hermes, webhooks, tailscale, automation, event-driven, github, stripe, vercel]
