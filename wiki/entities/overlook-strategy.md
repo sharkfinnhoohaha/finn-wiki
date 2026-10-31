@@ -1,6 +1,6 @@
 ---
 entity_role: parent-company
-attention: 75.1
+attention: 61.9
 title: "Overlook Strategy"
 type: entity
 tags: [organization, business, brand, web-dev, branding]
