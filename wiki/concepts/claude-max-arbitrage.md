@@ -1,5 +1,5 @@
 ---
-attention: 61.9
+attention: 53.2
 title: "Claude Max arbitrage"
 type: concept
 tags: [concept, claude-max, monetization, anthropic, business-model]
