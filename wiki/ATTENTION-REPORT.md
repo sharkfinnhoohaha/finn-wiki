@@ -1,13 +1,13 @@
 # Attention Report — auto-generated
 
-_Generated 2026-10-31 22:30 by attention-score.py (90d window, git x3, PR x2, mentions x1, 30d half-life decay)_
+_Generated 2026-11-01 22:30 by attention-score.py (90d window, git x3, PR x2, mentions x1, 30d half-life decay)_
 
-- **finn-wiki-ingest**: 405.0  (commits 135, PRs 0, mentions 0, last git 2026-10-30)
-- **ventura-forward**: 90.3  (commits 132, PRs 0, mentions 0, last git 2026-08-28)
-- **overlook-audio**: 53.2  (commits 76, PRs 17, mentions 0, last git 2026-08-23)
-- **claude-code**: 53.2  (commits 76, PRs 17, mentions 0, last git 2026-08-23)
-- **pier-and-point**: 29.0  (commits 9, PRs 1, mentions 0, last git 2026-10-31)
-- **starcommand**: 4.8  (commits 9, PRs 1, mentions 0, last git 2026-08-14)
+- **finn-wiki-ingest**: 402.0  (commits 134, PRs 0, mentions 0, last git 2026-10-31)
+- **ventura-forward**: 81.5  (commits 122, PRs 0, mentions 0, last git 2026-08-28)
+- **overlook-audio**: 44.8  (commits 64, PRs 17, mentions 0, last git 2026-08-23)
+- **claude-code**: 44.8  (commits 64, PRs 17, mentions 0, last git 2026-08-23)
+- **pier-and-point**: 28.3  (commits 9, PRs 1, mentions 0, last git 2026-10-31)
+- **starcommand**: 4.7  (commits 9, PRs 1, mentions 0, last git 2026-08-14)
 - **hermes-webhook-setup**: 0.6  (commits 1, PRs 0, mentions 0, last git 2026-08-22)
 - **cbs**: 0.0  (commits 0, PRs 0, mentions 0, last git never)
 - **metacheck**: 0.0  (commits 0, PRs 0, mentions 0, last git 2026-07-08)
