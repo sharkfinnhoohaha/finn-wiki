@@ -1,5 +1,5 @@
 ---
-attention: 4.7
+attention: 4.6
 title: "Starcommand"
 type: project
 status: dormant
