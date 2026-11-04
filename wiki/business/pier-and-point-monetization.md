@@ -1,5 +1,5 @@
 ---
-attention: 27.7
+attention: 27.1
 title: "Pier and Point — Monetization & Roadmap"
 type: business
 status: active

@@ -1,5 +1,5 @@
 ---
-attention: 30.4
+attention: 22.2
 title: "Overlook Vertical Landing Pages (Apr 26, 2026 batch)"
 type: source
 tags: [overlook-strategy, landing-pages, seo, vertical-positioning, sanity, finn-v2]
