@@ -1,6 +1,6 @@
 ---
 entity_role: parent-company
-attention: 22.2
+attention: 21.7
 title: "Overlook Strategy Final V1 — variant slugs"
 type: project
 status: dormant

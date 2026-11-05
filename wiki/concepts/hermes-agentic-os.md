@@ -1,5 +1,5 @@
 ---
-attention: 0.6
+attention: 0.5
 title: "Hermes Agentic OS"
 type: concept
 status: active
