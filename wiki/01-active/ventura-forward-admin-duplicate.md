@@ -1,5 +1,5 @@
 ---
-attention: 58.6
+attention: 54.8
 title: "ventura-forward-admin-client-web-app (duplicate)"
 type: project
 status: dormant
