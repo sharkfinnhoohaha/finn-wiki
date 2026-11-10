@@ -1,5 +1,5 @@
 ---
-attention: 18.7
+attention: 17.8
 title: "Overlook Boilerplates"
 type: project
 status: active
