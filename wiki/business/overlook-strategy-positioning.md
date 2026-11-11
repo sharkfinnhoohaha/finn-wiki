@@ -1,6 +1,6 @@
 ---
 entity_role: parent-company
-attention: 17.8
+attention: 17.4
 title: "Overlook Strategy — Positioning"
 type: business
 tags: [overlook-strategy, positioning, branding, web-dev, module-01]

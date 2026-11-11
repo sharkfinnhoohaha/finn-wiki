@@ -1,6 +1,6 @@
 ---
 entity_role: subsidiary-of: overlook-strategy
-attention: 17.8
+attention: 17.4
 title: "Overlook Audio"
 type: entity
 tags: [organization, business, brand, hardware, firmware, audio]
