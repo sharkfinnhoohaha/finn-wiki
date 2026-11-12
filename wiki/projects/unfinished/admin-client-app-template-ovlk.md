@@ -7,13 +7,13 @@ tags:
 - template
 - superseded
 created: 2026-04-24
-updated: '2026-11-11'
+updated: '2026-11-12'
 weight: low
 node_size: 2
 sources:
 - overlook-strategy-admin-client-template-ovlk
 - cc-batch-a
-last_touched: '2026-11-11'
+last_touched: '2026-11-12'
 next_action: Onboarding Flow Ovlk.works
 blocker: OVLK.tech website build
 --- life-os-daily contract ---

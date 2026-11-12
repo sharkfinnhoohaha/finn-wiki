@@ -1,5 +1,5 @@
 ---
-attention: 34.7
+attention: 29.7
 title: "Ventura Forward"
 type: client
 status: active
