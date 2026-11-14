@@ -1,5 +1,5 @@
 ---
-attention: 0.5
+attention: 0.4
 title: "Hermes Cron Audit — 2026-06-29"
 type: tech
 tags: [hermes, cron, infrastructure, audit]
