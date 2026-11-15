@@ -8,8 +8,8 @@
   "last_git": "never"
  },
  "ventura-forward": {
-  "score": 24.3,
-  "commits": 48,
+  "score": 22.3,
+  "commits": 45,
   "prs": 0,
   "mentions": 0,
   "repos": [
@@ -19,7 +19,7 @@
   "last_git": "2026-08-28"
  },
  "pier-and-point": {
-  "score": 94.0,
+  "score": 91.9,
   "commits": 28,
   "prs": 5,
   "mentions": 0,
@@ -56,7 +56,7 @@
   "repos": [
    "Finn-Wiki"
   ],
-  "last_git": "2026-11-12"
+  "last_git": "2026-11-13"
  },
  "hermes-webhook-setup": {
   "score": 0.4,
@@ -69,9 +69,9 @@
   "last_git": "2026-08-22"
  },
  "overlook-audio": {
-  "score": 11.0,
-  "commits": 21,
-  "prs": 5,
+  "score": 8.8,
+  "commits": 18,
+  "prs": 3,
   "mentions": 0,
   "repos": [
    "overlook-web",
@@ -81,9 +81,9 @@
   "last_git": "2026-08-23"
  },
  "claude-code": {
-  "score": 11.0,
-  "commits": 21,
-  "prs": 5,
+  "score": 8.8,
+  "commits": 18,
+  "prs": 3,
   "mentions": 0,
   "repos": [
    "claude_Overlook-webapp"
