@@ -1,5 +1,5 @@
 ---
-attention: 3.2
+attention: 0.0
 title: "Claude Code"
 type: entity
 tags: [tool, agent, anthropic, phase-3]

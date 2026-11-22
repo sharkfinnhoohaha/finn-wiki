@@ -1,5 +1,5 @@
 ---
-attention: 6.9
+attention: 6.7
 title: Ventura Forward App
 type: project
 status: active
