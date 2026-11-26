@@ -8,8 +8,8 @@
   "last_git": "never"
  },
  "ventura-forward": {
-  "score": 4.7,
-  "commits": 12,
+  "score": 3.1,
+  "commits": 8,
   "prs": 0,
   "mentions": 0,
   "repos": [
@@ -19,14 +19,14 @@
   "last_git": "2026-08-28"
  },
  "pier-and-point": {
-  "score": 103.1,
-  "commits": 32,
+  "score": 111.0,
+  "commits": 33,
   "prs": 6,
   "mentions": 0,
   "repos": [
    "pier-and-point"
   ],
-  "last_git": "2026-11-22"
+  "last_git": "2026-11-25"
  },
  "metacheck": {
   "score": 0.0,
@@ -56,7 +56,7 @@
   "repos": [
    "Finn-Wiki"
   ],
-  "last_git": "2026-11-23"
+  "last_git": "2026-11-24"
  },
  "hermes-webhook-setup": {
   "score": 0.0,
