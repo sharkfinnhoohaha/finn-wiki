@@ -1,11 +1,11 @@
 # Attention Report — auto-generated
 
-_Generated 2026-11-25 22:30 by attention-score.py (90d window, git x3, PR x2, mentions x1, 30d half-life decay)_
+_Generated 2026-11-26 22:30 by attention-score.py (90d window, git x3, PR x2, mentions x1, 30d half-life decay)_
 
-- **finn-wiki-ingest**: 402.0  (commits 134, PRs 0, mentions 0, last git 2026-11-24)
-- **pier-and-point**: 111.0  (commits 33, PRs 6, mentions 0, last git 2026-11-25)
-- **ventura-forward**: 3.1  (commits 8, PRs 0, mentions 0, last git 2026-08-28)
+- **finn-wiki-ingest**: 402.0  (commits 134, PRs 0, mentions 0, last git 2026-11-25)
+- **pier-and-point**: 108.5  (commits 33, PRs 6, mentions 0, last git 2026-11-25)
 - **cbs**: 0.0  (commits 0, PRs 0, mentions 0, last git never)
+- **ventura-forward**: 0.0  (commits 0, PRs 0, mentions 0, last git 2026-08-28)
 - **metacheck**: 0.0  (commits 0, PRs 0, mentions 0, last git 2026-07-08)
 - **starcommand**: 0.0  (commits 0, PRs 0, mentions 0, last git 2026-08-14)
 - **hermes-webhook-setup**: 0.0  (commits 0, PRs 0, mentions 0, last git 2026-08-22)
